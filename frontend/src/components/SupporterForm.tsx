@@ -1,0 +1,128 @@
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { SectionLabel } from './Layout.styled'
+import {
+  Form,
+  Row,
+  Field,
+  Label,
+  Input,
+  TextArea,
+  FileInput,
+  ErrorText,
+  HelpText,
+  StatusText,
+} from './Form.styled'
+import { Button } from './Layout.styled'
+import { submitTestimonial } from '../api/endpoints'
+import { ApiError } from '../api/client'
+import { fileToDataUrl, MAX_IMAGE_BYTES, ALLOWED_IMAGE_TYPES } from '../utils/fileToDataUrl'
+
+interface FormValues {
+  firstName: string
+  lastName: string
+  quote: string
+  image: FileList
+}
+
+type Status = { type: 'idle' } | { type: 'success' } | { type: 'error'; message: string }
+
+export function SupporterForm() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>()
+  const [status, setStatus] = useState<Status>({ type: 'idle' })
+
+  async function onSubmit(values: FormValues) {
+    setStatus({ type: 'idle' })
+    try {
+      const file = values.image?.[0]
+      const image = file ? await fileToDataUrl(file) : undefined
+
+      await submitTestimonial({
+        firstName: values.firstName.trim(),
+        lastName: values.lastName.trim(),
+        quote: values.quote.trim(),
+        image,
+      })
+
+      setStatus({ type: 'success' })
+      reset()
+    } catch (err) {
+      const message = err instanceof ApiError ? err.message : 'Da ist etwas schiefgelaufen. Versuch es noch einmal.'
+      setStatus({ type: 'error', message })
+    }
+  }
+
+  return (
+    <section>
+      <SectionLabel>04. Zitat einreichen</SectionLabel>
+      <Form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <Row>
+          <Field>
+            <Label htmlFor="firstName">Vorname</Label>
+            <Input
+              id="firstName"
+              autoComplete="given-name"
+              {...register('firstName', { required: true, maxLength: 100 })}
+            />
+            {errors.firstName && <ErrorText>Bitte Vorname angeben.</ErrorText>}
+          </Field>
+          <Field>
+            <Label htmlFor="lastName">Nachname</Label>
+            <Input
+              id="lastName"
+              autoComplete="family-name"
+              {...register('lastName', { required: true, maxLength: 100 })}
+            />
+            {errors.lastName && <ErrorText>Bitte Nachname angeben.</ErrorText>}
+          </Field>
+        </Row>
+
+        <Field>
+          <Label htmlFor="quote">Dein Zitat</Label>
+          <TextArea
+            id="quote"
+            placeholder="Warum unterstützt du Melanie Berner und Nicole Wyss?"
+            {...register('quote', { required: true, maxLength: 2000 })}
+          />
+          {errors.quote && <ErrorText>Bitte ein Zitat schreiben.</ErrorText>}
+        </Field>
+
+        <Field>
+          <Label htmlFor="image">Foto (optional)</Label>
+          <FileInput
+            id="image"
+            type="file"
+            accept={ALLOWED_IMAGE_TYPES.join(',')}
+            {...register('image', {
+              validate: (files) => {
+                const file = files?.[0]
+                if (!file) return true
+                if (!ALLOWED_IMAGE_TYPES.includes(file.type)) return 'Nur JPG, PNG oder WEBP erlaubt.'
+                if (file.size > MAX_IMAGE_BYTES) return 'Bild ist zu gross (max. 2 MB).'
+                return true
+              },
+            })}
+          />
+          <HelpText>JPG, PNG oder WEBP, maximal 2 MB.</HelpText>
+          {errors.image && <ErrorText>{errors.image.message}</ErrorText>}
+        </Field>
+
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Wird gesendet…' : 'Zitat einreichen'}
+        </Button>
+
+        {status.type === 'success' && (
+          <StatusText $variant="success">
+            Zitat gesendet. Danke für deine Unterstützung.
+          </StatusText>
+        )}
+        {status.type === 'error' && <StatusText $variant="error">{status.message}</StatusText>}
+      </Form>
+    </section>
+  )
+}

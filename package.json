@@ -1,0 +1,13 @@
+{
+  "name": "berner-wyss2027",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "postinstall": "npm install --prefix backend --include=dev && npm install --prefix frontend --include=dev",
+    "build": "npm run build --prefix frontend && npm run build --prefix backend",
+    "start": "node backend/dist/index.js"
+  }
+}

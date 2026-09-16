@@ -1,0 +1,5 @@
+- Datenschutzerklärung
+- Web tracking (aufrufe)
+- Social Media teilen
+- Game
+- Füge verzeichnis ein um zu listen, was bei änderungen potentiell angepasst werden muss (llms.txt / robots.txt, datenschutz...)
