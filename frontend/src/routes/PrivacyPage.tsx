@@ -81,14 +81,14 @@ export function PrivacyPage() {
             Angaben werden nur dafür übermittelt.
           </li>
         </Ul>
-        <P>Keine US-Cloud, kein Google, kein Facebook. Nicht mal für ein Nickerchen.</P>
+        <P>Keine US-Cloud, kein Google, kein Facebook.</P>
       </Section>
 
       <Section>
         <H2>Speicherdauer</H2>
         <P>
-          Die E-Mail liegt im Postfach des Kandidatur-Teams, bis jemand aufräumt. Wir haben ein
-          Postfach, keinen Geheimdienst. Ein veröffentlichtes Zitat bleibt auf der Website, bis du
+          Die E-Mail liegt im Postfach des Kandidatur-Teams und wird dort nach der Bearbeitung gelöscht.
+          Ein veröffentlichtes Zitat bleibt auf der Website, bis spätestens ein Jahr nach der Wahl oder bis du
           die Entfernung verlangst.
         </P>
       </Section>

@@ -7,6 +7,10 @@ import rateLimit from 'express-rate-limit'
 import testimonialsRouter from './routes/testimonials'
 import { errorHandler } from './middleware/errorHandler'
 
+if (!process.env.BREVO_SMTP_USER || !process.env.BREVO_SMTP_KEY) {
+  console.warn('BREVO_SMTP_USER/BREVO_SMTP_KEY fehlen: das Formular kann keine Mails senden.')
+}
+
 const app = express()
 const port = process.env.PORT || 3001
 
