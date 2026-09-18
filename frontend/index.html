@@ -17,6 +17,7 @@
     <meta name="author" content="Berner & Wyss 2027" />
     <meta name="theme-color" content="#FF1975" />
     <link rel="canonical" href="__SITE_URL__/" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -28,10 +29,17 @@
     />
     <meta property="og:url" content="__SITE_URL__" />
     <meta property="og:image" content="__SITE_URL__/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Melanie Berner und Nicole Wyss in den Regierungsrat, Regierungsratswahlen 2027 Kanton Zürich"
+    />
     <meta property="og:locale" content="de_CH" />
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="__SITE_URL__/og-image.jpg" />
     <meta name="twitter:title" content="Melanie Berner & Nicole Wyss: Regierungsratswahl Zürich 2027" />
     <meta
       name="twitter:description"
@@ -69,7 +77,36 @@
 
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Statischer Inhalt für Crawler ohne JavaScript. React ersetzt ihn beim Start. -->
+    <div id="root">
+      <header>
+        <p>Regierungsratswahlen 2027, Kanton Zürich</p>
+        <h1>radikal sozial: Melanie Berner &amp; Nicole Wyss in den Regierungsrat</h1>
+        <p>
+          Melanie Berner und Nicole Wyss kandidieren 2027 für den Regierungsrat des Kantons
+          Zürich. Diese Seite zur Regierungsratswahl Zürich 2027 sammelt öffentliche Unterstützung
+          für die Kandidatur.
+        </p>
+      </header>
+      <main>
+        <section>
+          <h2>Melanie Berner und Nicole Wyss öffentlich unterstützen</h2>
+          <p>
+            Schreib in einem Satz, warum du die Kandidierenden für den Regierungsrat unterstützt.
+            Nach einer Prüfung erscheint dein Zitat mit deinem Namen auf dieser Seite.
+          </p>
+        </section>
+        <section>
+          <h2>Wahlkampf der Regierungsratswahl 2027 spenden</h2>
+          <p>Mit deiner Spende finanzieren wir den Wahlkampf. Jeder Betrag hilft.</p>
+        </section>
+      </main>
+      <footer>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/impressum">Impressum</a>
+      </footer>
+      <noscript>Für das Formular und die Spendenangaben wird JavaScript benötigt.</noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
