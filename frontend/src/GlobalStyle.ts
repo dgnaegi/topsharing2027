@@ -13,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  html {
+    background: ${({ theme }) => theme.colors.paper};
+  }
+
   body {
     font-family: var(--font-text);
     font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
