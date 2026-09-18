@@ -27,17 +27,25 @@ export interface MailOptions {
   to: string
   subject: string
   html: string
+  replyTo?: string
   attachments?: MailAttachment[]
 }
 
 const DEFAULT_FROM = '"Berner & Wyss 2027" <noreply@wyss-berner.ch>'
 
-export async function sendMail({ to, subject, html, attachments }: MailOptions): Promise<void> {
+export async function sendMail({
+  to,
+  subject,
+  html,
+  replyTo,
+  attachments,
+}: MailOptions): Promise<void> {
   await getTransporter().sendMail({
     from: process.env.MAIL_FROM || DEFAULT_FROM,
     to,
     subject,
     html,
+    replyTo,
     attachments,
   })
 }

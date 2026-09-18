@@ -47,8 +47,9 @@ export function PrivacyPage() {
         </P>
         <Ul>
           <li>
-            <strong>Formular-Einreichung:</strong> Vorname, Nachname, dein Zitat und optional ein
-            Foto
+            <strong>Formular-Einreichung:</strong> Vorname, Nachname, E-Mail-Adresse (für
+            Rückfragen, sie wird nicht veröffentlicht), dein Zitat, optional ein Titel und optional
+            ein Foto
           </li>
         </Ul>
         <P>
@@ -87,9 +88,9 @@ export function PrivacyPage() {
       <Section>
         <H2>Speicherdauer</H2>
         <P>
-          Die E-Mail liegt im Postfach des Kandidatur-Teams und wird dort nach der Bearbeitung gelöscht.
-          Ein veröffentlichtes Zitat bleibt auf der Website, bis spätestens ein Jahr nach der Wahl oder bis du
-          die Entfernung verlangst.
+          Die E-Mail liegt im Postfach des Kandidatur-Teams und wird dort nach der Bearbeitung
+          gelöscht. Ein veröffentlichtes Zitat bleibt auf der Website, bis spätestens ein Jahr nach
+          der Wahl oder bis du die Entfernung verlangst.
         </P>
       </Section>
 

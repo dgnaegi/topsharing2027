@@ -14,11 +14,11 @@ export function HeroSection() {
         <Claim>Melanie Berner &amp; Nicole Wyss in den Regierungsrat</Claim>
       </Title>
       <Actions>
-        <Button as="a" href="#spenden" $variant="onSignal">
-          Spenden
-        </Button>
         <Button as="a" href="#unterstuetzen" $variant="onSignal">
           Öffentlich unterstützen
+        </Button>
+        <Button as="a" href="#spenden" $variant="onSignal">
+          Spenden
         </Button>
       </Actions>
     </Band>

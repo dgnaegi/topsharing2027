@@ -16,6 +16,8 @@ const MAX_IMAGE_BYTES = 2 * 1024 * 1024 // 2 MB
 const testimonialSchema = z.object({
   firstName: z.string().trim().min(1).max(100),
   lastName: z.string().trim().min(1).max(100),
+  email: z.string().trim().email().max(200),
+  title: z.string().trim().max(100).optional(),
   quote: z.string().trim().min(1).max(2000),
   image: z.string().max(3_000_000).optional(),
 })
@@ -48,7 +50,9 @@ function parseImage(dataUrl: string): { buffer: Buffer; contentType: string; ext
 
 router.post('/testimonials', validate(testimonialSchema), async (req, res, next) => {
   try {
-    const { firstName, lastName, quote, image } = req.body as z.infer<typeof testimonialSchema>
+    const { firstName, lastName, email, title, quote, image } = req.body as z.infer<
+      typeof testimonialSchema
+    >
 
     const attachments = []
     if (image) {
@@ -61,10 +65,13 @@ router.post('/testimonials', validate(testimonialSchema), async (req, res, next)
       subject: `Neues Unterstützer*innen-Zitat: ${firstName} ${lastName}`,
       html: `
         <p><strong>Name:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
+        <p><strong>E-Mail:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Titel:</strong> ${title ? escapeHtml(title) : 'keiner'}</p>
         <p><strong>Zitat:</strong></p>
         <p>${escapeHtml(quote).replace(/\n/g, '<br>')}</p>
         <p>${image ? 'Foto im Anhang.' : 'Kein Foto eingereicht.'}</p>
       `,
+      replyTo: email,
       attachments,
     })
 

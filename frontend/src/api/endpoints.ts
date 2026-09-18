@@ -3,6 +3,8 @@ import { postJson } from './client'
 export interface TestimonialSubmission {
   firstName: string
   lastName: string
+  email: string
+  title?: string
   quote: string
   image?: string
 }

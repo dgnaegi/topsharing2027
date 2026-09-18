@@ -20,6 +20,8 @@ import { fileToDataUrl, MAX_IMAGE_BYTES, ALLOWED_IMAGE_TYPES } from '../utils/fi
 interface FormValues {
   firstName: string
   lastName: string
+  email: string
+  title: string
   quote: string
   image: FileList
 }
@@ -44,6 +46,8 @@ export function SupporterForm() {
       await submitTestimonial({
         firstName: values.firstName.trim(),
         lastName: values.lastName.trim(),
+        email: values.email.trim(),
+        title: values.title.trim() || undefined,
         quote: values.quote.trim(),
         image,
       })
@@ -81,6 +85,29 @@ export function SupporterForm() {
           {errors.lastName && <ErrorText>Bitte Nachname angeben.</ErrorText>}
         </Field>
       </Row>
+
+      <Field>
+        <Label htmlFor="email">E-Mail</Label>
+        <Input
+          id="email"
+          type="email"
+          autoComplete="email"
+          {...register('email', {
+            required: true,
+            maxLength: 200,
+            pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+          })}
+        />
+        <HelpText>Nur für Rückfragen. Sie erscheint nicht auf der Seite.</HelpText>
+        {errors.email && <ErrorText>Bitte eine gültige E-Mail angeben.</ErrorText>}
+      </Field>
+
+      <Field>
+        <Label htmlFor="title">Titel (optional)</Label>
+        <Input id="title" {...register('title', { maxLength: 100 })} />
+        <HelpText>Zum Beispiel Beruf oder Funktion. Erscheint neben deinem Namen.</HelpText>
+        {errors.title && <ErrorText>Der Titel ist zu lang.</ErrorText>}
+      </Field>
 
       <Field>
         <Label htmlFor="quote">Dein Zitat</Label>
