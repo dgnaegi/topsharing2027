@@ -63,6 +63,14 @@ export function SupporterForm() {
     }
   }
 
+  if (status.type === 'success') {
+    return (
+      <Form as="div" role="status">
+        <StatusText>Zitat gesendet. Danke für deine Unterstützung.</StatusText>
+      </Form>
+    )
+  }
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)} noValidate>
       <Row>
@@ -143,9 +151,6 @@ export function SupporterForm() {
         {isSubmitting ? 'Wird gesendet…' : 'Zitat einreichen'}
       </Button>
 
-      {status.type === 'success' && (
-        <StatusText>Zitat gesendet. Danke für deine Unterstützung.</StatusText>
-      )}
       {status.type === 'error' && <StatusText>{status.message}</StatusText>}
     </Form>
   )
