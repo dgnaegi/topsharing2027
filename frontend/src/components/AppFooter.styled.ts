@@ -2,14 +2,17 @@ import styled from 'styled-components'
 import { media } from '../theme'
 
 export const FooterBar = styled.footer`
-  border-top: ${({ theme }) => theme.borderThick};
-  padding: ${({ theme }) => theme.spacing.xl};
+  padding-block: ${({ theme }) => theme.spacing.xl};
+  padding-inline: max(clamp(1rem, 4vw, 4rem), calc((100% - 1600px) / 2));
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing.md};
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 
   ${media.maxSm} {
     flex-direction: column;
@@ -20,14 +23,4 @@ export const FooterBar = styled.footer`
 export const FooterLinks = styled.nav`
   display: flex;
   gap: ${({ theme }) => theme.spacing.lg};
-
-  a {
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 700;
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.accent};
-    }
-  }
 `

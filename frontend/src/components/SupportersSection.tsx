@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { SectionLabel } from './Layout.styled'
+import { Band, BandMeta, Grid, Col, Display, Lead } from './Band.styled'
 import { getSupportersSortedAlphabetically, type Supporter } from '../data/supporters'
 import {
-  SupportersWrapper,
   SupportersList,
   SupporterItem,
   SupporterName,
@@ -15,25 +14,40 @@ export function SupportersSection() {
   const [selected, setSelected] = useState<Supporter | null>(null)
 
   return (
-    <SupportersWrapper>
-      <SectionLabel>03. Unterstützende</SectionLabel>
-      <SupportersList>
-        {supporters.map((supporter) => (
-          <SupporterItem key={supporter.id}>
-            {supporter.quote ? (
-              <QuoteTrigger onClick={() => setSelected(supporter)}>
-                {supporter.firstName} {supporter.lastName}
-              </QuoteTrigger>
-            ) : (
-              <SupporterName>
-                {supporter.firstName} {supporter.lastName}
-              </SupporterName>
-            )}
-          </SupporterItem>
-        ))}
-      </SupportersList>
+    <Band $tone="paper">
+      <BandMeta>
+        <span>02 / Unterstützende</span>
+        <span>Berner &amp; Wyss 2027</span>
+      </BandMeta>
+      <Grid>
+        <Col>
+          <Display>unterstützende</Display>
+        </Col>
+        <Col $to={6}>
+          <Lead>
+            Diese Personen stehen hinter der Kandidatur. Ein unterstrichener Name öffnet das Zitat.
+          </Lead>
+        </Col>
+        <Col $from={6}>
+          <SupportersList>
+            {supporters.map((supporter) => (
+              <SupporterItem key={supporter.id}>
+                {supporter.quote ? (
+                  <QuoteTrigger onClick={() => setSelected(supporter)}>
+                    {supporter.firstName} {supporter.lastName}
+                  </QuoteTrigger>
+                ) : (
+                  <SupporterName>
+                    {supporter.firstName} {supporter.lastName}
+                  </SupporterName>
+                )}
+              </SupporterItem>
+            ))}
+          </SupportersList>
+        </Col>
+      </Grid>
 
       {selected && <SupporterDetailDialog supporter={selected} onClose={() => setSelected(null)} />}
-    </SupportersWrapper>
+    </Band>
   )
 }

@@ -1,22 +1,26 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta'
-import { PageWrapper, PageTitle } from '../components/Layout.styled'
-import { BackButton, Section, H2, P } from './PrivacyPage.styled'
+import { Band, BandMeta } from '../components/Band.styled'
+import { PageHeading, BackButton, Section, H2, P } from './PrivacyPage.styled'
 
 export function ImpressumPage() {
-  const navigate = useNavigate()
-
   usePageMeta(
     'Impressum: Berner & Wyss 2027',
     'Impressum der Kandidatur von Melanie Berner und Nicole Wyss für die Regierungsratswahl Zürich 2027.',
   )
 
   return (
-    <PageWrapper>
-      <BackButton $variant="secondary" onClick={() => navigate(-1)}>
-        Zurück
+    <Band as="main" $tone="paper">
+      <BandMeta>
+        <span>Rechtliches</span>
+        <span>Berner &amp; Wyss 2027</span>
+      </BandMeta>
+      <BackButton as={Link} to="/" $variant="secondary">
+        Zur Startseite
       </BackButton>
-      <PageTitle>Impressum</PageTitle>
+      <PageHeading as="h1" $size="l">
+        impressum
+      </PageHeading>
 
       <Section>
         <H2>Herausgeberin</H2>
@@ -41,8 +45,8 @@ export function ImpressumPage() {
         <H2>Haftungsausschluss</H2>
         <P>
           Diese Website informiert über die Kandidatur von Melanie Berner und Nicole Wyss zur
-          Regierungsratswahl Zürich 2027. Für die Richtigkeit und Vollständigkeit der Inhalte
-          wird keine Gewähr übernommen.
+          Regierungsratswahl Zürich 2027. Für die Richtigkeit und Vollständigkeit der Inhalte wird
+          keine Gewähr übernommen.
         </P>
       </Section>
 
@@ -53,6 +57,6 @@ export function ImpressumPage() {
           geschützt. Verwendung nur mit vorheriger Zustimmung.
         </P>
       </Section>
-    </PageWrapper>
+    </Band>
   )
 }

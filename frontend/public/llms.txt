@@ -7,10 +7,8 @@ für die Regierungsratswahlen des Kantons Zürich im Jahr 2027.
 
 ## Kernfunktionen
 
-- Video-Vorstellung der Kandidatinnen
-- Erläuterung ihrer Anliegen
-- Liste unterstützender Personen mit Zitaten
-- Formular zum Einreichen eines eigenen Unterstützungs-Zitats
+- Öffentliche Unterstützung: Formular zum Einreichen eines eigenen Zitats
+- Spenden per Twint oder Banküberweisung
 
 ## Zielgruppe
 

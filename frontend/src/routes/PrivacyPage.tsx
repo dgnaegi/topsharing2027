@@ -1,25 +1,29 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta'
-import { PageWrapper, PageTitle } from '../components/Layout.styled'
-import { BackButton, Section, H2, P, Ul } from './PrivacyPage.styled'
+import { Band, BandMeta } from '../components/Band.styled'
+import { PageHeading, BackButton, Section, H2, P, Ul } from './PrivacyPage.styled'
 
 export function PrivacyPage() {
-  const navigate = useNavigate()
-
   usePageMeta(
     'Datenschutzerklärung: Berner & Wyss 2027',
     'Datenschutzerklärung zur Kandidatur von Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027.',
   )
 
   return (
-    <PageWrapper>
-      <BackButton $variant="secondary" onClick={() => navigate(-1)}>
-        Zurück
+    <Band as="main" $tone="paper">
+      <BandMeta>
+        <span>Rechtliches</span>
+        <span>Berner &amp; Wyss 2027</span>
+      </BandMeta>
+      <BackButton as={Link} to="/" $variant="secondary">
+        Zur Startseite
       </BackButton>
-      <PageTitle>Datenschutzerklärung</PageTitle>
+      <PageHeading as="h1" $size="l">
+        datenschutz
+      </PageHeading>
       <P>
-        Diese Erklärung gilt für die Website der Kandidatur von Melanie Berner und Nicole Wyss
-        für den Regierungsrat des Kantons Zürich, gemäss dem Schweizer Datenschutzgesetz (DSG).
+        Diese Erklärung gilt für die Website der Kandidatur von Melanie Berner und Nicole Wyss für
+        den Regierungsrat des Kantons Zürich, gemäss dem Schweizer Datenschutzgesetz (DSG).
       </P>
 
       <Section>
@@ -37,8 +41,8 @@ export function PrivacyPage() {
       <Section>
         <H2>Welche Daten wir bearbeiten</H2>
         <P>
-          Diese Seite hat keine Konten, kein Login und keine Datenbank. Wir erheben nur, was du
-          uns über das Formular „Zitat einreichen" freiwillig gibst:
+          Diese Seite hat keine Konten, kein Login und keine Datenbank. Wir erheben nur, was du uns
+          über das Formular „Zitat einreichen" freiwillig gibst:
         </P>
         <Ul>
           <li>
@@ -48,8 +52,8 @@ export function PrivacyPage() {
         </Ul>
         <P>
           Diese Angaben werden direkt per E-Mail an das Kandidatur-Team geschickt und nicht auf
-          einem Server gespeichert. Wir setzen keine Tracking-Cookies und keine
-          Analyse-Werkzeuge ein.
+          einem Server gespeichert. Wir setzen keine Tracking-Cookies und keine Analyse-Werkzeuge
+          ein.
         </P>
       </Section>
 
@@ -57,8 +61,8 @@ export function PrivacyPage() {
         <H2>Zweck und Rechtsgrundlage</H2>
         <P>
           Deine Angaben werden bearbeitet, um dein Zitat nach Prüfung auf dieser Website als
-          Unterstützungsstimme zu veröffentlichen. Rechtsgrundlage ist deine Einwilligung durch
-          das Absenden des Formulars.
+          Unterstützungsstimme zu veröffentlichen. Rechtsgrundlage ist deine Einwilligung durch das
+          Absenden des Formulars.
         </P>
       </Section>
 
@@ -70,9 +74,8 @@ export function PrivacyPage() {
             <strong>Scalingo</strong> (Frankreich): Hosting der Website.
           </li>
           <li>
-            <strong>Brevo</strong> (Frankreich): Versand der E-Mail mit deiner
-            Formular-Einreichung. Deine Angaben werden ausschliesslich für diesen Zweck
-            übermittelt.
+            <strong>Brevo</strong> (Frankreich): Versand der E-Mail mit deiner Formular-Einreichung.
+            Deine Angaben werden ausschliesslich für diesen Zweck übermittelt.
           </li>
         </Ul>
       </Section>
@@ -81,8 +84,8 @@ export function PrivacyPage() {
         <H2>Speicherdauer</H2>
         <P>
           Die E-Mail mit deiner Einreichung bleibt im Postfach des Kandidatur-Teams, bis sie
-          gelöscht wird. Ein veröffentlichtes Zitat bleibt auf der Website, bis du dessen
-          Entfernung verlangst.
+          gelöscht wird. Ein veröffentlichtes Zitat bleibt auf der Website, bis du dessen Entfernung
+          verlangst.
         </P>
       </Section>
 
@@ -112,18 +115,18 @@ export function PrivacyPage() {
       <Section>
         <H2>Sicherheit</H2>
         <P>
-          Die Verbindung zur Website ist durchgehend TLS-verschlüsselt (HTTPS). Formulardaten
-          werden verschlüsselt übertragen.
+          Die Verbindung zur Website ist durchgehend TLS-verschlüsselt (HTTPS). Formulardaten werden
+          verschlüsselt übertragen.
         </P>
       </Section>
 
       <Section>
         <H2>Änderungen</H2>
         <P>
-          Diese Datenschutzerklärung kann angepasst werden. Die jeweils aktuelle Version ist
-          immer auf dieser Seite zu finden. Stand: September 2026.
+          Diese Datenschutzerklärung kann angepasst werden. Die jeweils aktuelle Version ist immer
+          auf dieser Seite zu finden. Stand: September 2026.
         </P>
       </Section>
-    </PageWrapper>
+    </Band>
   )
 }

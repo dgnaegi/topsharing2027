@@ -24,7 +24,10 @@ export function SupporterDetailDialog({ supporter, onClose }: Props) {
           ×
         </CloseButton>
         {supporter.imageUrl && (
-          <DetailImage src={supporter.imageUrl} alt={`${supporter.firstName} ${supporter.lastName}`} />
+          <DetailImage
+            src={supporter.imageUrl}
+            alt={`${supporter.firstName} ${supporter.lastName}`}
+          />
         )}
         <DetailName>
           {supporter.firstName} {supporter.lastName}

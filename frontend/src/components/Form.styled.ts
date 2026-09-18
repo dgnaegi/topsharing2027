@@ -2,16 +2,27 @@ import styled from 'styled-components'
 import { media } from '../theme'
 
 export const Form = styled.form`
-  max-width: 560px;
+  position: relative;
   background: ${({ theme }) => theme.colors.tint};
-  border: ${({ theme }) => theme.borderThick};
-  padding: ${({ theme }) => theme.spacing.xl};
+  border: ${({ theme }) => theme.border};
+  padding: calc(${({ theme }) => theme.spacing.xl} + 8px) ${({ theme }) => theme.spacing.xl}
+    ${({ theme }) => theme.spacing.xl};
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.md};
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: ${({ theme }) => theme.colors.signal};
+  }
+
   ${media.maxSm} {
-    padding: ${({ theme }) => theme.spacing.md};
+    padding-inline: ${({ theme }) => theme.spacing.md};
   }
 `
 
@@ -39,8 +50,7 @@ export const Label = styled.label`
 `
 
 const fieldStyles = `
-  border-width: 2px;
-  border-style: solid;
+  border: 2px solid #000000;
   border-radius: 0;
   padding: 10px 12px;
   font-size: 1rem;
@@ -51,11 +61,9 @@ const fieldStyles = `
 
 export const Input = styled.input`
   ${fieldStyles}
-  border-color: ${({ theme }) => theme.colors.border};
 
   &:focus-visible {
-    outline: none;
-    border-color: ${({ theme }) => theme.colors.accent};
+    border-color: ${({ theme }) => theme.colors.signal};
   }
 `
 
@@ -63,33 +71,33 @@ export const TextArea = styled.textarea`
   ${fieldStyles}
   resize: vertical;
   min-height: 120px;
-  border-color: ${({ theme }) => theme.colors.border};
 
   &:focus-visible {
-    outline: none;
-    border-color: ${({ theme }) => theme.colors.accent};
+    border-color: ${({ theme }) => theme.colors.signal};
   }
 `
 
 export const FileInput = styled.input`
   border: ${({ theme }) => theme.border};
   padding: ${({ theme }) => theme.spacing.sm};
-  background: #ffffff;
+  background: ${({ theme }) => theme.colors.paper};
+  font-family: inherit;
   font-size: 0.9rem;
 `
 
-export const ErrorText = styled.p`
-  color: ${({ theme }) => theme.colors.accentDark};
-  font-size: 0.85rem;
-  font-weight: 700;
-`
-
 export const HelpText = styled.p`
-  color: ${({ theme }) => theme.colors.textMuted};
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 `
 
-export const StatusText = styled.p<{ $variant: 'success' | 'error' }>`
+export const ErrorText = styled.p`
+  font-size: 0.875rem;
   font-weight: 700;
-  color: ${({ theme, $variant }) => ($variant === 'error' ? theme.colors.accentDark : theme.colors.text)};
+  border-left: 4px solid ${({ theme }) => theme.colors.signal};
+  padding-left: ${({ theme }) => theme.spacing.sm};
+`
+
+export const StatusText = styled.p`
+  font-weight: 700;
+  border-left: 4px solid ${({ theme }) => theme.colors.signal};
+  padding-left: ${({ theme }) => theme.spacing.sm};
 `

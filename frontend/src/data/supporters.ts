@@ -15,8 +15,7 @@ const supporters: Supporter[] = [
     id: 'baumann-sara',
     firstName: 'Sara',
     lastName: 'Baumann',
-    quote:
-      'Melanie und Nicole hören zu und handeln danach. Genau das braucht der Regierungsrat.',
+    quote: 'Melanie und Nicole hören zu und handeln danach. Genau das braucht der Regierungsrat.',
   },
   { id: 'frei-thomas', firstName: 'Thomas', lastName: 'Frei' },
   {

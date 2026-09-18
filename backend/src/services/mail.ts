@@ -30,9 +30,11 @@ export interface MailOptions {
   attachments?: MailAttachment[]
 }
 
+const DEFAULT_FROM = '"Berner & Wyss 2027" <noreply@wyss-berner.ch>'
+
 export async function sendMail({ to, subject, html, attachments }: MailOptions): Promise<void> {
   await getTransporter().sendMail({
-    from: '"Berner & Wyss 2027" <noreply@berner-wyss2027.ch>',
+    from: process.env.MAIL_FROM || DEFAULT_FROM,
     to,
     subject,
     html,

@@ -8,6 +8,14 @@ und optionales Foto per E-Mail an `daniel@gnaegi.me`.
 
 ---
 
+## Domain anpassen
+
+Sobald die echte Domain feststeht: `frontend/site.config.json` anpassen. Das reicht, `index.html`,
+`robots.txt` und `sitemap.xml` übernehmen den Wert automatisch. Für die Absenderadresse der Mails
+`MAIL_FROM` in `backend/.env` setzen.
+
+---
+
 ## Mac Setup (erstmalig)
 
 ### 1. Homebrew

@@ -34,11 +34,13 @@ berner-wyss2027/
 ├── frontend/
 │   ├── src/
 │   │   ├── main.tsx, App.tsx, theme.ts, GlobalStyle.ts, styled.d.ts
-│   │   ├── components/           # Foo.tsx + Foo.styled.ts
+│   │   ├── components/           # Foo.tsx + Foo.styled.ts (Bänder: Hero, PublicSupport, Donate)
+│   │   ├── fonts.css             # @font-face + Lineto-Disclaimer (nicht entfernen)
 │   │   ├── data/supporters.ts    # Platzhalter-Unterstützende (manuell gepflegt)
 │   │   ├── routes/               # HomePage, PrivacyPage, ImpressumPage
 │   │   ├── api/{client,endpoints}.ts
 │   │   └── hooks/usePageMeta.ts
+│   ├── webfonts/                 # Ruder Plakat (Lizenz: nur al-zh.ch, siehe docs/DESIGN.md)
 │   ├── public/{robots.txt,sitemap.xml,llms.txt}
 │   └── index.html
 ├── docs/{DESIGN,SEO,SECURITY,MICROCOPY,MARKDOWN_GUIDELINES}.md
@@ -78,7 +80,15 @@ git subtree push --prefix frontend scalingo main
 - Security-Checkliste für Reviews: **[docs/SECURITY.md](docs/SECURITY.md)**.
 - Regeln für neue MD-Dateien: **[docs/MARKDOWN_GUIDELINES.md](docs/MARKDOWN_GUIDELINES.md)**.
 
+## Domain
+
+Zentral in `frontend/site.config.json` (`siteUrl`). Speist `index.html` (`__SITE_URL__`-Token,
+ersetzt via Vite-Plugin in `vite.config.ts`) sowie `robots.txt`/`sitemap.xml` (generiert von
+`frontend/scripts/generate-public-seo.mjs`, läuft automatisch vor `dev` und `build`). Override
+ohne Code-Änderung: Env-Var `VITE_SITE_URL`. Mail-Absenderadresse separat via `MAIL_FROM` in
+`backend/.env`.
+
 ## Unterstützende pflegen
 
-Es gibt keine Datenbank. Neue Unterstützungs-Zitate kommen als E-Mail an `daniel@gnaegi.me`.
+Die Liste (`SupportersSection`) ist vorerst nicht auf der Startseite eingebunden. Es gibt keine Datenbank. Neue Unterstützungs-Zitate kommen als E-Mail an `daniel@gnaegi.me`.
 Nach Prüfung werden sie manuell in `frontend/src/data/supporters.ts` ergänzt.

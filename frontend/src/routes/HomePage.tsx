@@ -1,9 +1,7 @@
 import { usePageMeta } from '../hooks/usePageMeta'
-import { PageWrapper, PageTitle } from '../components/Layout.styled'
-import { VideoSection } from '../components/VideoSection'
-import { AboutSection } from '../components/AboutSection'
-import { SupportersSection } from '../components/SupportersSection'
-import { SupporterForm } from '../components/SupporterForm'
+import { HeroSection } from '../components/HeroSection'
+import { PublicSupportSection } from '../components/PublicSupportSection'
+import { DonateSection } from '../components/DonateSection'
 
 export function HomePage() {
   usePageMeta(
@@ -12,14 +10,10 @@ export function HomePage() {
   )
 
   return (
-    <PageWrapper>
-      <PageTitle>
-        Melanie Berner &amp; Nicole Wyss. Kandidierende für den Regierungsrat Zürich 2027.
-      </PageTitle>
-      <VideoSection />
-      <AboutSection />
-      <SupportersSection />
-      <SupporterForm />
-    </PageWrapper>
+    <main>
+      <HeroSection />
+      <PublicSupportSection />
+      <DonateSection />
+    </main>
   )
 }

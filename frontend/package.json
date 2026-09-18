@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/generate-public-seo.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/generate-public-seo.mjs",
     "build": "tsc && vite build",
     "start": "npx serve -s dist -l $PORT",
     "preview": "vite preview",

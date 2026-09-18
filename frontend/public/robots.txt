@@ -13,4 +13,4 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-Sitemap: https://berner-wyss2027.ch/sitemap.xml
+Sitemap: https://wyss-berner.ch/sitemap.xml

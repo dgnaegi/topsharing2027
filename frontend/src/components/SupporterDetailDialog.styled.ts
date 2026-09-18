@@ -9,14 +9,16 @@ export const DetailImage = styled.img`
 `
 
 export const DetailName = styled.h3`
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
-  font-size: 1.2rem;
   margin-bottom: ${({ theme }) => theme.spacing.sm};
+  padding-right: 56px;
 `
 
 export const DetailQuote = styled.p`
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.25;
 `

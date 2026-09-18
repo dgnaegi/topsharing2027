@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: ${({ theme }) => theme.colors.signal};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,8 +12,9 @@ export const Overlay = styled.div`
 `
 
 export const DialogBox = styled.div`
-  background: ${({ theme }) => theme.colors.surface};
-  border: ${({ theme }) => theme.borderThick};
+  background: ${({ theme }) => theme.colors.paper};
+  color: ${({ theme }) => theme.colors.ink};
+  border: ${({ theme }) => theme.borderStructural};
   max-width: 560px;
   width: 100%;
   max-height: 85vh;
@@ -26,16 +27,17 @@ export const CloseButton = styled.button`
   position: absolute;
   top: ${({ theme }) => theme.spacing.md};
   right: ${({ theme }) => theme.spacing.md};
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border: ${({ theme }) => theme.border};
-  background: ${({ theme }) => theme.colors.surface};
+  background: ${({ theme }) => theme.colors.paper};
   cursor: pointer;
-  font-weight: 900;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
   line-height: 1;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.accent};
+    background: ${({ theme }) => theme.colors.ink};
+    color: ${({ theme }) => theme.colors.paper};
   }
 `

@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './theme'
 import { GlobalStyle } from './GlobalStyle'
+import './fonts.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(

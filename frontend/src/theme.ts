@@ -3,30 +3,29 @@ const px = (n: number): string => `${n * BASE}px`
 
 export const theme = {
   colors: {
-    text: '#000000',
-    background: '#FFFFFF',
-    surface: '#FFFFFF',
-    accent: '#FF1975',
-    accentDark: '#C10F5D',
+    paper: '#FFFFFF',
+    ink: '#000000',
+    signal: '#FF1975',
+    signalDark: '#C10F5D',
     tint: '#FFE9F2',
     muted: '#F2F2F2',
-    textMuted: '#555555',
-    border: '#000000',
-    danger: '#C10F5D',
+  },
+  fonts: {
+    display: "'AL Ruder Plakat', 'Helvetica Neue', Arial, sans-serif",
+    text: "'LL Unica77', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    mono: "'LL Unica77 Mono', ui-monospace, monospace",
   },
   spacing: {
-    xs: px(1), //  4px
-    sm: px(2), //  8px
-    md: px(4), // 16px
-    lg: px(6), // 24px
-    xl: px(8), // 32px
-    xxl: px(16), // 64px
+    xs: px(1), //   4px
+    sm: px(2), //   8px
+    md: px(4), //  16px
+    lg: px(6), //  24px
+    xl: px(8), //  32px
+    xxl: px(16), //  64px
+    xxxl: px(32), // 128px
   },
-  headerHeight: px(14), // 56px
   zIndex: {
     base: 0,
-    header: 100,
-    overlay: 200,
     modal: 1000,
   },
   breakpoints: {
@@ -35,11 +34,9 @@ export const theme = {
     lg: '1200px',
   },
   border: '2px solid #000000',
-  borderThick: '3px solid #000000',
+  borderStructural: '4px solid #000000',
   radius: '0px',
   shadow: 'none',
-  maxWidth: '1200px',
-  font: "'Inter', system-ui, sans-serif",
 }
 
 export type Theme = typeof theme

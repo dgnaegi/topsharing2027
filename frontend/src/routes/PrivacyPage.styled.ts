@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import { Button } from '../components/Layout.styled'
+import { Button } from '../components/Button.styled'
+import { Display } from '../components/Band.styled'
 
 export const BackButton = styled(Button)`
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
 `
 
 export const Section = styled.section`
@@ -10,26 +11,32 @@ export const Section = styled.section`
 `
 
 export const H2 = styled.h2`
-  font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  border-top: ${({ theme }) => theme.border};
+  padding-top: ${({ theme }) => theme.spacing.md};
   margin-bottom: ${({ theme }) => theme.spacing.sm};
   margin-top: ${({ theme }) => theme.spacing.lg};
+  max-width: 68ch;
 `
 
 export const P = styled.p`
-  color: ${({ theme }) => theme.colors.text};
   margin-bottom: ${({ theme }) => theme.spacing.sm};
-  max-width: 680px;
+  max-width: 68ch;
 `
 
 export const Ul = styled.ul`
   padding-left: ${({ theme }) => theme.spacing.lg};
   margin-bottom: ${({ theme }) => theme.spacing.sm};
-  max-width: 680px;
+  max-width: 68ch;
 
   li {
     margin-bottom: ${({ theme }) => theme.spacing.xs};
   }
+`
+
+export const PageHeading = styled(Display)`
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
 `

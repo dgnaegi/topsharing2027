@@ -20,8 +20,8 @@ app.use(
       directives: {
         defaultSrc: ["'self'"],
         // styled-components injiziert Styles inline, daher unsafe-inline.
-        styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        fontSrc: ["'self'"],
         // blob: braucht die Bildvorschau beim Formular-Upload (createObjectURL).
         imgSrc: ["'self'", 'data:', 'blob:'],
         connectSrc: ["'self'"],
