@@ -62,6 +62,21 @@ git subtree push --prefix backend scalingo main
 git subtree push --prefix frontend scalingo main
 ```
 
+## Scalingo-Konfiguration
+
+App: `topsharing`, Region `osc-fr1` (einzige Region des Kontos). Env-Vars werden nur auf Scalingo
+gesetzt, nie im Repo. Der Brevo-Key gehört nicht in diese Datei (sie ist eingecheckt).
+
+```bash
+scalingo --region osc-fr1 --app topsharing env-set \
+  BREVO_SMTP_USER='daniel.gnaegi@outlook.com' \
+  BREVO_SMTP_KEY='<SMTP-Key aus Brevo: Settings > SMTP & API>' \
+  MAIL_FROM='"Berner & Wyss 2027" <noreply@wyss-berner.ch>'
+```
+
+Vor dem Setzen mit `scalingo --region osc-fr1 --app topsharing env` prüfen, ob die Variablen dort
+schon belegt sind. `env-set` startet die App neu.
+
 ## Konventionen
 
 - API-Routen unter `/api/v1/`. Strict TypeScript, kein `any`.
