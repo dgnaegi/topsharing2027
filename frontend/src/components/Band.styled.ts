@@ -52,7 +52,7 @@ export const Display = styled.h2<{ $size?: 'xl' | 'l' }>`
   font-size: ${({ $size = 'l' }) =>
     $size === 'xl' ? 'clamp(3.5rem, 17vw, 18rem)' : 'clamp(3rem, 10vw, 8rem)'};
   line-height: 0.85;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
   word-spacing: 0.1em;
   text-transform: lowercase;
   margin-left: -0.055em;

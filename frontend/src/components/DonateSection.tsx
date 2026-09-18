@@ -27,19 +27,13 @@ export function DonateSection() {
             </div>
             <div>
               <dt>Banküberweisung</dt>
-              <dd>Alternative Liste</dd>
-            </div>
-            <div>
-              <dt>IBAN</dt>
-              <dd>CH07 0900 0000 1668 6688 9</dd>
-            </div>
-            <div>
-              <dt>Kontonummer</dt>
-              <dd>16-686688-9</dd>
-            </div>
-            <div>
-              <dt>Adresse</dt>
               <dd>
+                Alternative Liste
+                <br />
+                IBAN: CH07 0900 0000 1668 6688 9
+                <br />
+                Kontonummer: 16-686688-9
+                <br />
                 Molkenstrasse 21
                 <br />
                 8004 Zürich

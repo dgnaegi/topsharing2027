@@ -15,7 +15,7 @@ export const Slogan = styled(Display).attrs({ as: 'span', $size: 'xl' })`
   display: block;
   text-align: center;
   margin-left: 0;
-  padding-left: 0.05em;
+  padding-left: 0.025em;
 `
 
 export const Claim = styled.span`
