@@ -22,8 +22,8 @@ export function PrivacyPage() {
         datenschutz
       </PageHeading>
       <P>
-        Diese Erklärung gilt für die Website der Kandidatur von Melanie Berner und Nicole Wyss für
-        den Regierungsrat des Kantons Zürich, gemäss dem Schweizer Datenschutzgesetz (DSG).
+        Kurz gesagt: Wir wollen so wenig wie möglich über dich wissen. Der Rest ist Kleingedrucktes,
+        das wir lesbar halten. Es gilt das Schweizer Datenschutzgesetz (DSG).
       </P>
 
       <Section>
@@ -41,8 +41,9 @@ export function PrivacyPage() {
       <Section>
         <H2>Welche Daten wir bearbeiten</H2>
         <P>
-          Diese Seite hat keine Konten, kein Login und keine Datenbank. Wir erheben nur, was du uns
-          über das Formular „Zitat einreichen" freiwillig gibst:
+          Diese Seite hat kein Login, keine Konten und keine Datenbank. Das ist Prinzip. Und ein
+          bisschen Bequemlichkeit. Wir erheben nur, was du uns über das Formular „Zitat einreichen"
+          freiwillig gibst:
         </P>
         <Ul>
           <li>
@@ -51,41 +52,44 @@ export function PrivacyPage() {
           </li>
         </Ul>
         <P>
-          Diese Angaben werden direkt per E-Mail an das Kandidatur-Team geschickt und nicht auf
-          einem Server gespeichert. Wir setzen keine Tracking-Cookies und keine Analyse-Werkzeuge
-          ein.
+          Das landet als E-Mail beim Kandidatur-Team und nirgends sonst. Keine Tracking-Cookies,
+          keine Analyse-Tools, keine Werbepixel. Selbst die Schriften liegen bei uns und nicht bei
+          Google.
         </P>
       </Section>
 
       <Section>
         <H2>Zweck und Rechtsgrundlage</H2>
         <P>
-          Deine Angaben werden bearbeitet, um dein Zitat nach Prüfung auf dieser Website als
-          Unterstützungsstimme zu veröffentlichen. Rechtsgrundlage ist deine Einwilligung durch das
-          Absenden des Formulars.
+          Wir schauen dein Zitat an und zeigen es danach auf dieser Seite, damit alle sehen, dass
+          wir nicht allein sind. Rechtsgrundlage ist deine Einwilligung durch das Absenden des
+          Formulars.
         </P>
       </Section>
 
       <Section>
         <H2>Hosting &amp; Infrastruktur</H2>
-        <P>Wir setzen auf europäische Infrastruktur:</P>
+        <P>
+          Wir wählen bewusst europäische Anbieter. Deine Daten bleiben in Europa, versteht sich:
+        </P>
         <Ul>
           <li>
             <strong>Scalingo</strong> (Frankreich): Hosting der Website.
           </li>
           <li>
-            <strong>Brevo</strong> (Frankreich): Versand der E-Mail mit deiner Formular-Einreichung.
-            Deine Angaben werden ausschliesslich für diesen Zweck übermittelt.
+            <strong>Brevo</strong> (Frankreich): Versand der E-Mail mit deiner Einreichung. Deine
+            Angaben werden nur dafür übermittelt.
           </li>
         </Ul>
+        <P>Keine US-Cloud, kein Google, kein Facebook. Nicht mal für ein Nickerchen.</P>
       </Section>
 
       <Section>
         <H2>Speicherdauer</H2>
         <P>
-          Die E-Mail mit deiner Einreichung bleibt im Postfach des Kandidatur-Teams, bis sie
-          gelöscht wird. Ein veröffentlichtes Zitat bleibt auf der Website, bis du dessen Entfernung
-          verlangst.
+          Die E-Mail liegt im Postfach des Kandidatur-Teams, bis jemand aufräumt. Wir haben ein
+          Postfach, keinen Geheimdienst. Ein veröffentlichtes Zitat bleibt auf der Website, bis du
+          die Entfernung verlangst.
         </P>
       </Section>
 
@@ -94,7 +98,7 @@ export function PrivacyPage() {
         <P>Du hast gemäss DSG folgende Rechte:</P>
         <Ul>
           <li>
-            <strong>Auskunft:</strong> welche Daten wir über dich gespeichert haben
+            <strong>Auskunft:</strong> welche Daten wir über dich haben (spoiler: nicht viele)
           </li>
           <li>
             <strong>Berichtigung:</strong> Korrektur falscher Daten
@@ -108,23 +112,24 @@ export function PrivacyPage() {
         </Ul>
         <P>
           Für all das genügt eine kurze E-Mail an{' '}
-          <a href="mailto:daniel@gnaegi.me">daniel@gnaegi.me</a>.
+          <a href="mailto:daniel@gnaegi.me">daniel@gnaegi.me</a>. Wir antworten innerhalb von 30
+          Tagen, meistens schneller.
         </P>
       </Section>
 
       <Section>
         <H2>Sicherheit</H2>
         <P>
-          Die Verbindung zur Website ist durchgehend TLS-verschlüsselt (HTTPS). Formulardaten werden
-          verschlüsselt übertragen.
+          Die Verbindung läuft durchgehend über HTTPS. Dein Zitat reist verschlüsselt und nicht als
+          Postkarte.
         </P>
       </Section>
 
       <Section>
         <H2>Änderungen</H2>
         <P>
-          Diese Datenschutzerklärung kann angepasst werden. Die jeweils aktuelle Version ist immer
-          auf dieser Seite zu finden. Stand: September 2026.
+          Diese Erklärung kann sich ändern. Die aktuelle Version steht immer hier. Stand: September
+          2026.
         </P>
       </Section>
     </Band>
