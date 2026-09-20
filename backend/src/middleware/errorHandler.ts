@@ -17,7 +17,7 @@ export function errorHandler(
     res.status(400).json({
       error: {
         code: ErrorCode.VALIDATION_ERROR,
-        message: 'Ungültige Eingabe.',
+        message: 'Bitte prüf deine Eingaben.',
         fields: err.flatten().fieldErrors,
       },
     })
@@ -25,5 +25,10 @@ export function errorHandler(
   }
 
   console.error(err)
-  res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: 'Interner Serverfehler.' } })
+  res.status(500).json({
+    error: {
+      code: 'INTERNAL_ERROR',
+      message: 'Da ist etwas schiefgelaufen. Versuch es noch einmal.',
+    },
+  })
 }

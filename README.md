@@ -3,8 +3,9 @@
 Website zur Kandidatur von Melanie Berner und Nicole Wyss für den Regierungsrat des Kantons
 Zürich, Wahlen 2027. React + Vite Frontend, Node.js/Express Backend, deployed auf Scalingo.
 
-Kein Login, keine Datenbank. Das Formular „Zitat einreichen" schickt Vor- und Nachname, Zitat
-und optionales Foto per E-Mail an `daniel@gnaegi.me`.
+Kein Login, keine Datenbank. Das Formular „Unterstützen" schickt Name, E-Mail, die Art der
+Unterstützung (Kampagne und/oder öffentlich) und optional Titel, Zitat und Foto per E-Mail an
+`daniel@gnaegi.me`.
 
 ---
 

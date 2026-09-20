@@ -3,6 +3,8 @@ import { Display } from './Band.styled'
 import { media } from '../theme'
 
 export const Title = styled.h1`
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: ${({ theme }) => theme.spacing.lg};
@@ -27,7 +29,7 @@ export const Claim = styled.span`
   line-height: 1.2;
 
   ${media.md} {
-    grid-column: 7 / -1;
+    grid-column: 1 / 11;
   }
 `
 

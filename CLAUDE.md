@@ -5,7 +5,7 @@
 Website zur Regierungsratskandidatur von Melanie Berner und Nicole Wyss (Kanton Zürich, Wahlen
 2027). React/TypeScript-Frontend, Node.js/Express/TypeScript-Backend, deployed auf Scalingo.
 
-Kein Login, keine Datenbank, kein S3. Das Formular „Zitat einreichen" schickt die Eingaben
+Kein Login, keine Datenbank, kein S3. Das Formular „Unterstützen" (Kampagne mitmachen und/oder öffentlich unterstützen) schickt die Eingaben
 (inkl. Foto als Mail-Anhang) direkt per E-Mail an `daniel@gnaegi.me`.
 
 ## Stack
@@ -13,7 +13,7 @@ Kein Login, keine Datenbank, kein S3. Das Formular „Zitat einreichen" schickt 
 | Layer | Technologie | Hinweis |
 |---|---|---|
 | Frontend | React 18 + TypeScript + Vite | styled-components v6 |
-| Backend | Node.js + Express + TypeScript | Ein Endpunkt: `POST /api/v1/testimonials` |
+| Backend | Node.js + Express + TypeScript | Ein Endpunkt: `POST /api/v1/support` |
 | Mail | Nodemailer + Brevo SMTP | Kein DB-Speicher, jede Einreichung ist eine E-Mail |
 | Hosting | Scalingo | PaaS, europäisches Hosting |
 
@@ -26,7 +26,7 @@ berner-wyss2027/
 │   │   ├── index.ts              # Express-Entry-Point
 │   │   ├── errors.ts
 │   │   ├── middleware/{validate,errorHandler}.ts
-│   │   ├── routes/testimonials.ts # Formular-Endpunkt
+│   │   ├── routes/support.ts     # Formular-Endpunkt
 │   │   └── services/mail.ts
 │   ├── .env.example
 │   ├── Procfile
@@ -34,7 +34,7 @@ berner-wyss2027/
 ├── frontend/
 │   ├── src/
 │   │   ├── main.tsx, App.tsx, theme.ts, GlobalStyle.ts, styled.d.ts
-│   │   ├── components/           # Foo.tsx + Foo.styled.ts (Bänder: Hero, PublicSupport, Donate)
+│   │   ├── components/           # Foo.tsx + Foo.styled.ts (Bänder: Hero, Team, Support, Donate)
 │   │   ├── fonts.css             # @font-face + Lineto-Disclaimer (nicht entfernen)
 │   │   ├── data/supporters.ts    # Platzhalter-Unterstützende (manuell gepflegt)
 │   │   ├── routes/               # HomePage, PrivacyPage, ImpressumPage

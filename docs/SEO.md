@@ -78,7 +78,7 @@ Gleiches Schema für Nicole Wyss.
 
 ## Semantisches HTML
 
-- Ein `<h1>` pro Seite, danach `<h2>` für Abschnitte (Öffentlich unterstützen, Spenden).
+- Ein `<h1>` pro Seite, danach `<h2>` für Abschnitte (Kandidatur, Unterstützen, Spenden).
 - `<main>`, `<section>`, `<header>`, `<footer>`, `<nav>` statt `<div>` überall dort, wo es strukturell stimmt.
 - Bilder brauchen beschreibenden `alt`-Text mit Namen, z.B. `alt="Melanie Berner und Nicole Wyss"`, nicht `alt="Bild"`.
 

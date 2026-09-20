@@ -4,7 +4,7 @@ import express from 'express'
 import compression from 'compression'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
-import testimonialsRouter from './routes/testimonials'
+import supportRouter from './routes/support'
 import { errorHandler } from './middleware/errorHandler'
 
 if (!process.env.BREVO_SMTP_USER || !process.env.BREVO_SMTP_KEY) {
@@ -39,13 +39,13 @@ const WINDOW_MS = 15 * 60 * 1000
 const globalLimiter = rateLimit({ windowMs: WINDOW_MS, max: 200 })
 // Eigenes, engeres Limit fürs Formular: verhindert Mail-Spam über den einzigen
 // Endpunkt, ohne normale Nutzung einzuschränken.
-const testimonialLimiter = rateLimit({ windowMs: WINDOW_MS, max: 10 })
+const supportLimiter = rateLimit({ windowMs: WINDOW_MS, max: 10 })
 
 app.use(express.json({ limit: '3mb' }))
 app.use('/api/', globalLimiter)
-app.use('/api/v1/testimonials', testimonialLimiter)
+app.use('/api/v1/support', supportLimiter)
 
-app.use('/api/v1', testimonialsRouter)
+app.use('/api/v1', supportRouter)
 
 if (process.env.NODE_ENV === 'production') {
   const staticDir = path.resolve(__dirname, '../../frontend/dist')

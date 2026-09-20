@@ -5,7 +5,7 @@ export function DonateSection() {
   return (
     <Band $tone="ink" id="spenden">
       <BandMeta>
-        <span>02 / Spenden</span>
+        <span>03 / Spenden</span>
         <span>Berner &amp; Wyss 2027</span>
       </BandMeta>
       <Grid>

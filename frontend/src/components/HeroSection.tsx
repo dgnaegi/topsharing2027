@@ -15,7 +15,7 @@ export function HeroSection() {
       </Title>
       <Actions>
         <Button as="a" href="#unterstuetzen" $variant="onSignal">
-          Öffentlich unterstützen
+          Unterstützen
         </Button>
         <Button as="a" href="#spenden" $variant="onSignal">
           Spenden

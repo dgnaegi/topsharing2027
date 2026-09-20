@@ -4,7 +4,7 @@ Checkliste für Security-Reviews dieses Projekts.
 
 ## Threat-Modell
 
-- Statische React-Seite plus ein einziger öffentlicher API-Endpunkt (`POST /api/v1/testimonials`), der Formulardaten per E-Mail an `daniel@gnaegi.me` weiterleitet.
+- Statische React-Seite plus ein einziger öffentlicher API-Endpunkt (`POST /api/v1/support`), der Formulardaten per E-Mail an `daniel@gnaegi.me` weiterleitet.
 - Kein Login, keine Datenbank, keine gespeicherten Nutzerdaten. Der Endpunkt ist der gesamte Angriffsvektor.
 - Öffentlich erreichbar, anonyme Nutzung, keine Authentifizierung nötig oder vorgesehen.
 

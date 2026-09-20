@@ -1,6 +1,7 @@
 import { usePageMeta } from '../hooks/usePageMeta'
 import { HeroSection } from '../components/HeroSection'
-import { PublicSupportSection } from '../components/PublicSupportSection'
+import { TeamSection } from '../components/TeamSection'
+import { SupportSection } from '../components/SupportSection'
 import { DonateSection } from '../components/DonateSection'
 
 export function HomePage() {
@@ -12,7 +13,8 @@ export function HomePage() {
   return (
     <main>
       <HeroSection />
-      <PublicSupportSection />
+      <TeamSection />
+      <SupportSection />
       <DonateSection />
     </main>
   )

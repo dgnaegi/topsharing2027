@@ -101,3 +101,19 @@ export const StatusText = styled.p`
   border-left: 4px solid ${({ theme }) => theme.colors.signal};
   padding-left: ${({ theme }) => theme.spacing.sm};
 `
+
+export const Fieldset = styled.fieldset`
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.md};
+  min-width: 0;
+`
+
+export const Legend = styled.legend`
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
+`

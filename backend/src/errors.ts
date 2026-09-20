@@ -6,8 +6,8 @@ export const ErrorCode = {
 export type ErrorCode = (typeof ErrorCode)[keyof typeof ErrorCode]
 
 const defaultMessages: Record<ErrorCode, string> = {
-  VALIDATION_ERROR: 'Ungültige Eingabe.',
-  NOT_FOUND: 'Nicht gefunden.',
+  VALIDATION_ERROR: 'Bitte prüf deine Eingaben.',
+  NOT_FOUND: 'Diese Seite gibt es nicht.',
 }
 
 export class AppError extends Error {

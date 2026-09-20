@@ -7,7 +7,7 @@ für die Regierungsratswahlen des Kantons Zürich im Jahr 2027.
 
 ## Kernfunktionen
 
-- Öffentliche Unterstützung: Formular zum Einreichen eines eigenen Zitats
+- Unterstützen: Formular für Kampagnenmitarbeit und öffentliche Unterstützung (Name, optional Zitat und Foto)
 - Spenden per Twint oder Banküberweisung
 
 ## Zielgruppe

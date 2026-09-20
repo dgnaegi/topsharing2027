@@ -4,9 +4,11 @@ import { media } from '../theme'
 export type Tone = 'signal' | 'paper' | 'ink'
 
 export const Band = styled.section<{ $tone?: Tone }>`
+  --band-pad: clamp(4rem, 10vw, 10rem);
+  --band-pad-x: max(clamp(1rem, 4vw, 4rem), calc((100% - 1600px) / 2));
   width: 100%;
-  padding-block: clamp(4rem, 10vw, 10rem);
-  padding-inline: max(clamp(1rem, 4vw, 4rem), calc((100% - 1600px) / 2));
+  padding-block: var(--band-pad);
+  padding-inline: var(--band-pad-x);
   border-bottom: ${({ theme }) => theme.borderStructural};
   background: ${({ theme, $tone = 'paper' }) => theme.colors[$tone]};
   color: ${({ theme, $tone }) => ($tone === 'ink' ? theme.colors.paper : theme.colors.ink)};
@@ -21,6 +23,8 @@ export const Band = styled.section<{ $tone?: Tone }>`
 `
 
 export const BandMeta = styled.p`
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   gap: ${({ theme }) => theme.spacing.md};

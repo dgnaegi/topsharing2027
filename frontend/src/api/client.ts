@@ -19,7 +19,7 @@ export async function postJson<T>(path: string, body: unknown): Promise<T> {
   const data = await res.json().catch(() => null)
 
   if (!res.ok) {
-    const message = data?.error?.message || 'Da ist etwas schiefgelaufen.'
+    const message = data?.error?.message || 'Da ist etwas schiefgelaufen. Versuch es noch einmal.'
     throw new ApiError(message, res.status)
   }
 

@@ -156,6 +156,10 @@ Die Marginalien des Plakats („Liste 6", Datum, Ort) werden zum Navigationsprin
 
 12 Spalten, Gutter `24px`, asymmetrische Belegung. Displayzeilen laufen voll (der Hero-Slogan zentriert). Textblöcke halten sich strikt daran und sitzen nie mittig, sondern auf Spalte 1 bis 5 (Lead) und 6 bis 12 (Inhalt).
 
+### Fotos
+
+Fotos nur in Schwarzweiss (`grayscale(1)`, leicht erhöhter Kontrast), im Hochformat 7:8 mit `4px` Rahmen in einem eigenen Papierband (`TeamSection`). Kein Foto auf Signalflächen: Versuche mit `multiply` auf dem Hero und als Streifen am Bandrand wirkten unruhig und konkurrierten mit dem Slogan. Originale liegen in `frontend/originals/` (nicht im Repo), ausgeliefert wird nur die verkleinerte WebP-Datei aus `src/assets/`.
+
 ## Rahmen & Radius
 
 - **Radius:** `0px` überall. Keine Ausnahme.

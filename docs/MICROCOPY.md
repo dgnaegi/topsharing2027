@@ -56,12 +56,12 @@ Verb zuerst, max. 3 Wörter, konkrete Aktion.
 
 ## Fehlermeldungen
 
-Zustand plus Handlung. Kein „leider", keine technischen Codes.
+Immer ganze Sätze, wenn möglich als freundliche Bitte („Bitte gib …"). Zustand plus Handlung. Kein „leider", keine technischen Codes, keine Stichworte wie „Ungültige Eingabe".
 
 | ✓ | ✗ |
 |---|---|
-| „Bild ist zu gross. Wähle ein Bild unter 2 MB." | „Fehler: Datei überschreitet das Limit." |
-| „Bitte Vor- und Nachname angeben." | „Validierung fehlgeschlagen." |
+| „Bitte wähl ein Bild unter 2 MB." | „Fehler: Datei überschreitet das Limit." |
+| „Bitte gib eine gültige E-Mail an." | „Ungültige E-Mail." |
 
 ## Was vermeiden
 

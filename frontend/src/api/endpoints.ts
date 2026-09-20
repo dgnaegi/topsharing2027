@@ -1,14 +1,16 @@
 import { postJson } from './client'
 
-export interface TestimonialSubmission {
+export interface SupportSubmission {
   firstName: string
   lastName: string
   email: string
-  title?: string
-  quote: string
+  campaign: boolean
+  publicSupport: boolean
+  role?: string
+  quote?: string
   image?: string
 }
 
-export function submitTestimonial(data: TestimonialSubmission): Promise<{ ok: true }> {
-  return postJson('/testimonials', data)
+export function submitSupport(data: SupportSubmission): Promise<{ ok: true }> {
+  return postJson('/support', data)
 }

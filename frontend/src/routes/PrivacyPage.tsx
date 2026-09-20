@@ -42,14 +42,14 @@ export function PrivacyPage() {
         <H2>Welche Daten wir bearbeiten</H2>
         <P>
           Diese Seite hat kein Login, keine Konten und keine Datenbank. Das ist Prinzip. Und ein
-          bisschen Bequemlichkeit. Wir erheben nur, was du uns über das Formular „Zitat einreichen"
+          bisschen Bequemlichkeit. Wir erheben nur, was du uns über das Formular „Unterstützen"
           freiwillig gibst:
         </P>
         <Ul>
           <li>
             <strong>Formular-Einreichung:</strong> Vorname, Nachname, E-Mail-Adresse (für
-            Rückfragen, sie wird nicht veröffentlicht), dein Zitat, optional ein Titel und optional
-            ein Foto
+            Rückfragen, sie wird nicht veröffentlicht) und die Art deiner Unterstützung. Wenn du
+            öffentlich unterstützt, dein Zitat sowie optional Funktion und Foto
           </li>
         </Ul>
         <P>
@@ -62,9 +62,10 @@ export function PrivacyPage() {
       <Section>
         <H2>Zweck und Rechtsgrundlage</H2>
         <P>
-          Wir schauen dein Zitat an und zeigen es danach auf dieser Seite, damit alle sehen, dass
-          wir nicht allein sind. Rechtsgrundlage ist deine Einwilligung durch das Absenden des
-          Formulars.
+          Wir melden uns bei dir, wenn du bei der Kampagne mithelfen willst. Wenn du öffentlich
+          unterstützt, schauen wir deine Angaben an und zeigen sie danach auf dieser Seite, damit
+          alle sehen, dass wir nicht allein sind. Rechtsgrundlage ist deine Einwilligung durch das
+          Absenden des Formulars.
         </P>
       </Section>
 
