@@ -76,15 +76,22 @@
     </script>
 
     <link rel="preload" href="/webfonts/ALRuderPlakatWeb-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      document.documentElement.classList.add('js')
+    </script>
     <style>
       html {
         background: #ff1975;
+      }
+      /* Statischer Crawler-Inhalt bleibt ohne JS sichtbar, wird mit JS nie ungestylt gezeigt. */
+      .js #root[data-static] {
+        visibility: hidden;
       }
     </style>
   </head>
   <body>
     <!-- Statischer Inhalt für Crawler ohne JavaScript. React ersetzt ihn beim Start. -->
-    <div id="root">
+    <div id="root" data-static>
       <header>
         <p>Regierungsratswahlen 2027, Kanton Zürich</p>
         <h1>radikal sozial: Melanie Berner &amp; Nicole Wyss in den Regierungsrat</h1>

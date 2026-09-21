@@ -7,7 +7,10 @@ import { GlobalStyle } from './GlobalStyle'
 import './fonts.css'
 import App from './App'
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!
+root.removeAttribute('data-static')
+
+createRoot(root).render(
   <StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
