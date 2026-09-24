@@ -1,6 +1,6 @@
 import { Band, BandMeta } from './Band.styled'
 import { Button } from './Button.styled'
-import { Title, Slogan, Claim, Actions, MetaRight } from './HeroSection.styled'
+import { Title, Slogan, Claim, Actions, InstagramLink } from './HeroSection.styled'
 import { IconInstagram } from './icons/IconInstagram'
 
 export function HeroSection() {
@@ -8,17 +8,7 @@ export function HeroSection() {
     <Band $tone="signal" as="header">
       <BandMeta>
         <span>Regierungsratswahlen 2027</span>
-        <MetaRight>
-          <span>Kanton Zürich</span>
-          <a
-            href="https://www.instagram.com/topsharing2027/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Berner & Wyss 2027 auf Instagram"
-          >
-            <IconInstagram width="16" height="16" />
-          </a>
-        </MetaRight>
+        <span>Kanton Zürich</span>
       </BandMeta>
       <Title>
         <Slogan>radikal sozial</Slogan>
@@ -31,6 +21,14 @@ export function HeroSection() {
         <Button as="a" href="#spenden" $variant="onSignal">
           Spenden
         </Button>
+        <InstagramLink
+          href="https://www.instagram.com/topsharing2027/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Berner & Wyss 2027 auf Instagram"
+        >
+          <IconInstagram width="28" height="28" />
+        </InstagramLink>
       </Actions>
     </Band>
   )

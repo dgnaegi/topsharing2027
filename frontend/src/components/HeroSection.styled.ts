@@ -40,13 +40,10 @@ export const Actions = styled.div`
   margin-top: clamp(2rem, 5vw, 4rem);
 `
 
-export const MetaRight = styled.span`
+export const InstagramLink = styled.a`
   display: inline-flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.sm};
-
-  a {
-    display: inline-flex;
-    color: inherit;
-  }
+  min-height: 44px;
+  margin-left: auto;
+  color: inherit;
 `
