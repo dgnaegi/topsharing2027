@@ -8,6 +8,9 @@ export function AppFooter() {
       <FooterLinks>
         <Link to="/datenschutz">Datenschutz</Link>
         <Link to="/impressum">Impressum</Link>
+        <a href="https://al-zh.ch" target="_blank" rel="noopener noreferrer">
+          AL Zürich
+        </a>
       </FooterLinks>
     </FooterBar>
   )
