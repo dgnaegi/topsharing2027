@@ -3,10 +3,11 @@ import { HeroSection } from '../components/HeroSection'
 import { TeamSection } from '../components/TeamSection'
 import { SupportSection } from '../components/SupportSection'
 import { DonateSection } from '../components/DonateSection'
+import { ShareSection } from '../components/ShareSection'
 
 export function HomePage() {
   usePageMeta(
-    'Melanie Berner & Nicole Wyss: Kandidierende für den Regierungsrat Zürich 2027',
+    'Melanie Berner & Nicole Wyss: Regierungsratswahl Zürich 2027',
     'Melanie Berner und Nicole Wyss kandidieren 2027 für den Regierungsrat des Kantons Zürich. Erfahre mehr und unterstütze die Kandidatur.',
   )
 
@@ -16,6 +17,7 @@ export function HomePage() {
       <TeamSection />
       <SupportSection />
       <DonateSection />
+      <ShareSection />
     </main>
   )
 }

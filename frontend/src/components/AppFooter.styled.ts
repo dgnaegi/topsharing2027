@@ -22,5 +22,11 @@ export const FooterBar = styled.footer`
 
 export const FooterLinks = styled.nav`
   display: flex;
+  align-items: center;
   gap: ${({ theme }) => theme.spacing.lg};
+
+  a {
+    display: inline-flex;
+    align-items: center;
+  }
 `
