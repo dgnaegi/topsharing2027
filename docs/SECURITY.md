@@ -11,7 +11,7 @@ Checkliste für Security-Reviews dieses Projekts.
 ## Formular-Endpunkt
 
 - [ ] Body wird mit Zod validiert (Länge, Typ, Pflichtfelder), bevor irgendetwas verarbeitet wird
-- [ ] Bild kommt als Data-URL, wird auf erlaubten MIME-Typ (`jpeg`, `png`, `webp`) und Maximalgrösse (2 MB) geprüft, bevor es als Anhang verschickt wird
+- [ ] Bild kommt als Data-URL, wird auf erlaubten MIME-Typ (`jpeg`, `png`, `webp`) und Maximalgrösse (10 MB) geprüft, bevor es als Anhang verschickt wird
 - [ ] Text aus dem Formular wird vor dem Einsetzen ins E-Mail-HTML escaped (`escapeHtml`), nie roh interpoliert
 - [ ] Rate-Limit auf dem Endpunkt (`express-rate-limit`), damit das Formular nicht für Mail-Spam missbraucht werden kann
 - [ ] `express.json({ limit })` begrenzt die Body-Grösse serverseitig zusätzlich zur Bildgrössen-Prüfung

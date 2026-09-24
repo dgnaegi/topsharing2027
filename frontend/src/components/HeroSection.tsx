@@ -1,11 +1,11 @@
-import { Band, BandMeta } from './Band.styled'
+import { BandMeta } from './Band.styled'
 import { Button } from './Button.styled'
-import { Title, Slogan, Claim, Actions, InstagramLink } from './HeroSection.styled'
+import { Title, Slogan, Claim, Actions, HeroBand, InstagramLink } from './HeroSection.styled'
 import { IconInstagram } from './icons/IconInstagram'
 
 export function HeroSection() {
   return (
-    <Band $tone="signal" as="header">
+    <HeroBand $tone="signal" as="header">
       <BandMeta>
         <span>Regierungsratswahlen 2027</span>
         <span>Kanton Zürich</span>
@@ -30,6 +30,6 @@ export function HeroSection() {
           <IconInstagram width="32" height="32" />
         </InstagramLink>
       </Actions>
-    </Band>
+    </HeroBand>
   )
 }

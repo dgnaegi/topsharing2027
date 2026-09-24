@@ -70,12 +70,12 @@ export function PublicFields() {
               if (!file) return true
               if (!ALLOWED_IMAGE_TYPES.includes(file.type))
                 return 'Bitte wähl ein Bild im Format JPG, PNG oder WEBP.'
-              if (file.size > MAX_IMAGE_BYTES) return 'Bitte wähl ein Bild unter 2 MB.'
+              if (file.size > MAX_IMAGE_BYTES) return 'Bitte wähl ein Bild unter 10 MB.'
               return true
             },
           })}
         />
-        <HelpText id="image-help">JPG, PNG oder WEBP, maximal 2 MB.</HelpText>
+        <HelpText id="image-help">JPG, PNG oder WEBP, maximal 10 MB.</HelpText>
         {errors.image && <ErrorText id="image-error">{errors.image.message}</ErrorText>}
       </Field>
     </Fieldset>

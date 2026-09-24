@@ -1,6 +1,14 @@
 import styled from 'styled-components'
-import { Display } from './Band.styled'
+import { Band, Display } from './Band.styled'
 import { media } from '../theme'
+
+export const HeroBand = styled(Band)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-height: 100svh;
+`
 
 export const Title = styled.h1`
   position: relative;

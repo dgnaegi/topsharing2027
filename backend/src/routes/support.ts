@@ -11,7 +11,7 @@ const ALLOWED_MIMES: Record<string, string> = {
   'image/png': 'png',
   'image/webp': 'webp',
 }
-const MAX_IMAGE_BYTES = 2 * 1024 * 1024 // 2 MB
+const MAX_IMAGE_BYTES = 10 * 1024 * 1024 // 10 MB
 
 const MAGIC_BYTES: Record<string, (buffer: Buffer) => boolean> = {
   'image/jpeg': (b) => b.length >= 3 && b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff,
@@ -31,7 +31,7 @@ const supportSchema = z
     publicSupport: z.boolean(),
     role: z.string().trim().max(100).optional(),
     quote: z.string().trim().max(2000).optional(),
-    image: z.string().max(3_000_000).optional(),
+    image: z.string().max(14_000_000).optional(),
   })
   .refine((d) => d.campaign || d.publicSupport)
   .refine((d) => !d.publicSupport || Boolean(d.quote))
@@ -60,7 +60,7 @@ function parseImage(dataUrl: string): { buffer: Buffer; contentType: string; ext
 
   const buffer = Buffer.from(data, 'base64')
   if (buffer.byteLength > MAX_IMAGE_BYTES) {
-    throw new AppError(ErrorCode.VALIDATION_ERROR, 400, 'Bitte wähl ein Bild unter 2 MB.')
+    throw new AppError(ErrorCode.VALIDATION_ERROR, 400, 'Bitte wähl ein Bild unter 10 MB.')
   }
 
   if (!MAGIC_BYTES[mime](buffer)) {

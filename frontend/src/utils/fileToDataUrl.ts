@@ -1,4 +1,4 @@
-export const MAX_IMAGE_BYTES = 2 * 1024 * 1024 // 2 MB, muss zum Backend-Limit passen
+export const MAX_IMAGE_BYTES = 10 * 1024 * 1024 // 10 MB, muss zum Backend-Limit passen
 export const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp']
 
 export function fileToDataUrl(file: File): Promise<string> {

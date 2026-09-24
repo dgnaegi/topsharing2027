@@ -41,7 +41,7 @@ const globalLimiter = rateLimit({ windowMs: WINDOW_MS, max: 200 })
 // Endpunkt, ohne normale Nutzung einzuschränken.
 const supportLimiter = rateLimit({ windowMs: WINDOW_MS, max: 10 })
 
-app.use(express.json({ limit: '3mb' }))
+app.use(express.json({ limit: '15mb' }))
 app.use('/api/', globalLimiter)
 app.use('/api/v1/support', supportLimiter)
 
