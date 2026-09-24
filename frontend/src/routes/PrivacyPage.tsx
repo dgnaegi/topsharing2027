@@ -122,8 +122,7 @@ export function PrivacyPage() {
       <Section>
         <H2>Sicherheit</H2>
         <P>
-          Die Verbindung läuft durchgehend über HTTPS. Dein Zitat reist verschlüsselt und nicht als
-          Postkarte.
+          Die Verbindung läuft durchgehend über HTTPS. Dein Zitat reist verschlüsselt.
         </P>
       </Section>
 

@@ -76,18 +76,26 @@
     </script>
 
     <link rel="preload" href="/webfonts/ALRuderPlakatWeb-Regular.woff2" as="font" type="font/woff2" crossorigin />
-    <script>
-      document.documentElement.classList.add('js')
-    </script>
     <style>
       html {
         background: #ff1975;
       }
-      /* Statischer Crawler-Inhalt bleibt ohne JS sichtbar, wird mit JS nie ungestylt gezeigt. */
-      .js #root[data-static] {
-        visibility: hidden;
+      /*
+       * Statischer Crawler-Inhalt ist standardmässig unsichtbar, damit er nie ungestylt
+       * aufblitzt. React entfernt data-static erst, nachdem der eigene Inhalt gerendert ist
+       * (siehe App.tsx). Ohne JavaScript hebt das noscript-Style die Regel wieder auf.
+       */
+      #root[data-static] {
+        display: none;
       }
     </style>
+    <noscript>
+      <style>
+        #root[data-static] {
+          display: block;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <!-- Statischer Inhalt für Crawler ohne JavaScript. React ersetzt ihn beim Start. -->
