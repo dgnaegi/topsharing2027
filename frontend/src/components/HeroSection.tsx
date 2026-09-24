@@ -27,7 +27,7 @@ export function HeroSection() {
           rel="noopener noreferrer"
           aria-label="Berner & Wyss 2027 auf Instagram"
         >
-          <IconInstagram width="28" height="28" />
+          <IconInstagram width="32" height="32" />
         </InstagramLink>
       </Actions>
     </Band>

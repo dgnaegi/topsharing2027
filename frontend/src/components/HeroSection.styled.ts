@@ -46,4 +46,12 @@ export const InstagramLink = styled.a`
   min-height: 44px;
   margin-left: auto;
   color: inherit;
+  transition:
+    color 0.15s ease-out,
+    transform 0.1s ease-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.signalDark};
+    transform: translateY(-1px);
+  }
 `
