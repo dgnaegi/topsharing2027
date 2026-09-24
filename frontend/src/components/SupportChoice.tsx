@@ -16,11 +16,12 @@ export function SupportChoice() {
   }
 
   return (
-    <Fieldset>
+    <Fieldset aria-describedby={errors.campaign ? 'campaign-error' : undefined}>
       <Legend>Wie möchtest du unterstützen?</Legend>
       <Card>
         <input
           type="checkbox"
+          aria-invalid={errors.campaign ? 'true' : undefined}
           {...register('campaign', {
             validate: () =>
               getValues('campaign') ||
@@ -44,7 +45,7 @@ export function SupportChoice() {
           </CardHelp>
         </span>
       </Card>
-      {errors.campaign && <ErrorText>{errors.campaign.message}</ErrorText>}
+      {errors.campaign && <ErrorText id="campaign-error">{errors.campaign.message}</ErrorText>}
     </Fieldset>
   )
 }

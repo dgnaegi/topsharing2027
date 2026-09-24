@@ -77,18 +77,26 @@ export function SupportForm() {
             <Input
               id="firstName"
               autoComplete="given-name"
+              aria-invalid={errors.firstName ? 'true' : undefined}
+              aria-describedby={errors.firstName ? 'firstName-error' : undefined}
               {...register('firstName', { required: true, maxLength: 100 })}
             />
-            {errors.firstName && <ErrorText>Bitte gib deinen Vornamen an.</ErrorText>}
+            {errors.firstName && (
+              <ErrorText id="firstName-error">Bitte gib deinen Vornamen an.</ErrorText>
+            )}
           </Field>
           <Field>
             <Label htmlFor="lastName">Nachname</Label>
             <Input
               id="lastName"
               autoComplete="family-name"
+              aria-invalid={errors.lastName ? 'true' : undefined}
+              aria-describedby={errors.lastName ? 'lastName-error' : undefined}
               {...register('lastName', { required: true, maxLength: 100 })}
             />
-            {errors.lastName && <ErrorText>Bitte gib deinen Nachnamen an.</ErrorText>}
+            {errors.lastName && (
+              <ErrorText id="lastName-error">Bitte gib deinen Nachnamen an.</ErrorText>
+            )}
           </Field>
         </Row>
         <Field>
@@ -97,14 +105,20 @@ export function SupportForm() {
             id="email"
             type="email"
             autoComplete="email"
+            aria-invalid={errors.email ? 'true' : undefined}
+            aria-describedby={errors.email ? 'email-help email-error' : 'email-help'}
             {...register('email', {
               required: true,
               maxLength: 200,
               pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
             })}
           />
-          <HelpText>Nur für Rückfragen. Sie erscheint nicht auf der Seite.</HelpText>
-          {errors.email && <ErrorText>Bitte gib eine gültige E-Mail an.</ErrorText>}
+          <HelpText id="email-help">
+            Nur für Rückfragen. Sie erscheint nicht auf der Seite.
+          </HelpText>
+          {errors.email && (
+            <ErrorText id="email-error">Bitte gib eine gültige E-Mail an.</ErrorText>
+          )}
         </Field>
 
         <SupportChoice />
@@ -113,7 +127,7 @@ export function SupportForm() {
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Wird gesendet…' : 'Unterstützung senden'}
         </Button>
-        {status.type === 'error' && <StatusText>{status.message}</StatusText>}
+        {status.type === 'error' && <StatusText role="alert">{status.message}</StatusText>}
       </Form>
     </FormProvider>
   )

@@ -34,3 +34,4 @@ So kurz wie möglich. Ein Dokument ist fertig, wenn nichts mehr weggelassen werd
 | [SEO.md](./SEO.md) | Meta-Tags, Keywords, strukturierte Daten |
 | [SECURITY.md](./SECURITY.md) | Checkliste für Security-Reviews |
 | [MICROCOPY.md](./MICROCOPY.md) | Tonalität und Textregeln für alle UI-Texte |
+| [A11Y.md](./A11Y.md) | Checkliste für Accessibility-Reviews |

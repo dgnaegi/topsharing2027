@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Band, BandMeta, Grid, Col, Display, Lead } from './Band.styled'
 import { getSupportersSortedAlphabetically, type Supporter } from '../data/supporters'
 import {
@@ -12,6 +12,17 @@ import { SupporterDetailDialog } from './SupporterDetailDialog'
 export function SupportersSection() {
   const supporters = getSupportersSortedAlphabetically()
   const [selected, setSelected] = useState<Supporter | null>(null)
+  const triggerRef = useRef<HTMLButtonElement | null>(null)
+
+  function openDetail(supporter: Supporter, trigger: HTMLButtonElement) {
+    triggerRef.current = trigger
+    setSelected(supporter)
+  }
+
+  function closeDetail() {
+    setSelected(null)
+    triggerRef.current?.focus()
+  }
 
   return (
     <Band $tone="paper">
@@ -33,7 +44,10 @@ export function SupportersSection() {
             {supporters.map((supporter) => (
               <SupporterItem key={supporter.id}>
                 {supporter.quote ? (
-                  <QuoteTrigger onClick={() => setSelected(supporter)}>
+                  <QuoteTrigger
+                    onClick={(e) => openDetail(supporter, e.currentTarget)}
+                    aria-haspopup="dialog"
+                  >
                     {supporter.firstName} {supporter.lastName}
                   </QuoteTrigger>
                 ) : (
@@ -47,7 +61,7 @@ export function SupportersSection() {
         </Col>
       </Grid>
 
-      {selected && <SupporterDetailDialog supporter={selected} onClose={() => setSelected(null)} />}
+      {selected && <SupporterDetailDialog supporter={selected} onClose={closeDetail} />}
     </Band>
   )
 }

@@ -1,6 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { AppFooter } from './components/AppFooter'
+import { SkipLink } from './components/SkipLink'
 import { HomePage } from './routes/HomePage'
 import { PrivacyPage } from './routes/PrivacyPage'
 import { ImpressumPage } from './routes/ImpressumPage'
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+      <SkipLink />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/datenschutz" element={<PrivacyPage />} />

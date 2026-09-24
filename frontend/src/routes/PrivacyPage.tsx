@@ -10,7 +10,7 @@ export function PrivacyPage() {
   )
 
   return (
-    <Band as="main" $tone="paper">
+    <Band as="main" id="main-content" tabIndex={-1} $tone="paper">
       <BandMeta>
         <span>Rechtliches</span>
         <span>Berner &amp; Wyss 2027</span>
@@ -121,9 +121,7 @@ export function PrivacyPage() {
 
       <Section>
         <H2>Sicherheit</H2>
-        <P>
-          Die Verbindung läuft durchgehend über HTTPS. Dein Zitat reist verschlüsselt.
-        </P>
+        <P>Die Verbindung läuft durchgehend über HTTPS. Dein Zitat reist verschlüsselt.</P>
       </Section>
 
       <Section>

@@ -93,6 +93,7 @@ schon belegt sind. `env-set` startet die App neu.
 - Farben, Typografie und Komponenten-Styles: **[docs/DESIGN.md](docs/DESIGN.md)**.
 - SEO-Keywords und Meta-Tag-Vorlagen: **[docs/SEO.md](docs/SEO.md)**.
 - Security-Checkliste für Reviews: **[docs/SECURITY.md](docs/SECURITY.md)**.
+- Accessibility-Checkliste für Reviews: **[docs/A11Y.md](docs/A11Y.md)**.
 - Regeln für neue MD-Dateien: **[docs/MARKDOWN_GUIDELINES.md](docs/MARKDOWN_GUIDELINES.md)**.
 
 ## Domain

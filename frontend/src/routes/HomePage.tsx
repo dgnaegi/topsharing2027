@@ -11,7 +11,7 @@ export function HomePage() {
   )
 
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <HeroSection />
       <TeamSection />
       <SupportSection />

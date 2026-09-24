@@ -24,10 +24,19 @@ export function PublicFields() {
       <Legend>Für die Website</Legend>
       <Field>
         <Label htmlFor="role">Funktion (optional)</Label>
-        <Input id="role" {...register('role', { maxLength: 100 })} />
-        <HelpText>Zum Beispiel dein Beruf oder deine Rolle. Erscheint neben deinem Namen.</HelpText>
+        <Input
+          id="role"
+          aria-invalid={errors.role ? 'true' : undefined}
+          aria-describedby={errors.role ? 'role-help role-error' : 'role-help'}
+          {...register('role', { maxLength: 100 })}
+        />
+        <HelpText id="role-help">
+          Zum Beispiel dein Beruf oder deine Rolle. Erscheint neben deinem Namen.
+        </HelpText>
         {errors.role && (
-          <ErrorText>Bitte kürze deine Funktion auf höchstens 100 Zeichen.</ErrorText>
+          <ErrorText id="role-error">
+            Bitte kürze deine Funktion auf höchstens 100 Zeichen.
+          </ErrorText>
         )}
       </Field>
       <Field>
@@ -35,10 +44,12 @@ export function PublicFields() {
         <TextArea
           id="quote"
           placeholder="Warum unterstützt du Melanie Berner und Nicole Wyss?"
+          aria-invalid={errors.quote ? 'true' : undefined}
+          aria-describedby={errors.quote ? 'quote-error' : undefined}
           {...register('quote', { required: true, maxLength: 2000 })}
         />
         {errors.quote && (
-          <ErrorText>
+          <ErrorText id="quote-error">
             {errors.quote.type === 'required'
               ? 'Bitte schreib dein Zitat.'
               : 'Bitte kürze dein Zitat auf höchstens 2000 Zeichen.'}
@@ -51,6 +62,8 @@ export function PublicFields() {
           id="image"
           type="file"
           accept={ALLOWED_IMAGE_TYPES.join(',')}
+          aria-invalid={errors.image ? 'true' : undefined}
+          aria-describedby={errors.image ? 'image-help image-error' : 'image-help'}
           {...register('image', {
             validate: (files) => {
               const file = files?.[0]
@@ -62,8 +75,8 @@ export function PublicFields() {
             },
           })}
         />
-        <HelpText>JPG, PNG oder WEBP, maximal 2 MB.</HelpText>
-        {errors.image && <ErrorText>{errors.image.message}</ErrorText>}
+        <HelpText id="image-help">JPG, PNG oder WEBP, maximal 2 MB.</HelpText>
+        {errors.image && <ErrorText id="image-error">{errors.image.message}</ErrorText>}
       </Field>
     </Fieldset>
   )

@@ -10,7 +10,7 @@ export function ImpressumPage() {
   )
 
   return (
-    <Band as="main" $tone="paper">
+    <Band as="main" id="main-content" tabIndex={-1} $tone="paper">
       <BandMeta>
         <span>Rechtliches</span>
         <span>Berner &amp; Wyss 2027</span>
