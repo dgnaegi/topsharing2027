@@ -39,3 +39,9 @@ export const Actions = styled.div`
   gap: ${({ theme }) => theme.spacing.md};
   margin-top: clamp(2rem, 5vw, 4rem);
 `
+
+export const ButtonContent = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.sm};
+`

@@ -3,7 +3,6 @@ import { HeroSection } from '../components/HeroSection'
 import { TeamSection } from '../components/TeamSection'
 import { SupportSection } from '../components/SupportSection'
 import { DonateSection } from '../components/DonateSection'
-import { ShareSection } from '../components/ShareSection'
 
 export function HomePage() {
   usePageMeta(
@@ -17,7 +16,6 @@ export function HomePage() {
       <TeamSection />
       <SupportSection />
       <DonateSection />
-      <ShareSection />
     </main>
   )
 }

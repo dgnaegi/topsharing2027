@@ -1,6 +1,7 @@
 import { Band, BandMeta } from './Band.styled'
 import { Button } from './Button.styled'
-import { Title, Slogan, Claim, Actions } from './HeroSection.styled'
+import { Title, Slogan, Claim, Actions, ButtonContent } from './HeroSection.styled'
+import { IconInstagram } from './icons/IconInstagram'
 
 export function HeroSection() {
   return (
@@ -19,6 +20,18 @@ export function HeroSection() {
         </Button>
         <Button as="a" href="#spenden" $variant="onSignal">
           Spenden
+        </Button>
+        <Button
+          as="a"
+          href="https://www.instagram.com/topsharing2027/"
+          target="_blank"
+          rel="noopener noreferrer"
+          $variant="onSignal"
+        >
+          <ButtonContent>
+            <IconInstagram width="18" height="18" />
+            Instagram
+          </ButtonContent>
         </Button>
       </Actions>
     </Band>

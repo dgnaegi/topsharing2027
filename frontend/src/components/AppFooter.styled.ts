@@ -24,9 +24,31 @@ export const FooterLinks = styled.nav`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.lg};
+`
 
-  a {
-    display: inline-flex;
-    align-items: center;
+export const FooterShare = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.md};
+`
+
+export const FooterIconButton = styled.button`
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.signal};
   }
+`
+
+export const FooterStatus = styled.p`
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 `
