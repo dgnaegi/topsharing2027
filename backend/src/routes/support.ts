@@ -13,6 +13,15 @@ const ALLOWED_MIMES: Record<string, string> = {
 }
 const MAX_IMAGE_BYTES = 2 * 1024 * 1024 // 2 MB
 
+const MAGIC_BYTES: Record<string, (buffer: Buffer) => boolean> = {
+  'image/jpeg': (b) => b.length >= 3 && b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff,
+  'image/png': (b) =>
+    b.length >= 8 &&
+    [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a].every((byte, i) => b[i] === byte),
+  'image/webp': (b) =>
+    b.length >= 12 && b.toString('ascii', 0, 4) === 'RIFF' && b.toString('ascii', 8, 12) === 'WEBP',
+}
+
 const supportSchema = z
   .object({
     firstName: z.string().trim().min(1).max(100),
@@ -52,6 +61,10 @@ function parseImage(dataUrl: string): { buffer: Buffer; contentType: string; ext
   const buffer = Buffer.from(data, 'base64')
   if (buffer.byteLength > MAX_IMAGE_BYTES) {
     throw new AppError(ErrorCode.VALIDATION_ERROR, 400, 'Bitte wähl ein Bild unter 2 MB.')
+  }
+
+  if (!MAGIC_BYTES[mime](buffer)) {
+    throw new AppError(ErrorCode.VALIDATION_ERROR, 400, 'Bitte wähl ein gültiges Bild.')
   }
 
   return { buffer, contentType: mime, ext }

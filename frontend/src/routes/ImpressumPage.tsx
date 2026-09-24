@@ -27,8 +27,13 @@ export function ImpressumPage() {
         <P>
           Melanie Berner &amp; Nicole Wyss, Kandidatur für den Regierungsrat Zürich 2027
           <br />
-          {/* Platzhalter: Postadresse des Wahlkomitees ergänzen. */}
-          Zürich, Schweiz
+          c/o Daniel Gnägi
+          <br />
+          Sekretariat AL
+          <br />
+          Molkenstrasse 21
+          <br />
+          8004 Zürich
         </P>
       </Section>
 
