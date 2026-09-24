@@ -40,8 +40,13 @@ export const Actions = styled.div`
   margin-top: clamp(2rem, 5vw, 4rem);
 `
 
-export const ButtonContent = styled.span`
+export const MetaRight = styled.span`
   display: inline-flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.sm};
+
+  a {
+    display: inline-flex;
+    color: inherit;
+  }
 `
