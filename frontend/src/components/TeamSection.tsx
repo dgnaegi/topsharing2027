@@ -27,7 +27,7 @@ export function TeamSection() {
           </Text>
           <Text>
             Unser Top-Sharing beginnt nicht bei einer allfälligen Wahl. Es hat mit der Nomination
-            begonnen. Radikal sozial eben.
+            begonnen. Zusammen mehr eben.
           </Text>
           <Names>
             Nicole Wyss, Kantonsrätin AL

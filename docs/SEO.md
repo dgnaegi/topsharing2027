@@ -32,12 +32,12 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 <title>Melanie Berner & Nicole Wyss: Kandidierende für den Regierungsrat Zürich 2027</title>
 <meta name="description" content="Melanie Berner und Nicole Wyss kandidieren 2027 für den Regierungsrat des Kantons Zürich. Erfahre mehr und unterstütze die Kandidatur." />
 <meta name="keywords" content="Regierungsratswahl Zürich 2027, Kandidierende Regierungsrat, Melanie Berner, Nicole Wyss, Regierungsrat Kandidatinnen Zürich" />
-<link rel="canonical" href="https://wyss-berner.ch/" />
+<link rel="canonical" href="https://zusammen-mehr.ch/" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Melanie Berner & Nicole Wyss: Regierungsratswahl Zürich 2027" />
 <meta property="og:description" content="Kandidierende für den Regierungsrat des Kantons Zürich, Wahlen 2027." />
-<meta property="og:image" content="https://wyss-berner.ch/og-image.jpg" />
+<meta property="og:image" content="https://zusammen-mehr.ch/og-image.jpg" />
 <meta property="og:locale" content="de_CH" />
 
 <meta name="twitter:card" content="summary_large_image" />
@@ -59,7 +59,7 @@ Zwei `Person`-Einträge plus `WebSite`, eingebettet in `frontend/index.html`:
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Melanie Berner & Nicole Wyss: Regierungsratswahl Zürich 2027",
-  "url": "https://wyss-berner.ch",
+  "url": "https://zusammen-mehr.ch",
   "inLanguage": "de-CH"
 }
 ```
@@ -70,7 +70,7 @@ Zwei `Person`-Einträge plus `WebSite`, eingebettet in `frontend/index.html`:
   "@type": "Person",
   "name": "Melanie Berner",
   "jobTitle": "Kandidierende für den Regierungsrat des Kantons Zürich",
-  "url": "https://wyss-berner.ch"
+  "url": "https://zusammen-mehr.ch"
 }
 ```
 

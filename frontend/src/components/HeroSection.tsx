@@ -11,7 +11,7 @@ export function HeroSection() {
         <span>Kanton Zürich</span>
       </BandMeta>
       <Title>
-        <Slogan>radikal sozial</Slogan>
+        <Slogan>zusammen mehr</Slogan>
         <Claim>Melanie Berner &amp; Nicole Wyss in den Regierungsrat</Claim>
       </Title>
       <Actions>

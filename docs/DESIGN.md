@@ -56,7 +56,7 @@ Zwei Schnitte, klar getrennte Aufgaben. Kein Mischen innerhalb einer Ebene.
 }
 ```
 
-> **Lizenz:** Die Ruder-Plakat-Dateien (`frontend/webfonts/`, eingebunden in `frontend/src/fonts.css`) sind laut Lineto-Disclaimer ausschliesslich für Domains von `al-zh.ch` lizenziert. Für `wyss-berner.ch` vor dem Livegang schriftlich bei der AL klären. Der Disclaimer in `fonts.css` darf nicht entfernt werden.
+> **Lizenz:** Die Ruder-Plakat-Dateien (`frontend/webfonts/`, eingebunden in `frontend/src/fonts.css`) sind laut Lineto-Disclaimer ausschliesslich für Domains von `al-zh.ch` lizenziert. Für `zusammen-mehr.ch` vor dem Livegang schriftlich bei der AL klären. Der Disclaimer in `fonts.css` darf nicht entfernt werden.
 >
 > **Unica77 fehlt:** Es wurden nur Ruder-Plakat-Dateien geliefert. Bis Unica77 als `woff2` vorliegt, greift der Fallback Helvetica Neue / Arial. Sobald die Dateien da sind, `@font-face` in `fonts.css` ergänzen, der Name steht schon im Font-Stack. Alle Schnitte als `woff2`, `font-display: swap`, selbst gehostet, keine Google Fonts.
 
@@ -80,7 +80,7 @@ Der Schnitt ist eine sehr schmale, schwere Plakatgrotesk und funktioniert nur gr
 - Zeilenabstand unter 1, die Zeilen sollen als Block stehen, nicht als Absatz.
 - Buchstabenabstand öffnen (`letter-spacing: 0.025em`), sonst verschmelzen die Buchstaben des schweren Schnitts. Wortabstand ebenfalls leicht öffnen.
 - Nie in Fliesstextlänge. Maximal 4 Wörter pro Zeile.
-- **Ausnahme Zentrierung:** Der Hero-Slogan „radikal sozial" steht immer exakt mittig (`text-align: center`, `margin-left: 0`, `padding-left` in Höhe des `letter-spacing`, damit der Nachlauf nach dem letzten Buchstaben die Mitte nicht verschiebt). Alle anderen Displayzeilen und aller Fliesstext bleiben linksbündig.
+- **Ausnahme Zentrierung:** Der Hero-Slogan „zusammen mehr" steht immer exakt mittig (`text-align: center`, `margin-left: 0`, `padding-left` in Höhe des `letter-spacing`, damit der Nachlauf nach dem letzten Buchstaben die Mitte nicht verschiebt). Alle anderen Displayzeilen und aller Fliesstext bleiben linksbündig.
 - Eine Kontur-Variante (Outline) ist nicht im gelieferten Paket.
 
 ### Unica77: Text und UI

@@ -13,4 +13,4 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-Sitemap: https://wyss-berner.ch/sitemap.xml
+Sitemap: https://zusammen-mehr.ch/sitemap.xml
