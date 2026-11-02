@@ -80,7 +80,7 @@ Der Schnitt ist eine sehr schmale, schwere Plakatgrotesk und funktioniert nur gr
 - Zeilenabstand unter 1, die Zeilen sollen als Block stehen, nicht als Absatz.
 - Buchstabenabstand öffnen (`letter-spacing: 0.025em`), sonst verschmelzen die Buchstaben des schweren Schnitts. Wortabstand ebenfalls leicht öffnen.
 - Nie in Fliesstextlänge. Maximal 4 Wörter pro Zeile.
-- **Ausnahme Zentrierung:** Der Hero-Slogan „zusammen mehr" steht immer exakt mittig (`text-align: center`, `margin-left: 0`, `padding-left` in Höhe des `letter-spacing`, damit der Nachlauf nach dem letzten Buchstaben die Mitte nicht verschiebt). Alle anderen Displayzeilen und aller Fliesstext bleiben linksbündig.
+- **Ausnahme Zentrierung:** Der Hero-Slogan „radikal sozial" steht immer exakt mittig (`text-align: center`, `margin-left: 0`, `padding-left` in Höhe des `letter-spacing`, damit der Nachlauf nach dem letzten Buchstaben die Mitte nicht verschiebt). Alle anderen Displayzeilen und aller Fliesstext bleiben linksbündig.
 - Eine Kontur-Variante (Outline) ist nicht im gelieferten Paket.
 
 ### Unica77: Text und UI

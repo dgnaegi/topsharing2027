@@ -11,7 +11,7 @@ export function HeroSection() {
         <span>Kanton Zürich</span>
       </BandMeta>
       <Title>
-        <Slogan>zusammen mehr</Slogan>
+        <Slogan>radikal sozial</Slogan>
         <Claim>Melanie Berner &amp; Nicole Wyss in den Regierungsrat</Claim>
       </Title>
       <Actions>
@@ -25,7 +25,7 @@ export function HeroSection() {
           href="https://www.instagram.com/topsharing2027/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Berner & Wyss 2027 auf Instagram"
+          aria-label="zusammen mehr: Berner & Wyss 2027 auf Instagram"
         >
           <IconInstagram width="32" height="32" />
         </InstagramLink>

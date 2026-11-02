@@ -8,10 +8,11 @@ Priorität von oben nach unten. Jedes Keyword muss natürlich im Fliesstext vork
 
 | Keyword | Wo verwenden |
 |---|---|
+| zusammen mehr | Kampagnenname und Domain. Title, H1 (Slogan), `og:site_name`, JSON-LD (`WebSite.name`) |
 | Regierungsratswahl Zürich 2027 | Titel, Eckenmetadaten (Hero), erster Absatz |
 | Kandidierende Regierungsrat | H1 (Claim „in den Regierungsrat"), Meta-Description |
-| Melanie Berner | Überall, wo sie erwähnt wird (voller Name, nicht nur „Melanie") |
-| Nicole Wyss | Überall, wo sie erwähnt wird (voller Name, nicht nur „Nicole") |
+| Melanie Berner | Title, H1, JSON-LD `Person`. Überall, wo sie erwähnt wird (voller Name, nicht nur „Melanie") |
+| Nicole Wyss | Title, H1, JSON-LD `Person`. Überall, wo sie erwähnt wird (voller Name, nicht nur „Nicole") |
 | Regierungsrat Kandidatinnen Zürich | H2, Meta-Description |
 | Regierungsratswahlen Kanton Zürich | Fliesstext, Impressum/About |
 
@@ -21,7 +22,7 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 
 | Seite | Title | Description (max. 155 Zeichen) |
 |---|---|---|
-| Startseite | `Melanie Berner & Nicole Wyss: Kandidierende für den Regierungsrat Zürich 2027` | `Melanie Berner und Nicole Wyss kandidieren 2027 für den Regierungsrat des Kantons Zürich. Erfahre mehr und unterstütze die Kandidatur.` |
+| Startseite | `zusammen mehr: Melanie Berner & Nicole Wyss, Regierungsrat Zürich 2027` | `zusammen mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur.` |
 | Datenschutz | `Datenschutzerklärung: Berner & Wyss 2027` | `Datenschutzerklärung zur Kandidatur von Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027.` |
 | Impressum | `Impressum: Berner & Wyss 2027` | `Impressum der Kandidatur von Melanie Berner und Nicole Wyss für die Regierungsratswahl Zürich 2027.` |
 
@@ -29,13 +30,13 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 
 ```html
 <html lang="de-CH">
-<title>Melanie Berner & Nicole Wyss: Kandidierende für den Regierungsrat Zürich 2027</title>
-<meta name="description" content="Melanie Berner und Nicole Wyss kandidieren 2027 für den Regierungsrat des Kantons Zürich. Erfahre mehr und unterstütze die Kandidatur." />
+<title>zusammen mehr: Melanie Berner & Nicole Wyss, Regierungsrat Zürich 2027</title>
+<meta name="description" content="zusammen mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur." />
 <meta name="keywords" content="Regierungsratswahl Zürich 2027, Kandidierende Regierungsrat, Melanie Berner, Nicole Wyss, Regierungsrat Kandidatinnen Zürich" />
 <link rel="canonical" href="https://zusammen-mehr.ch/" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Melanie Berner & Nicole Wyss: Regierungsratswahl Zürich 2027" />
+<meta property="og:title" content="zusammen mehr: Melanie Berner & Nicole Wyss, Regierungsrat Zürich 2027" />
 <meta property="og:description" content="Kandidierende für den Regierungsrat des Kantons Zürich, Wahlen 2027." />
 <meta property="og:image" content="https://zusammen-mehr.ch/og-image.jpg" />
 <meta property="og:locale" content="de_CH" />
@@ -52,29 +53,29 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 
 ## Strukturierte Daten (JSON-LD)
 
-Zwei `Person`-Einträge plus `WebSite`, eingebettet in `frontend/index.html`:
+Ein `@graph` in `frontend/index.html`, verknüpft über `@id`:
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Melanie Berner & Nicole Wyss: Regierungsratswahl Zürich 2027",
-  "url": "https://zusammen-mehr.ch",
-  "inLanguage": "de-CH"
-}
-```
+- `WebSite` mit `name: "zusammen mehr"` und `alternateName`. Damit kann Google den Kampagnennamen
+  als Site-Namen im Suchergebnis anzeigen.
+- `Organization` (die Kampagne) mit `sameAs` auf Instagram und `member` auf beide Personen.
+- Je ein `Person` für Melanie Berner und Nicole Wyss mit `jobTitle` (Kantonsrätin bzw.
+  Alt-Kantonsrätin AL), `affiliation` (Alternative Liste Zürich) und `colleague`.
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Melanie Berner",
-  "jobTitle": "Kandidierende für den Regierungsrat des Kantons Zürich",
-  "url": "https://zusammen-mehr.ch"
-}
-```
+Kommen neue Profile dazu (Kantonsrat, Wikipedia, eigene Social-Media-Konten), gehören sie als
+`sameAs` an die jeweilige `Person`. Das ist der stärkste Hebel, damit Google die Seite den
+Namen zuordnet.
 
-Gleiches Schema für Nicole Wyss.
+## Statischer Crawler-Inhalt
+
+`index.html` enthält im `#root` eine statische Fassung von H1, Kandidaturtext und Abschnitten.
+Wird der Text in `HeroSection` oder `TeamSection` geändert, die statische Fassung nachziehen.
+
+## Ausserhalb des Codes
+
+- Google Search Console: Domain verifizieren, `sitemap.xml` einreichen, Startseite zur
+  Indexierung anfragen.
+- Backlinks mit den Namen als Linktext: AL-Website, Kantonsrats-Profile, Instagram-Bio,
+  Medienberichte. Ohne solche Links rankt eine neue Domain für Personennamen kaum.
 
 ## Semantisches HTML
 

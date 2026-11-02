@@ -11,7 +11,12 @@ export function TeamSection() {
       </BandMeta>
       <Grid>
         <Col $to={6}>
-          <Portrait src={photo} alt="Melanie Berner und Nicole Wyss" width={1200} height={1799} />
+          <Portrait
+            src={photo}
+            alt="Melanie Berner und Nicole Wyss, Kandidatinnen für den Regierungsrat Zürich 2027"
+            width={1200}
+            height={1799}
+          />
         </Col>
         <Col $from={7}>
           <Display>gemeinsam mit links</Display>

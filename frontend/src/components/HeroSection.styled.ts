@@ -6,8 +6,10 @@ export const HeroBand = styled(Band)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
-  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
+  padding-block: clamp(1.5rem, 5svh, 4rem);
+  overflow: hidden;
 `
 
 export const Title = styled.h1`
@@ -26,6 +28,7 @@ export const Slogan = styled(Display).attrs({ as: 'span', $size: 'xl' })`
   text-align: center;
   margin-left: 0;
   padding-left: 0.025em;
+  font-size: clamp(3.5rem, min(17vw, 28svh), 18rem);
 `
 
 export const Claim = styled.span`
