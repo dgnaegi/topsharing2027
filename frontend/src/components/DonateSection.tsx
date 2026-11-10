@@ -1,16 +1,16 @@
-import { Band, BandMeta, Grid, Col, Lead } from './Band.styled'
-import { DonateHeading, Details, QrBox } from './DonateSection.styled'
+import { Band, BandMeta, Grid, Col, Display, Lead } from './Band.styled'
+import { Details, QrBox } from './DonateSection.styled'
 
 export function DonateSection() {
   return (
-    <Band $tone="ink" id="spenden">
+    <Band $tone="signal" id="spenden">
       <BandMeta>
         <span>04 / Spenden</span>
-        <span>Berner &amp; Wyss 2027</span>
+        <span>Steuerlich abziehbar</span>
       </BandMeta>
       <Grid>
         <Col>
-          <DonateHeading>spenden</DonateHeading>
+          <Display>spenden</Display>
         </Col>
         <Col $to={6}>
           <Lead>

@@ -6,8 +6,8 @@ export function TeamSection() {
   return (
     <Band $tone="paper" id="kandidatur">
       <BandMeta>
-        <span>01 / Top-Sharing-Kandidatur</span>
-        <span>Berner &amp; Wyss 2027</span>
+        <span>01 / Kandidatur</span>
+        <span>Alternative Linke</span>
       </BandMeta>
       <Grid>
         <Col $to={6}>
@@ -19,7 +19,7 @@ export function TeamSection() {
           />
         </Col>
         <Col $from={7}>
-          <Display>zusammen mehr</Display>
+          <Display>top-sharing</Display>
           <Text>
             Wir sind überzeugt, dass zusammen mehr und bessere Ergebnisse erzielt werden können.
             Darum kandidieren wir gemeinsam für den Regierungsrat. Keine klassische

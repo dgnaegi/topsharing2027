@@ -1,5 +1,5 @@
 import { Band, BandMeta, Grid, Col, Lead } from './Band.styled'
-import { ProgramHeading, ProgramList, Aside } from './ProgramSection.styled'
+import { ProgramHeading, ProgramList, GoalNumber, Aside } from './ProgramSection.styled'
 
 const GOALS = [
   'es im ganzen Kanton bezahlbaren Wohnraum gibt und die Verdrängung gestoppt wird',
@@ -14,8 +14,8 @@ export function ProgramSection() {
   return (
     <Band $tone="ink" id="programm">
       <BandMeta>
-        <span>02 / Politisches Programm</span>
-        <span>Berner &amp; Wyss 2027</span>
+        <span>02 / Programm</span>
+        <span>{GOALS.length} Ziele</span>
       </BandMeta>
       <Grid>
         <Col>
@@ -29,8 +29,11 @@ export function ProgramSection() {
         </Col>
         <Col $from={6}>
           <ProgramList>
-            {GOALS.map((goal) => (
-              <li key={goal}>{goal}</li>
+            {GOALS.map((goal, i) => (
+              <li key={goal}>
+                <GoalNumber aria-hidden="true">{String(i + 1).padStart(2, '0')}</GoalNumber>
+                {goal}
+              </li>
             ))}
           </ProgramList>
           <Aside>
