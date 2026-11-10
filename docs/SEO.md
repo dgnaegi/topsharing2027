@@ -59,7 +59,7 @@ Ein `@graph` in `frontend/index.html`, verknüpft über `@id`:
   als Site-Namen im Suchergebnis anzeigen.
 - `Organization` (die Kampagne) mit `sameAs` auf Instagram und `member` auf beide Personen.
 - Je ein `Person` für Melanie Berner und Nicole Wyss mit `jobTitle` (Kantonsrätin bzw.
-  Alt-Kantonsrätin AL), `affiliation` (Alternative Liste Zürich) und `colleague`.
+  Alt-Kantonsrätin AL), `affiliation` (Alternative Linke Zürich) und `colleague`.
 
 Kommen neue Profile dazu (Kantonsrat, Wikipedia, eigene Social-Media-Konten), gehören sie als
 `sameAs` an die jeweilige `Person`. Das ist der stärkste Hebel, damit Google die Seite den

@@ -5,14 +5,14 @@ import { IconInstagram } from './icons/IconInstagram'
 
 export function HeroSection() {
   return (
-    <HeroBand $tone="signal" as="header">
+    <HeroBand $tone="signal">
       <BandMeta>
         <span>Regierungsratswahlen 2027</span>
         <span>Kanton Zürich</span>
       </BandMeta>
       <Title>
-        <Slogan>radikal sozial</Slogan>
-        <Claim>Melanie Berner &amp; Nicole Wyss in den Regierungsrat</Claim>
+        <Slogan>zusammen mehr</Slogan>
+        <Claim>Nicole Wyss und Melanie Berner gemeinsam in den Regierungsrat</Claim>
       </Title>
       <Actions>
         <Button as="a" href="#unterstuetzen" $variant="onSignal">

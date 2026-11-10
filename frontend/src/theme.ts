@@ -26,8 +26,10 @@ export const theme = {
   },
   zIndex: {
     base: 0,
+    nav: 100,
     modal: 1000,
   },
+  navHeight: '56px',
   breakpoints: {
     sm: '600px',
     md: '900px',

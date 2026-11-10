@@ -6,8 +6,8 @@ export const HeroBand = styled(Band)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
-  height: 100svh;
+  height: calc(100vh - ${({ theme }) => theme.navHeight});
+  height: calc(100svh - ${({ theme }) => theme.navHeight});
   padding-block: clamp(1.5rem, 5svh, 4rem);
   overflow: hidden;
 `

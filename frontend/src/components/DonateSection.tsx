@@ -5,7 +5,7 @@ export function DonateSection() {
   return (
     <Band $tone="ink" id="spenden">
       <BandMeta>
-        <span>03 / Spenden</span>
+        <span>04 / Spenden</span>
         <span>Berner &amp; Wyss 2027</span>
       </BandMeta>
       <Grid>
@@ -13,7 +13,10 @@ export function DonateSection() {
           <DonateHeading>spenden</DonateHeading>
         </Col>
         <Col $to={6}>
-          <Lead>Mit deiner Spende finanzieren wir den Wahlkampf. Jeder Betrag hilft.</Lead>
+          <Lead>
+            Jeder Betrag hilft. Du erhältst von uns eine Spendenbescheinigung und kannst die Spende
+            von den Steuern abziehen.
+          </Lead>
         </Col>
         <Col $from={6}>
           <Details>
@@ -28,7 +31,7 @@ export function DonateSection() {
             <div>
               <dt>Banküberweisung</dt>
               <dd>
-                Alternative Liste
+                Alternative Linke
                 <br />
                 IBAN: CH07 0900 0000 1668 6688 9
                 <br />
@@ -38,6 +41,10 @@ export function DonateSection() {
                 <br />
                 8004 Zürich
               </dd>
+            </div>
+            <div>
+              <dt>Vermerk</dt>
+              <dd>Nicole Wyss &amp; Melanie Berner</dd>
             </div>
           </Details>
         </Col>

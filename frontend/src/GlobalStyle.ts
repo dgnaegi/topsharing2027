@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     background: ${({ theme }) => theme.colors.paper};
+    scroll-padding-top: ${({ theme }) => theme.navHeight};
   }
 
   body {
