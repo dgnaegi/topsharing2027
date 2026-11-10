@@ -24,7 +24,13 @@ export function DonateSection() {
               <dt>Twint</dt>
               <dd>
                 <QrBox>
-                  <img src="/twint-qr.png" alt="Twint QR-Code für die Spende" width="220" />
+                  <img
+                    src="/twint-qr.png"
+                    alt="Twint QR-Code für die Spende"
+                    width="220"
+                    height="244"
+                    loading="lazy"
+                  />
                 </QrBox>
               </dd>
             </div>

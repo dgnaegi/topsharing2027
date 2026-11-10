@@ -16,6 +16,8 @@ export function TeamSection() {
             alt="Nicole Wyss und Melanie Berner, Kandidatinnen für den Regierungsrat Zürich 2027"
             width={1200}
             height={1799}
+            loading="lazy"
+            decoding="async"
           />
         </Col>
         <Col $from={7}>

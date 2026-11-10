@@ -30,7 +30,7 @@ function metaByProperty(property: string, content: string) {
   upsertHead(`meta[property="${property}"]`, create, 'content', content)
 }
 
-export function usePageMeta(title: string, description?: string): void {
+export function usePageMeta(title: string, description?: string, noindex = false): void {
   const { pathname } = useLocation()
 
   useEffect(() => {
@@ -52,10 +52,12 @@ export function usePageMeta(title: string, description?: string): void {
     metaByProperty('og:title', pageTitle)
     metaByName('twitter:title', pageTitle)
 
+    metaByName('robots', noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large')
+
     if (description) {
       metaByName('description', description)
       metaByProperty('og:description', description)
       metaByName('twitter:description', description)
     }
-  }, [title, description, pathname])
+  }, [title, description, noindex, pathname])
 }
