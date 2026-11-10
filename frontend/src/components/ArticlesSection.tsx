@@ -4,14 +4,14 @@ import { ARTICLES } from '../data/articles'
 
 export function ArticlesSection() {
   return (
-    <Band $tone="ink" id="artikel">
+    <Band $tone="ink" id="pressespiegel">
       <BandMeta>
-        <span>06 / Artikel und Links</span>
+        <span>06 / Pressespiegel</span>
         <span>Berner &amp; Wyss 2027</span>
       </BandMeta>
       <Grid>
         <Col>
-          <ArticlesHeading>in den medien</ArticlesHeading>
+          <ArticlesHeading>pressespiegel</ArticlesHeading>
         </Col>
         <Col $from={6}>
           <ArticleList>

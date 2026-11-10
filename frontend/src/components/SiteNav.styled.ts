@@ -7,8 +7,6 @@ export const NavBar = styled.header`
   z-index: ${({ theme }) => theme.zIndex.nav};
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: ${({ theme }) => theme.spacing.md};
   height: ${({ theme }) => theme.navHeight};
   padding-inline: max(clamp(1rem, 4vw, 4rem), calc((100% - 1600px) / 2));
   background: ${({ theme }) => theme.colors.paper};
@@ -21,12 +19,6 @@ export const NavBar = styled.header`
   a {
     text-decoration: none;
   }
-
-  a:hover {
-    text-decoration: underline;
-    text-decoration-color: ${({ theme }) => theme.colors.signal};
-    text-decoration-thickness: 3px;
-  }
 `
 
 export const Brand = styled.a`
@@ -34,23 +26,31 @@ export const Brand = styled.a`
   align-items: center;
   min-height: 44px;
   white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: ${({ theme }) => theme.colors.signal};
+    text-decoration-thickness: 3px;
+  }
 `
 
+/** Mobil: Hamburger ganz rechts, Icon bündig mit dem Seitenrand. */
 export const MenuToggle = styled.button`
-  min-height: 44px;
-  padding: 0 ${({ theme }) => theme.spacing.md};
-  border: ${({ theme }) => theme.border};
-  border-radius: ${({ theme }) => theme.radius};
-  background: ${({ theme }) => theme.colors.ink};
-  color: ${({ theme }) => theme.colors.paper};
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  margin-right: -8px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: ${({ theme }) => theme.colors.ink};
   cursor: pointer;
 
-  &[aria-expanded='true'] {
-    background: ${({ theme }) => theme.colors.signal};
-    color: ${({ theme }) => theme.colors.ink};
+  &:hover {
+    color: ${({ theme }) => theme.colors.signalDark};
   }
 
   ${media.lg} {
@@ -58,30 +58,8 @@ export const MenuToggle = styled.button`
   }
 `
 
-export const NavList = styled.ul<{ $open: boolean }>`
-  display: ${({ $open }) => ($open ? 'flex' : 'none')};
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  list-style: none;
-  padding: ${({ theme }) => theme.spacing.md} clamp(1rem, 4vw, 4rem);
-  background: ${({ theme }) => theme.colors.paper};
-  border-bottom: ${({ theme }) => theme.borderStructural};
-
-  a {
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-  }
-
+export const Nav = styled.nav`
   ${media.lg} {
-    display: flex;
-    flex-direction: row;
-    gap: ${({ theme }) => theme.spacing.lg};
-    position: static;
-    padding: 0;
-    border: none;
+    margin-left: auto;
   }
 `

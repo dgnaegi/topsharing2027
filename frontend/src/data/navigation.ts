@@ -9,5 +9,5 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'unterstuetzen', label: 'Unterstützen' },
   { id: 'spenden', label: 'Spenden' },
   { id: 'ueber-uns', label: 'Über uns' },
-  { id: 'artikel', label: 'Artikel' },
+  { id: 'pressespiegel', label: 'Pressespiegel' },
 ]
