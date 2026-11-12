@@ -57,7 +57,8 @@ export const media = {
   sm: `@media (min-width: ${bp.sm})`,
   md: `@media (min-width: ${bp.md})`,
   lg: `@media (min-width: ${bp.lg})`,
-  hero: `@media (min-width: ${bp.hero})`,
+  /** Hero nebeneinander: ab 1024px oder auf Handys quer (sonst verdeckt der Text die Gesichter). */
+  hero: `@media (min-width: ${bp.hero}), (orientation: landscape) and (min-width: 560px)`,
   maxSm: `@media (max-width: ${bp.sm})`,
   maxMd: `@media (max-width: ${bp.md})`,
 } as const

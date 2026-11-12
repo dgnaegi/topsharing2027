@@ -14,7 +14,8 @@ export const NameList = styled.div`
 
 export const NameButton = styled.button`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   min-height: 44px;
   padding: ${({ theme }) => theme.spacing.md};
   border: ${({ theme }) => theme.borderStructural};
@@ -25,7 +26,8 @@ export const NameButton = styled.button`
   font-size: clamp(1.25rem, 2.5vw, 2.25rem);
   line-height: 1;
   letter-spacing: -0.03em;
-  text-align: left;
+  text-align: center;
+  text-wrap: balance;
   cursor: pointer;
   transition:
     background 0.15s ease-out,

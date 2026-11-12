@@ -8,7 +8,7 @@ export const Actions = styled.div`
 
   ${media.hero} {
     display: flex;
-    margin-top: ${({ theme }) => theme.spacing.xl};
+    margin-top: clamp(0.5rem, 3svh, 2rem);
     ${enter(440)}
   }
 `
