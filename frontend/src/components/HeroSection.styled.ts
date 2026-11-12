@@ -7,7 +7,8 @@ import { enter, settle } from '../motion'
  * Mobil: Foto vollflächig, Schrift auf Balken. Daneben-Layout (media.hero): Pink, Foto rechts.
  */
 export const HeroBand = styled.section`
-  --hero-x: max(clamp(1.25rem, 5.5vw, 5rem), calc((100% - 1600px) / 2));
+  --hero-gap: clamp(1.25rem, 5.5vw, 5rem);
+  --hero-x: max(var(--hero-gap), calc((100% - 1600px) / 2));
   --photo-w: min(540px, 38vw, calc((100svh - ${({ theme }) => theme.navHeight}) * 0.62));
   position: relative;
   overflow: hidden;
@@ -63,7 +64,7 @@ export const Content = styled.div`
   ${media.hero} {
     top: 0;
     bottom: 0;
-    right: calc(var(--photo-w) + 2 * var(--hero-x));
+    right: calc(var(--photo-w) + var(--hero-x) + var(--hero-gap));
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -22,8 +22,9 @@ export const FooterBar = styled.footer`
 
 export const FooterLinks = styled.nav`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.lg};
+  gap: ${({ theme }) => theme.spacing.md} ${({ theme }) => theme.spacing.lg};
 `
 
 export const FooterShare = styled.span`
