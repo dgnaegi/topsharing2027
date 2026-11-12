@@ -22,12 +22,10 @@ export const Tab = styled.button`
   border-radius: ${({ theme }) => theme.radius};
   background: ${({ theme }) => theme.colors.paper};
   color: ${({ theme }) => theme.colors.ink};
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(2.5rem, 6vw, 6rem);
-  line-height: 0.85;
-  letter-spacing: 0.025em;
-  word-spacing: 0.1em;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
   text-align: left;
   cursor: pointer;
   transition:

@@ -50,17 +50,30 @@ export const Col = styled.div<{ $from?: number; $to?: number }>`
   }
 `
 
+/** Nur `xl` (Hero-Slogan) ist Ruder Plakat. Alle anderen Displayzeilen sind Unica77 Bold. */
 export const Display = styled.h2<{ $size?: 'xl' | 'l' }>`
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: ${({ $size = 'l' }) =>
-    $size === 'xl' ? 'clamp(3.5rem, 17vw, 18rem)' : 'clamp(3rem, 10vw, 8rem)'};
-  line-height: 0.85;
-  letter-spacing: 0.025em;
-  word-spacing: 0.1em;
   text-transform: lowercase;
-  margin-left: -0.055em;
   overflow-wrap: break-word;
+
+  ${({ $size = 'l' }) =>
+    $size === 'xl'
+      ? css`
+          font-family: var(--font-display);
+          font-weight: 400;
+          font-size: clamp(3.5rem, 17vw, 18rem);
+          line-height: 0.85;
+          letter-spacing: 0.025em;
+          word-spacing: 0.1em;
+          margin-left: -0.055em;
+        `
+      : css`
+          font-family: var(--font-text);
+          font-weight: 700;
+          font-size: clamp(2.5rem, 6vw, 5.5rem);
+          line-height: 0.95;
+          letter-spacing: -0.035em;
+          margin-left: -0.04em;
+        `}
 `
 
 export const Lead = styled.p`

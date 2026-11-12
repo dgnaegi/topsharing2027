@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { media } from '../theme'
 
 /**
- * Mobil: vollflächiges Signal-Panel unter der Leiste, Links in Ruder Plakat mit Trennlinien.
+ * Mobil: vollflächiges Signal-Panel unter der Leiste, Links gross in Unica77 Bold mit Trennlinien.
  * Ab lg: normale Linkzeile in Unica77 rechts in der Leiste.
  */
 export const NavList = styled.ul<{ $open: boolean }>`
@@ -32,11 +32,10 @@ export const NavList = styled.ul<{ $open: boolean }>`
     justify-content: space-between;
     gap: ${({ theme }) => theme.spacing.md};
     padding-block: ${({ theme }) => theme.spacing.md};
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(2.5rem, 12vw, 4.5rem);
-    line-height: 0.9;
-    letter-spacing: 0.025em;
+    font-weight: 700;
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
     text-transform: lowercase;
     transition: transform 0.1s ease-out;
   }
@@ -63,7 +62,6 @@ export const NavList = styled.ul<{ $open: boolean }>`
       align-items: center;
       min-height: 44px;
       padding: 0;
-      font-family: inherit;
       font-weight: 700;
       font-size: inherit;
       line-height: inherit;

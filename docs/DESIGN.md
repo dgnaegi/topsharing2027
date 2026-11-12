@@ -8,7 +8,7 @@ Abgeleitet vom Wahlplakat der Alternativen Liste: ein Schild, keine Seite. Die F
 
 1. **Bänder statt Container.** Die Seite besteht aus vollbreiten Farbflächen, hart aneinandergesetzt. Die Bandgrenze ist die stärkste Struktur im Layout.
 2. **Typografie geht bis an den Rand.** Displayzeilen werden randlos gesetzt und dürfen optisch angeschnitten werden. Die Schrift ist die Fläche, nicht ihr Inhalt.
-3. **Eine Schrift trägt alles.** Ruder Plakat für die Ansage, Unica77 für alles Lesbare. Keine Illustration, keine Ikonografie als Ersatz für Typografie.
+3. **Eine Schrift trägt alles.** Ruder Plakat nur für den Hero-Slogan, Unica77 für alles andere, auch Sektionstitel und Menü. Keine Illustration, keine Ikonografie als Ersatz für Typografie.
 4. **Drei Farben, kein Zwischenton.** Kein Grauverlauf, keine vierte Farbe, keine Halbtransparenz als Ersatz für eine Entscheidung.
 5. **Flache Tiefe.** Tiefe entsteht aus Kontrast, Rahmen und Überlappung. Nie aus Unschärfe.
 
@@ -44,8 +44,8 @@ Zwei Schnitte, klar getrennte Aufgaben. Kein Mischen innerhalb einer Ebene.
 
 | Familie | Rolle | Grössenbereich |
 |---|---|---|
-| **AL Ruder Plakat** | Display: H1, H2, Claims, Zahlen | ab 40px |
-| **LL Unica77** | Alles andere: Fliesstext, Labels, UI, Navigation | bis 32px |
+| **AL Ruder Plakat** | Nur der Hero-Slogan „zusammen mehr" (Display XL) | ab 40px |
+| **LL Unica77** | Alles andere: Sektionstitel (Display L, Bold), Menü, Fliesstext, Labels, UI | alle Grössen |
 | **LL Unica77 Mono** | Meta, Nummerierung, Code, Tabellenzahlen | optional |
 
 ```css
@@ -119,7 +119,7 @@ Zwischen Display und Text liegt bewusst nichts. Wer viele Zwischengrössen einf�
 | Stufe | Grösse | Schrift |
 |---|---|---|
 | Display XL | `clamp(3.5rem, 17vw, 18rem)` | Ruder Plakat |
-| Display L | `clamp(3rem, 10vw, 8rem)` | Ruder Plakat |
+| Display L | `clamp(2.5rem, 6vw, 5.5rem)` | Unica77 Bold, `letter-spacing: -0.035em`, lowercase |
 | Claim, Zitat | `clamp(1.25rem, 2.2vw, 2rem)` | Unica77 Bold / Medium |
 | Text | `1rem bis 1.125rem` | Unica77 Regular |
 | Meta | `0.75rem` | Unica77 Bold, uppercase |
