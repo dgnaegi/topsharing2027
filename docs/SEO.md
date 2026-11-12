@@ -15,21 +15,15 @@ Priorität von oben nach unten. Jedes Keyword muss natürlich im Fliesstext vork
 | Nicole Wyss | Title, H1, JSON-LD `Person`. Überall, wo sie erwähnt wird (voller Name, nicht nur „Nicole") |
 | Regierungsrat Kandidatinnen Zürich | H2, Meta-Description |
 | Regierungsratswahlen Kanton Zürich | Fliesstext, Impressum/About |
-| Zürcher Regierungsrat, Regierungsrat Kanton Zürich | H2 (visuell versteckter Zusatz), Fliesstext, FAQ |
-| Top-Sharing, Jobsharing Regierungsrat | Kandidaturtext, FAQ. „Jobsharing" ist der Begriff der Medien |
-| AL Regierungsrat Zürich, Alternative Linke | FAQ, JSON-LD, llms.txt |
+| Zürcher Regierungsrat, Regierungsrat Kanton Zürich | H2 (visuell versteckter Zusatz), Fliesstext |
+| Top-Sharing, Jobsharing Regierungsrat | Kandidaturtext. „Jobsharing" ist der Begriff der Medien |
+| AL Regierungsrat Zürich, Alternative Linke | JSON-LD, llms.txt |
 
 ## Abschnittsüberschriften
 
 Die sichtbaren H2 sind ein Wort („spenden", „über uns"). Jede H2 trägt deshalb einen
 `VisuallyHidden`-Zusatz mit Keyword, z.B. „spenden für den Wahlkampf zur Regierungsratswahl
 Zürich 2027". Der Zusatz muss für Screenreader sinnvoll lesbar bleiben, keine Keyword-Listen.
-
-## FAQ
-
-`frontend/src/data/faq.ts` ist die Quelle. Die Fragen sind wie Suchanfragen formuliert und
-werden mit vollen Namen beantwortet, damit Google und Sprachmodelle sie zitieren. Bei Änderungen
-drei Stellen nachziehen: statische Fassung und `FAQPage`-JSON-LD in `index.html`, `llms.txt`.
 
 Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsratswahl" nennen, nie isoliert. Das ist die Suchintention der Zielgruppe.
 
@@ -83,7 +77,7 @@ Namen zuordnet.
 ## Statischer Crawler-Inhalt
 
 `index.html` enthält im `#root` eine statische Fassung von H1, Kandidaturtext und Abschnitten.
-Wird Text in einer Section-Komponente, `candidates.ts`, `articles.ts` oder `faq.ts` geändert, die statische Fassung nachziehen. KI-Crawler (GPTBot, ClaudeBot, PerplexityBot) führen kein JavaScript aus und sehen nur diese Fassung.
+Wird Text in einer Section-Komponente, `candidates.ts`, oder `articles.ts` geändert, die statische Fassung nachziehen. KI-Crawler (GPTBot, ClaudeBot, PerplexityBot) führen kein JavaScript aus und sehen nur diese Fassung.
 
 ## Ausserhalb des Codes
 

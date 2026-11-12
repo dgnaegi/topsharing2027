@@ -8,7 +8,6 @@ import { SupportSection } from '../components/SupportSection'
 import { DonateSection } from '../components/DonateSection'
 import { AboutSection } from '../components/AboutSection'
 import { ArticlesSection } from '../components/ArticlesSection'
-import { FaqSection } from '../components/FaqSection'
 
 export function HomePage() {
   usePageMeta(
@@ -27,7 +26,6 @@ export function HomePage() {
       <DonateSection />
       <AboutSection />
       <ArticlesSection />
-      <FaqSection />
     </main>
   )
 }
