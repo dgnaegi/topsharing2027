@@ -2,6 +2,7 @@ import { Band, BandMeta, Grid, Col } from './Band.styled'
 import { VisuallyHidden } from './VisuallyHidden.styled'
 import { NewTabHint } from './NewTabHint'
 import { ArticlesHeading, ArticleList, Source, Arrow } from './ArticlesSection.styled'
+import { IconArrowUpRight } from './icons/IconArrowUpRight'
 import { ARTICLES } from '../data/articles'
 
 export function ArticlesSection() {
@@ -24,7 +25,9 @@ export function ArticlesSection() {
                 <Source>{a.source}</Source>
                 <a href={a.url} target="_blank" rel="noopener noreferrer">
                   {a.title}
-                  <Arrow aria-hidden="true">↗</Arrow>
+                  <Arrow aria-hidden="true">
+                    <IconArrowUpRight width="0.8em" height="0.8em" />
+                  </Arrow>
                   <NewTabHint />
                 </a>
               </li>
