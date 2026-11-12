@@ -1,7 +1,7 @@
 import { ResponsivePhoto } from './ResponsivePhoto'
 import { PHOTO_HIGHLIGHT } from '../data/photos'
 import type { Candidate } from '../data/candidates'
-import { Frame, Layer, HitFront, HitBack, Hint } from './AboutPhoto.styled'
+import { Frame, Layer, HitFront, HitBack } from './AboutPhoto.styled'
 
 const SIZES = '(min-width: 900px) 480px, 100vw'
 
@@ -19,44 +19,41 @@ interface Props {
  */
 export function AboutPhoto({ active, onSelect }: Props) {
   return (
-    <>
-      <Frame>
-        <Layer $visible>
-          <ResponsivePhoto
-            photo={PHOTO_HIGHLIGHT['nicole-wyss']}
-            alt={
-              active === 'nicole-wyss'
-                ? 'Nicole Wyss (hinten) und Melanie Berner (vorne), Nicole farbig hervorgehoben'
-                : ''
-            }
-            sizes={SIZES}
-          />
-        </Layer>
-        <Layer $visible={active === 'melanie-berner'}>
-          <ResponsivePhoto
-            photo={PHOTO_HIGHLIGHT['melanie-berner']}
-            alt={
-              active === 'melanie-berner'
-                ? 'Melanie Berner (vorne) und Nicole Wyss (hinten), Melanie farbig hervorgehoben'
-                : ''
-            }
-            sizes={SIZES}
-          />
-        </Layer>
-        <HitBack
-          type="button"
-          aria-label="Nicole Wyss auswählen"
-          aria-pressed={active === 'nicole-wyss'}
-          onClick={() => onSelect('nicole-wyss')}
+    <Frame>
+      <Layer $visible>
+        <ResponsivePhoto
+          photo={PHOTO_HIGHLIGHT['nicole-wyss']}
+          alt={
+            active === 'nicole-wyss'
+              ? 'Nicole Wyss (hinten) und Melanie Berner (vorne), Nicole farbig hervorgehoben'
+              : ''
+          }
+          sizes={SIZES}
         />
-        <HitFront
-          type="button"
-          aria-label="Melanie Berner auswählen"
-          aria-pressed={active === 'melanie-berner'}
-          onClick={() => onSelect('melanie-berner')}
+      </Layer>
+      <Layer $visible={active === 'melanie-berner'}>
+        <ResponsivePhoto
+          photo={PHOTO_HIGHLIGHT['melanie-berner']}
+          alt={
+            active === 'melanie-berner'
+              ? 'Melanie Berner (vorne) und Nicole Wyss (hinten), Melanie farbig hervorgehoben'
+              : ''
+          }
+          sizes={SIZES}
         />
-      </Frame>
-      <Hint>Klick auf eine Person oder einen Namen.</Hint>
-    </>
+      </Layer>
+      <HitBack
+        type="button"
+        aria-label="Nicole Wyss auswählen"
+        aria-pressed={active === 'nicole-wyss'}
+        onClick={() => onSelect('nicole-wyss')}
+      />
+      <HitFront
+        type="button"
+        aria-label="Melanie Berner auswählen"
+        aria-pressed={active === 'melanie-berner'}
+        onClick={() => onSelect('melanie-berner')}
+      />
+    </Frame>
   )
 }

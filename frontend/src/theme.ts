@@ -40,8 +40,6 @@ export const theme = {
     sm: '600px',
     md: '900px',
     lg: '1200px',
-    /** Ab hier Hero mit Pink und Foto rechts, darunter Vollbild-Foto. */
-    hero: '1024px',
   },
   border: '2px solid #000000',
   borderStructural: '4px solid #000000',
@@ -57,8 +55,11 @@ export const media = {
   sm: `@media (min-width: ${bp.sm})`,
   md: `@media (min-width: ${bp.md})`,
   lg: `@media (min-width: ${bp.lg})`,
-  /** Hero nebeneinander: ab 1024px oder auf Handys quer (sonst verdeckt der Text die Gesichter). */
-  hero: `@media (min-width: ${bp.hero}), (orientation: landscape) and (min-width: 560px)`,
+  /**
+   * Hero nebeneinander (Pink, Foto rechts): jeder Querformat-Screen ab Handybreite.
+   * Hochformat, auch grosse Tablets, bekommt das Vollbild-Foto.
+   */
+  hero: '@media (orientation: landscape) and (min-width: 560px)',
   maxSm: `@media (max-width: ${bp.sm})`,
   maxMd: `@media (max-width: ${bp.md})`,
 } as const

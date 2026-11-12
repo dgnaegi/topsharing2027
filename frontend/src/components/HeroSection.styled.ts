@@ -9,7 +9,8 @@ import { enter, settle } from '../motion'
 export const HeroBand = styled.section`
   --hero-gap: clamp(1.25rem, 5.5vw, 5rem);
   --hero-x: max(var(--hero-gap), calc((100% - 1600px) / 2));
-  --photo-w: min(540px, 38vw, calc((100svh - ${({ theme }) => theme.navHeight}) * 0.62));
+  /* Foto nah an 2:3 halten: Breite folgt der Hero-Höhe, gedeckelt durch Seitenbreite. */
+  --photo-w: min(640px, 40vw, calc((100svh - ${({ theme }) => theme.navHeight}) * 0.62));
   position: relative;
   overflow: hidden;
   height: calc(100vh - ${({ theme }) => theme.navHeight});
@@ -88,14 +89,14 @@ export const Slogan = styled.span`
   gap: 6px;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.5rem, min(10svh, 24cqi), 6rem);
+  font-size: clamp(2.5rem, min(10svh, 24cqi), 8rem);
   line-height: 1;
   letter-spacing: 0.025em;
   text-transform: lowercase;
 
   ${media.hero} {
     gap: 0;
-    font-size: clamp(2.5rem, min(25cqi, 22svh), 11.25rem);
+    font-size: clamp(2.5rem, min(25cqi, 22svh), 14rem);
     line-height: 0.92;
   }
 `

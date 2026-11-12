@@ -82,8 +82,3 @@ export const HitFront = styled(Hit)`
     clip-path: none;
   }
 `
-
-export const Hint = styled.p`
-  margin-top: ${({ theme }) => theme.spacing.sm};
-  font-size: 0.875rem;
-`
