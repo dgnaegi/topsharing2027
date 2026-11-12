@@ -4,6 +4,6 @@ import { useEffect } from 'react'
 export function useScrollToHash() {
   useEffect(() => {
     const id = decodeURIComponent(window.location.hash.slice(1))
-    if (id) document.getElementById(id)?.scrollIntoView()
+    if (id) document.getElementById(id)?.scrollIntoView({ behavior: 'instant' })
   }, [])
 }

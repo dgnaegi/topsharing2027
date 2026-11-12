@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { media } from '../theme'
 
-export const Button = styled.button<{ $variant?: 'primary' | 'secondary' | 'onSignal' }>`
+export const Button = styled.button<{ $variant?: 'primary' | 'secondary' | 'onSignal' | 'paper' }>`
   display: inline-block;
   padding: 16px 32px;
   min-height: 44px;
@@ -15,9 +15,13 @@ export const Button = styled.button<{ $variant?: 'primary' | 'secondary' | 'onSi
   border: ${({ theme }) => theme.border};
   border-radius: ${({ theme }) => theme.radius};
   background: ${({ theme, $variant }) =>
-    $variant === 'secondary' ? 'transparent' : theme.colors.ink};
+    $variant === 'secondary'
+      ? 'transparent'
+      : $variant === 'paper'
+        ? theme.colors.paper
+        : theme.colors.ink};
   color: ${({ theme, $variant }) =>
-    $variant === 'secondary' ? theme.colors.ink : theme.colors.paper};
+    $variant === 'secondary' || $variant === 'paper' ? theme.colors.ink : theme.colors.paper};
   transition:
     background 0.15s ease-out,
     color 0.15s ease-out,
@@ -25,14 +29,19 @@ export const Button = styled.button<{ $variant?: 'primary' | 'secondary' | 'onSi
 
   &:hover:not(:disabled) {
     background: ${({ theme, $variant }) =>
-      $variant === 'secondary'
+      $variant === 'secondary' || $variant === 'paper'
         ? theme.colors.ink
         : $variant === 'onSignal'
           ? theme.colors.paper
           : theme.colors.signal};
     color: ${({ theme, $variant }) =>
-      $variant === 'secondary' ? theme.colors.paper : theme.colors.ink};
+      $variant === 'secondary' || $variant === 'paper' ? theme.colors.paper : theme.colors.ink};
     transform: translateY(-1px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    transition-duration: 0.05s;
   }
 
   &:disabled {

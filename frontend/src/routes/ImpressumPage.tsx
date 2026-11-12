@@ -37,6 +37,16 @@ export function ImpressumPage() {
       </Section>
 
       <Section>
+        <H2>Bildnachweis</H2>
+        <P>
+          Fotos: ©{' '}
+          <a href="https://www.goranbasic.ch/" target="_blank" rel="noopener noreferrer">
+            Goran Basic
+          </a>
+        </P>
+      </Section>
+
+      <Section>
         <H2>Kontakt</H2>
         <P>
           Technischer Kontakt für diese Website: Daniel Gnägi

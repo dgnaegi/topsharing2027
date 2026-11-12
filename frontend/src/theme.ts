@@ -29,11 +29,19 @@ export const theme = {
     nav: 100,
     modal: 1000,
   },
+  motion: {
+    fast: '0.15s',
+    slow: '0.7s',
+    /** Ease-out ohne Überschwingen. */
+    ease: 'cubic-bezier(0.2, 0.7, 0.2, 1)',
+  },
   navHeight: '56px',
   breakpoints: {
     sm: '600px',
     md: '900px',
     lg: '1200px',
+    /** Ab hier Hero mit Pink und Foto rechts, darunter Vollbild-Foto. */
+    hero: '1024px',
   },
   border: '2px solid #000000',
   borderStructural: '4px solid #000000',
@@ -49,6 +57,7 @@ export const media = {
   sm: `@media (min-width: ${bp.sm})`,
   md: `@media (min-width: ${bp.md})`,
   lg: `@media (min-width: ${bp.lg})`,
+  hero: `@media (min-width: ${bp.hero})`,
   maxSm: `@media (max-width: ${bp.sm})`,
   maxMd: `@media (max-width: ${bp.md})`,
 } as const

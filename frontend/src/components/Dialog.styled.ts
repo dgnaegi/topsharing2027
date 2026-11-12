@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { enter, fadeIn } from '../motion'
 
 export const Overlay = styled.div`
   position: fixed;
@@ -9,6 +10,8 @@ export const Overlay = styled.div`
   justify-content: center;
   padding: ${({ theme }) => theme.spacing.md};
   z-index: ${({ theme }) => theme.zIndex.modal};
+  ${enter(0, fadeIn)}
+  animation-duration: 0.2s;
 `
 
 export const DialogBox = styled.div`
@@ -21,6 +24,8 @@ export const DialogBox = styled.div`
   overflow-y: auto;
   padding: ${({ theme }) => theme.spacing.xl};
   position: relative;
+  ${enter(60)}
+  animation-duration: 0.4s;
 `
 
 export const CloseButton = styled.button`
@@ -35,6 +40,9 @@ export const CloseButton = styled.button`
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1;
+  transition:
+    background ${({ theme }) => theme.motion.fast} ease-out,
+    color ${({ theme }) => theme.motion.fast} ease-out;
 
   &:hover {
     background: ${({ theme }) => theme.colors.ink};

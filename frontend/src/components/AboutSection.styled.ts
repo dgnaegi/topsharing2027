@@ -1,29 +1,28 @@
 import styled from 'styled-components'
 import { media } from '../theme'
 
-/** Mobil: zwei Namen nebeneinander über dem Text. Ab md: untereinander links vom Text. */
-export const TabList = styled.div`
+export const NameList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: ${({ theme }) => theme.spacing.sm};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
 
   ${media.md} {
-    grid-template-columns: 1fr;
     gap: ${({ theme }) => theme.spacing.md};
   }
 `
 
-export const Tab = styled.button`
+export const NameButton = styled.button`
   display: flex;
   align-items: flex-end;
   min-height: 44px;
   padding: ${({ theme }) => theme.spacing.md};
   border: ${({ theme }) => theme.borderStructural};
   border-radius: ${({ theme }) => theme.radius};
-  background: ${({ theme }) => theme.colors.paper};
+  background: ${({ theme }) => theme.colors.tint};
   color: ${({ theme }) => theme.colors.ink};
   font-weight: 700;
-  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  font-size: clamp(1.25rem, 2.5vw, 2.25rem);
   line-height: 1;
   letter-spacing: -0.03em;
   text-align: left;
@@ -33,11 +32,10 @@ export const Tab = styled.button`
     transform 0.1s ease-out;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.tint};
     transform: translateY(-1px);
   }
 
-  &[aria-selected='true'] {
+  &[aria-pressed='true'] {
     background: ${({ theme }) => theme.colors.signal};
   }
 

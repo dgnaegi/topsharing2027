@@ -1,8 +1,8 @@
-import nodemailer from 'nodemailer'
+import nodemailer, { type Mail } from 'nodemailer'
 
-let _transporter: nodemailer.Transporter | null = null
+let _transporter: Mail | null = null
 
-function getTransporter(): nodemailer.Transporter {
+function getTransporter(): Mail {
   if (!_transporter) {
     _transporter = nodemailer.createTransport({
       host: 'smtp-relay.brevo.com',

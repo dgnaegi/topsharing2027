@@ -1,28 +1,41 @@
-import { BandMeta } from './Band.styled'
-import { Title, Slogan, Claim, Actions, HeroBand, InstagramLink } from './HeroSection.styled'
+import { ResponsivePhoto } from './ResponsivePhoto'
+import { VisuallyHidden } from './VisuallyHidden.styled'
+import { PHOTO_BOTH } from '../data/photos'
+import { HeroBand, Photo, Content, Title, Slogan, Bar, Claim } from './HeroSection.styled'
+import { Actions, InstagramLink } from './HeroActions.styled'
 import { IconInstagram } from './icons/IconInstagram'
 
 export function HeroSection() {
   return (
-    <HeroBand $tone="signal">
-      <BandMeta>
-        <span>Regierungsratswahlen 2027</span>
-        <span>Kanton Zürich</span>
-      </BandMeta>
-      <Title>
-        <Slogan>zusammen mehr</Slogan>
-        <Claim>Nicole Wyss und Melanie Berner gemeinsam in den Regierungsrat</Claim>
-      </Title>
-      <Actions>
-        <InstagramLink
-          href="https://www.instagram.com/topsharing2027/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="zusammen mehr: Berner & Wyss 2027 auf Instagram"
-        >
-          <IconInstagram width="32" height="32" />
-        </InstagramLink>
-      </Actions>
+    <HeroBand>
+      <Photo>
+        <ResponsivePhoto
+          photo={PHOTO_BOTH}
+          alt="Melanie Berner und Nicole Wyss, Kandidatinnen für den Regierungsrat Zürich 2027"
+          sizes="(min-width: 1024px) min(540px, 38vw), 100vw"
+          eager
+        />
+      </Photo>
+      <Content>
+        <Title>
+          <Slogan>
+            <Bar>zusammen</Bar> <Bar>mehr</Bar>
+          </Slogan>
+          <VisuallyHidden>: </VisuallyHidden>
+          <Claim>Melanie Berner und Nicole Wyss in den Regierungsrat</Claim>
+          <VisuallyHidden>, Regierungsratswahlen 2027, Kanton Zürich</VisuallyHidden>
+        </Title>
+        <Actions>
+          <InstagramLink
+            href="https://www.instagram.com/topsharing2027/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="zusammen mehr auf Instagram"
+          >
+            <IconInstagram width="32" height="32" />
+          </InstagramLink>
+        </Actions>
+      </Content>
     </HeroBand>
   )
 }

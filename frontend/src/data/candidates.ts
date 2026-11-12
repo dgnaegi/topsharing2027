@@ -1,4 +1,5 @@
 export interface Candidate {
+  slug: 'nicole-wyss' | 'melanie-berner'
   name: string
   bio: string[]
   kantonsratUrl: string
@@ -6,6 +7,7 @@ export interface Candidate {
 
 export const CANDIDATES: Candidate[] = [
   {
+    slug: 'nicole-wyss',
     name: 'Nicole Wyss',
     bio: [
       'In Adliswil geboren und aufgewachsen, hat Nicole Wyss (50) nach dem Studium der Kunstgeschichte, Kommunikation & Journalistik und deutscher Literatur in Fribourg und Paris wieder nach Zürich zurückgefunden, wo sie mit ihrer Familie (Kinder: 11 & 14) seit über 20 Jahren im Kreis 3 zu Hause ist.',
@@ -16,6 +18,7 @@ export const CANDIDATES: Candidate[] = [
       'https://www.kantonsrat.zh.ch/mitglieder/mitglied/?id=e406787c01ae497bbe52672d4f6227fb',
   },
   {
+    slug: 'melanie-berner',
     name: 'Melanie Berner',
     bio: [
       'Melanie Berner (45) ist seit 24 Jahren in der Stadt Zürich zuhause. Gekommen, um Politikwissenschaft, Ethnologie und Wirtschafts- und Sozialgeschichte zu studieren, geblieben, weil sie hier ein Zuhause gefunden hat. Sie lebt mit ihren Kindern (7 & 10) im Kreis 9.',

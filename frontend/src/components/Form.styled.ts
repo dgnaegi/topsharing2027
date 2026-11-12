@@ -57,6 +57,7 @@ const fieldStyles = `
   font-family: inherit;
   background: #ffffff;
   min-height: 44px;
+  transition: border-color 0.15s ease-out, background 0.15s ease-out;
 `
 
 export const Input = styled.input`

@@ -49,6 +49,8 @@ export const MenuToggle = styled.button`
   color: ${({ theme }) => theme.colors.ink};
   cursor: pointer;
 
+  transition: color ${({ theme }) => theme.motion.fast} ease-out;
+
   &:hover {
     color: ${({ theme }) => theme.colors.signalDark};
   }

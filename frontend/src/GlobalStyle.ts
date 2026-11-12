@@ -33,6 +33,9 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration-color: ${({ theme }) => theme.colors.signal};
     text-decoration-thickness: 3px;
     text-underline-offset: 4px;
+    transition:
+      color ${({ theme }) => theme.motion.fast} ease-out,
+      text-decoration-color ${({ theme }) => theme.motion.fast} ease-out;
 
     &:hover {
       text-decoration-color: ${({ theme }) => theme.colors.signalDark};
@@ -46,6 +49,25 @@ export const GlobalStyle = createGlobalStyle`
   :focus-visible {
     outline: 3px solid ${({ theme }) => theme.colors.ink};
     outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Scroll-Reveal, gesteuert von hooks/useReveal.ts */
+    [data-reveal] {
+      transition:
+        opacity ${({ theme }) => `${theme.motion.slow} ${theme.motion.ease}`},
+        transform ${({ theme }) => `${theme.motion.slow} ${theme.motion.ease}`};
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    [data-reveal='hidden'] {
+      opacity: 0;
+      transform: translateY(24px);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

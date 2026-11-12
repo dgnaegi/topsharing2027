@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../theme'
+import { enter, fadeIn } from '../motion'
 
 /**
  * Mobil: vollflächiges Signal-Panel unter der Leiste, Links gross in Unica77 Bold mit Trennlinien.
@@ -17,10 +18,16 @@ export const NavList = styled.ul<{ $open: boolean }>`
   list-style: none;
   padding: ${({ theme }) => theme.spacing.lg} clamp(1rem, 4vw, 4rem);
   background: ${({ theme }) => theme.colors.signal};
+  ${enter(0, fadeIn)}
+  animation-duration: 0.25s;
 
   li {
     border-bottom: ${({ theme }) => theme.border};
+    ${enter(60)}
+    animation-duration: 0.45s;
   }
+
+  ${[2, 3, 4, 5, 6, 7].map((n) => `li:nth-child(${n}) { animation-delay: ${n * 40 + 20}ms; }`)}
 
   li:first-child {
     border-top: ${({ theme }) => theme.border};
@@ -45,6 +52,7 @@ export const NavList = styled.ul<{ $open: boolean }>`
   }
 
   ${media.lg} {
+    animation: none;
     display: flex;
     flex-direction: row;
     gap: ${({ theme }) => theme.spacing.lg};
@@ -56,6 +64,7 @@ export const NavList = styled.ul<{ $open: boolean }>`
     li,
     li:first-child {
       border: none;
+      animation: none;
     }
 
     a {
@@ -67,13 +76,19 @@ export const NavList = styled.ul<{ $open: boolean }>`
       line-height: inherit;
       letter-spacing: inherit;
       text-transform: uppercase;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 6px;
+      transition:
+        text-decoration-color ${({ theme }) => theme.motion.fast} ease-out,
+        text-underline-offset ${({ theme }) => theme.motion.fast} ease-out;
     }
 
     a:hover {
       transform: none;
-      text-decoration: underline;
       text-decoration-color: ${({ theme }) => theme.colors.signal};
-      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
     }
   }
 `
