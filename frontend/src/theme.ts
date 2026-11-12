@@ -31,6 +31,7 @@ export const theme = {
   },
   motion: {
     fast: '0.15s',
+    mid: '0.4s',
     slow: '0.7s',
     /** Ease-out ohne Überschwingen. */
     ease: 'cubic-bezier(0.2, 0.7, 0.2, 1)',

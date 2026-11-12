@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { Form, Row, Field, Label, Input, ErrorText, HelpText, StatusText } from './Form.styled'
+import { Form, Row, Field, Label, ErrorText, HelpText, StatusText } from './Form.styled'
+import { Input } from './FormControls.styled'
 import { Button } from './Button.styled'
 import { SupportChoice } from './SupportChoice'
+import { SupportSuccess } from './SupportSuccess'
 import { PublicFields } from './PublicFields'
 import { submitSupport } from '../api/endpoints'
 import { ApiError } from '../api/client'
@@ -57,16 +59,7 @@ export function SupportForm() {
     }
   }
 
-  if (status.type === 'success') {
-    return (
-      <Form as="div" role="status">
-        <StatusText>
-          Danke, du bist dabei. Wir melden uns bei dir.
-          {status.public && ' Bevor dein Name erscheint, schauen wir kurz drüber.'}
-        </StatusText>
-      </Form>
-    )
-  }
+  if (status.type === 'success') return <SupportSuccess isPublic={status.public} />
 
   return (
     <FormProvider {...methods}>
@@ -124,7 +117,7 @@ export function SupportForm() {
         <SupportChoice />
         {isPublic && <PublicFields />}
 
-        <Button type="submit" disabled={isSubmitting}>
+        <Button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
           {isSubmitting ? 'Wird gesendet…' : 'Unterstützung senden'}
         </Button>
         {status.type === 'error' && <StatusText role="alert">{status.message}</StatusText>}

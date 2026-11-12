@@ -1,15 +1,6 @@
 import { useFormContext } from 'react-hook-form'
-import {
-  Fieldset,
-  Legend,
-  Field,
-  Label,
-  Input,
-  TextArea,
-  FileInput,
-  HelpText,
-  ErrorText,
-} from './Form.styled'
+import { RevealFieldset, Legend, Field, Label, HelpText, ErrorText } from './Form.styled'
+import { Input, TextArea, FileInput } from './FormControls.styled'
 import { MAX_IMAGE_BYTES, ALLOWED_IMAGE_TYPES } from '../utils/fileToDataUrl'
 import type { SupportFormValues } from './SupportForm'
 
@@ -20,7 +11,7 @@ export function PublicFields() {
   } = useFormContext<SupportFormValues>()
 
   return (
-    <Fieldset>
+    <RevealFieldset>
       <Legend>Für die Website</Legend>
       <Field>
         <Label htmlFor="role">Funktion (optional)</Label>
@@ -78,6 +69,6 @@ export function PublicFields() {
         <HelpText id="image-help">JPG, PNG oder WEBP, maximal 10 MB.</HelpText>
         {errors.image && <ErrorText id="image-error">{errors.image.message}</ErrorText>}
       </Field>
-    </Fieldset>
+    </RevealFieldset>
   )
 }

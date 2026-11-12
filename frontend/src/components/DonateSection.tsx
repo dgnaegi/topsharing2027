@@ -1,5 +1,6 @@
 import { Band, BandMeta, Grid, Col, Display, Lead } from './Band.styled'
 import { Details, QrBox } from './DonateSection.styled'
+import { CopyButton } from './CopyButton'
 
 export function DonateSection() {
   return (
@@ -39,6 +40,7 @@ export function DonateSection() {
                 Alternative Linke
                 <br />
                 IBAN: CH07 0900 0000 1668 6688 9
+                <CopyButton value="CH0709000000166866889" label="IBAN kopieren" />
                 <br />
                 Kontonummer: 16-686688-9
                 <br />

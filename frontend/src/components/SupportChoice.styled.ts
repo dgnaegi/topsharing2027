@@ -10,9 +10,18 @@ export const Card = styled.label`
   background: ${({ theme }) => theme.colors.paper};
   border: ${({ theme }) => theme.border};
   cursor: pointer;
-  transition: background 0.15s ease-out;
+  transition:
+    background ${({ theme }) => theme.motion.fast} ease-out,
+    transform 0.1s ease-out;
 
-  &:hover,
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: none;
+  }
+
   &:has(input:checked) {
     background: ${({ theme }) => theme.colors.signal};
   }
@@ -34,11 +43,25 @@ export const Card = styled.label`
     cursor: pointer;
   }
 
-  input:checked::after {
+  /* Markierung: Hover zeigt sie klein in Pink an, Haken setzt sie voll in Schwarz. */
+  input::after {
     content: '';
     width: 14px;
     height: 14px;
+    background: ${({ theme }) => theme.colors.signal};
+    transform: scale(0);
+    transition:
+      transform ${({ theme }) => theme.motion.fast} ${({ theme }) => theme.motion.ease},
+      background ${({ theme }) => theme.motion.fast} ease-out;
+  }
+
+  &:hover input:not(:checked)::after {
+    transform: scale(0.5);
+  }
+
+  input:checked::after {
     background: ${({ theme }) => theme.colors.ink};
+    transform: none;
   }
 `
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../theme'
+import { grow } from '../motion'
 
 export const NavBar = styled.header`
   position: sticky;
@@ -19,6 +20,25 @@ export const NavBar = styled.header`
   a {
     text-decoration: none;
   }
+
+  /* Lesefortschritt: läuft pink über die schwarze Bandkante. Nur wo Scroll-Timelines gehen. */
+  @supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -4px;
+        height: 4px;
+        background: ${({ theme }) => theme.colors.signal};
+        transform-origin: 0 50%;
+        animation: ${grow} linear both;
+        animation-timeline: scroll(root);
+        pointer-events: none;
+      }
+    }
+  }
 `
 
 export const Brand = styled.a`
@@ -27,10 +47,17 @@ export const Brand = styled.a`
   min-height: 44px;
   white-space: nowrap;
 
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  transition:
+    text-decoration-color ${({ theme }) => theme.motion.fast} ease-out,
+    text-underline-offset ${({ theme }) => theme.motion.fast} ease-out;
+
   &:hover {
-    text-decoration: underline;
     text-decoration-color: ${({ theme }) => theme.colors.signal};
-    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
   }
 `
 

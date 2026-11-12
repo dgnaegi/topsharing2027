@@ -51,6 +51,13 @@ export const NavList = styled.ul<{ $open: boolean }>`
     transform: translateX(4px);
   }
 
+  a[aria-current='true'] {
+    text-decoration: underline;
+    text-decoration-color: ${({ theme }) => theme.colors.ink};
+    text-decoration-thickness: 4px;
+    text-underline-offset: 6px;
+  }
+
   ${media.lg} {
     animation: none;
     display: flex;
@@ -85,15 +92,19 @@ export const NavList = styled.ul<{ $open: boolean }>`
         text-underline-offset ${({ theme }) => theme.motion.fast} ease-out;
     }
 
-    a:hover {
+    a:hover,
+    a[aria-current='true'] {
       transform: none;
       text-decoration-color: ${({ theme }) => theme.colors.signal};
+      text-decoration-thickness: 3px;
       text-underline-offset: 4px;
     }
   }
 `
 
+/** inline-block, damit die Unterstreichung des aktiven Links nicht unter die Nummer läuft. */
 export const ItemNumber = styled.span`
+  display: inline-block;
   font-family: var(--font-text);
   font-weight: 700;
   font-size: 0.75rem;

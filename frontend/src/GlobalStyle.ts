@@ -46,6 +46,19 @@ export const GlobalStyle = createGlobalStyle`
     font-family: inherit;
   }
 
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  p, li, dd {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: ${({ theme }) => theme.colors.signal};
+    color: ${({ theme }) => theme.colors.ink};
+  }
+
   :focus-visible {
     outline: 3px solid ${({ theme }) => theme.colors.ink};
     outline-offset: 3px;

@@ -14,7 +14,7 @@ export const Layer = styled.div<{ $visible: boolean }>`
   position: absolute;
   inset: 0;
   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.6s ${({ theme }) => theme.motion.ease};
   will-change: opacity;
 
   img {

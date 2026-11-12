@@ -4,9 +4,13 @@ import { bp } from '../theme'
 import { NavBar, Brand, MenuToggle, Nav } from './SiteNav.styled'
 import { NavList, ItemNumber } from './SiteNavList.styled'
 import { IconMenu } from './icons/IconMenu'
+import { useActiveSection } from '../hooks/useActiveSection'
+
+const SECTION_IDS = NAV_ITEMS.map((item) => item.id)
 
 export function SiteNav() {
   const [open, setOpen] = useState(false)
+  const active = useActiveSection(SECTION_IDS)
 
   useEffect(() => {
     if (!open) return
@@ -47,7 +51,11 @@ export function SiteNav() {
         <NavList id="site-menu" $open={open}>
           {NAV_ITEMS.map((item, i) => (
             <li key={item.id}>
-              <a href={`/#${item.id}`} onClick={() => setOpen(false)}>
+              <a
+                href={`/#${item.id}`}
+                aria-current={item.id === active ? 'true' : undefined}
+                onClick={() => setOpen(false)}
+              >
                 {item.label}
                 <ItemNumber aria-hidden="true">{String(i + 1).padStart(2, '0')}</ItemNumber>
               </a>

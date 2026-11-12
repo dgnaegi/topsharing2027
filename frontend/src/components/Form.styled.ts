@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../theme'
+import { enter, nudgeIn } from '../motion'
 
 export const Form = styled.form`
   position: relative;
@@ -49,48 +50,13 @@ export const Label = styled.label`
   letter-spacing: 0.08em;
 `
 
-const fieldStyles = `
-  border: 2px solid #000000;
-  border-radius: 0;
-  padding: 10px 12px;
-  font-size: 1rem;
-  font-family: inherit;
-  background: #ffffff;
-  min-height: 44px;
-  transition: border-color 0.15s ease-out, background 0.15s ease-out;
-`
-
-export const Input = styled.input`
-  ${fieldStyles}
-
-  &:focus-visible {
-    border-color: ${({ theme }) => theme.colors.signal};
-  }
-`
-
-export const TextArea = styled.textarea`
-  ${fieldStyles}
-  resize: vertical;
-  min-height: 120px;
-
-  &:focus-visible {
-    border-color: ${({ theme }) => theme.colors.signal};
-  }
-`
-
-export const FileInput = styled.input`
-  border: ${({ theme }) => theme.border};
-  padding: ${({ theme }) => theme.spacing.sm};
-  background: ${({ theme }) => theme.colors.paper};
-  font-family: inherit;
-  font-size: 0.9rem;
-`
-
 export const HelpText = styled.p`
   font-size: 0.875rem;
 `
 
 export const ErrorText = styled.p`
+  ${enter(0, nudgeIn)}
+  animation-duration: 0.25s;
   font-size: 0.875rem;
   font-weight: 700;
   border-left: 4px solid ${({ theme }) => theme.colors.signal};
@@ -98,6 +64,8 @@ export const ErrorText = styled.p`
 `
 
 export const StatusText = styled.p`
+  ${enter(0, nudgeIn)}
+  animation-duration: 0.25s;
   font-weight: 700;
   border-left: 4px solid ${({ theme }) => theme.colors.signal};
   padding-left: ${({ theme }) => theme.spacing.sm};
@@ -117,4 +85,10 @@ export const Legend = styled.legend`
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: ${({ theme }) => theme.spacing.sm};
+`
+
+/** Zusatzfelder, die erst nach einer Auswahl erscheinen, gleiten herein. */
+export const RevealFieldset = styled(Fieldset)`
+  ${enter(0)}
+  animation-duration: ${({ theme }) => theme.motion.mid};
 `

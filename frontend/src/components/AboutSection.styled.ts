@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../theme'
+import { enter, fadeIn } from '../motion'
 
 export const NameList = styled.div`
   display: grid;
@@ -30,11 +31,15 @@ export const NameButton = styled.button`
   text-wrap: balance;
   cursor: pointer;
   transition:
-    background 0.15s ease-out,
+    background ${({ theme }) => theme.motion.fast} ease-out,
     transform 0.1s ease-out;
 
   &:hover {
     transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: none;
   }
 
   &[aria-pressed='true'] {
@@ -46,21 +51,32 @@ export const NameButton = styled.button`
   }
 `
 
-export const BioText = styled.p`
-  max-width: 68ch;
+/** Gemeinsame Spaltenbreite für Lead und Fliesstext, gemessen an der Fliesstextgrösse. */
+export const Bio = styled.div`
+  max-width: 60ch;
+`
 
+/** Wird per key beim Wechsel neu gesetzt und blendet synchron mit dem Foto über. */
+export const BioSwap = styled.div`
+  ${enter(0, fadeIn)}
+  animation-duration: 0.6s;
+`
+
+export const BioText = styled.p`
   & + & {
     margin-top: ${({ theme }) => theme.spacing.md};
   }
 
   &:first-child {
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
     font-weight: 500;
-    font-size: clamp(1.125rem, 2vw, 1.5rem);
-    line-height: 1.3;
+    font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+    line-height: 1.35;
+    text-wrap: pretty;
   }
 `
 
 export const ProfileLink = styled.p`
-  margin-top: ${({ theme }) => theme.spacing.lg};
+  margin-top: ${({ theme }) => theme.spacing.xl};
   font-weight: 700;
 `

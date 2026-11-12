@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Band, BandMeta, Grid, Col, Display } from './Band.styled'
-import { NameList, NameButton, BioText, ProfileLink } from './AboutSection.styled'
+import { NameList, NameButton, Bio, BioSwap, BioText, ProfileLink } from './AboutSection.styled'
 import { AboutPhoto } from './AboutPhoto'
 import { CANDIDATES, type Candidate } from '../data/candidates'
 
@@ -34,16 +34,18 @@ export function AboutSection() {
               </NameButton>
             ))}
           </NameList>
-          <div id="kandidatin-bio" aria-live="polite">
-            {current.bio.map((paragraph) => (
-              <BioText key={paragraph}>{paragraph}</BioText>
-            ))}
-            <ProfileLink>
-              <a href={current.kantonsratUrl} target="_blank" rel="noopener noreferrer">
-                {current.name} im Kantonsrat
-              </a>
-            </ProfileLink>
-          </div>
+          <Bio id="kandidatin-bio" aria-live="polite">
+            <BioSwap key={current.slug}>
+              {current.bio.map((paragraph) => (
+                <BioText key={paragraph}>{paragraph}</BioText>
+              ))}
+              <ProfileLink>
+                <a href={current.kantonsratUrl} target="_blank" rel="noopener noreferrer">
+                  {current.name} im Kantonsrat
+                </a>
+              </ProfileLink>
+            </BioSwap>
+          </Bio>
         </Col>
       </Grid>
     </Band>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   FooterBar,
@@ -15,6 +15,12 @@ const SHARE_TEXT =
 
 export function AppFooter() {
   const [status, setStatus] = useState('')
+
+  useEffect(() => {
+    if (!status) return
+    const t = window.setTimeout(() => setStatus(''), 3000)
+    return () => clearTimeout(t)
+  }, [status])
 
   async function handleShare() {
     const url = window.location.href
@@ -47,7 +53,7 @@ export function AppFooter() {
         </a>
         <FooterShare>
           <FooterIconButton type="button" onClick={handleShare} aria-label="Seite teilen">
-            <IconShare width="16" height="16" />
+            <IconShare width="20" height="20" />
           </FooterIconButton>
           <FooterIconButton
             as="a"
@@ -56,7 +62,7 @@ export function AppFooter() {
             rel="noopener noreferrer"
             aria-label="Auf WhatsApp teilen"
           >
-            <IconWhatsApp width="16" height="16" />
+            <IconWhatsApp width="20" height="20" />
           </FooterIconButton>
           <FooterStatus role="status" aria-live="polite">
             {status}
