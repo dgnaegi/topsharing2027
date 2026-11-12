@@ -42,7 +42,7 @@ export const ARTICLES: Article[] = [
   },
   {
     source: 'Tages-Anzeiger',
-    title: 'AL unterstützt SP bei den Regierungsratswahlen 2027',
+    title: 'AL unterstützt SP und Grüne bei den Regierungsratswahlen',
     url: 'https://www.tagesanzeiger.ch/zuerich-al-unterstuetzt-sp-bei-regierungsratswahlen-2027-182822252272',
   },
 ]
