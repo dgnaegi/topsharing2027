@@ -7,6 +7,7 @@ import {
   FooterIconButton,
   FooterStatus,
 } from './AppFooter.styled'
+import { NewTabHint } from './NewTabHint'
 import { IconShare } from './icons/IconShare'
 import { IconWhatsApp } from './icons/IconWhatsApp'
 
@@ -45,11 +46,12 @@ export function AppFooter() {
   return (
     <FooterBar>
       <span>Berner &amp; Wyss 2027. Regierungsratswahl Zürich.</span>
-      <FooterLinks>
+      <FooterLinks aria-label="Weitere Links">
         <Link to="/datenschutz">Datenschutz</Link>
         <Link to="/impressum">Impressum</Link>
         <a href="https://al-zh.ch" target="_blank" rel="noopener noreferrer">
           AL Zürich
+          <NewTabHint />
         </a>
         <FooterShare>
           <FooterIconButton type="button" onClick={handleShare} aria-label="Seite teilen">
@@ -60,7 +62,7 @@ export function AppFooter() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Auf WhatsApp teilen"
+            aria-label="Auf WhatsApp teilen (öffnet in neuem Tab)"
           >
             <IconWhatsApp width="20" height="20" />
           </FooterIconButton>

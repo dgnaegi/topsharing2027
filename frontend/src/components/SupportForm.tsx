@@ -69,6 +69,7 @@ export function SupportForm() {
             <Label htmlFor="firstName">Vorname</Label>
             <Input
               id="firstName"
+              aria-required="true"
               autoComplete="given-name"
               aria-invalid={errors.firstName ? 'true' : undefined}
               aria-describedby={errors.firstName ? 'firstName-error' : undefined}
@@ -82,6 +83,7 @@ export function SupportForm() {
             <Label htmlFor="lastName">Nachname</Label>
             <Input
               id="lastName"
+              aria-required="true"
               autoComplete="family-name"
               aria-invalid={errors.lastName ? 'true' : undefined}
               aria-describedby={errors.lastName ? 'lastName-error' : undefined}
@@ -96,6 +98,7 @@ export function SupportForm() {
           <Label htmlFor="email">E-Mail</Label>
           <Input
             id="email"
+            aria-required="true"
             type="email"
             autoComplete="email"
             aria-invalid={errors.email ? 'true' : undefined}

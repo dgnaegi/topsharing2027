@@ -1,4 +1,5 @@
 import { Band, BandMeta, Grid, Col, Lead } from './Band.styled'
+import { VisuallyHidden } from './VisuallyHidden.styled'
 import { ProgramHeading, ProgramList, GoalNumber, Aside } from './ProgramSection.styled'
 
 const GOALS = [
@@ -12,13 +13,16 @@ const GOALS = [
 
 export function ProgramSection() {
   return (
-    <Band $tone="ink" id="programm">
+    <Band $tone="ink" id="programm" aria-labelledby="programm-titel">
       <BandMeta>
         <span>02 / Programm</span>
       </BandMeta>
       <Grid>
         <Col>
-          <ProgramHeading>politisches programm</ProgramHeading>
+          <ProgramHeading id="programm-titel">
+            politisches programm
+            <VisuallyHidden> für den Regierungsrat des Kantons Zürich</VisuallyHidden>
+          </ProgramHeading>
         </Col>
         <Col $to={6}>
           <Lead>
@@ -27,7 +31,7 @@ export function ProgramSection() {
           </Lead>
         </Col>
         <Col $from={6}>
-          <ProgramList>
+          <ProgramList role="list">
             {GOALS.map((goal, i) => (
               <li key={goal}>
                 <GoalNumber aria-hidden="true">{String(i + 1).padStart(2, '0')}</GoalNumber>

@@ -34,6 +34,7 @@ export function PublicFields() {
         <Label htmlFor="quote">Dein Zitat</Label>
         <TextArea
           id="quote"
+          aria-required="true"
           placeholder="Warum unterstützt du Melanie Berner und Nicole Wyss?"
           aria-invalid={errors.quote ? 'true' : undefined}
           aria-describedby={errors.quote ? 'quote-error' : undefined}

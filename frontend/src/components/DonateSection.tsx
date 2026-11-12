@@ -1,16 +1,20 @@
 import { Band, BandMeta, Grid, Col, Display, Lead } from './Band.styled'
+import { VisuallyHidden } from './VisuallyHidden.styled'
 import { Details, QrBox } from './DonateSection.styled'
 import { CopyButton } from './CopyButton'
 
 export function DonateSection() {
   return (
-    <Band $tone="signal" id="spenden">
+    <Band $tone="signal" id="spenden" aria-labelledby="spenden-titel">
       <BandMeta>
         <span>04 / Spenden</span>
       </BandMeta>
       <Grid>
         <Col>
-          <Display>spenden</Display>
+          <Display id="spenden-titel">
+            spenden
+            <VisuallyHidden> für den Wahlkampf zur Regierungsratswahl Zürich 2027</VisuallyHidden>
+          </Display>
         </Col>
         <Col $to={6}>
           <Lead>

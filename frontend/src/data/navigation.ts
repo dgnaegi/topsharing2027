@@ -10,4 +10,5 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'spenden', label: 'Spenden' },
   { id: 'ueber-uns', label: 'Über uns' },
   { id: 'pressespiegel', label: 'Pressespiegel' },
+  { id: 'fragen', label: 'Fragen' },
 ]

@@ -44,12 +44,16 @@ export function AboutPhoto({ active, onSelect }: Props) {
       </Layer>
       <HitBack
         type="button"
+        tabIndex={-1}
+        aria-hidden="true"
         aria-label="Nicole Wyss auswählen"
         aria-pressed={active === 'nicole-wyss'}
         onClick={() => onSelect('nicole-wyss')}
       />
       <HitFront
         type="button"
+        tabIndex={-1}
+        aria-hidden="true"
         aria-label="Melanie Berner auswählen"
         aria-pressed={active === 'melanie-berner'}
         onClick={() => onSelect('melanie-berner')}

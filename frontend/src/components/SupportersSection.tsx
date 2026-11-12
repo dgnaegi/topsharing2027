@@ -39,7 +39,7 @@ export function SupportersSection() {
           </Lead>
         </Col>
         <Col $from={6}>
-          <SupportersList>
+          <SupportersList role="list">
             {supporters.map((supporter) => (
               <SupporterItem key={supporter.id}>
                 {supporter.quote ? (

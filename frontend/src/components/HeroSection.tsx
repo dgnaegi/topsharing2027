@@ -7,7 +7,7 @@ import { IconInstagram } from './icons/IconInstagram'
 
 export function HeroSection() {
   return (
-    <HeroBand>
+    <HeroBand aria-labelledby="titel">
       <Photo>
         <ResponsivePhoto
           photo={PHOTO_BOTH}
@@ -17,7 +17,7 @@ export function HeroSection() {
         />
       </Photo>
       <Content>
-        <Title>
+        <Title id="titel">
           <Slogan>
             <Bar>zusammen</Bar> <Bar>mehr</Bar>
           </Slogan>
@@ -30,7 +30,7 @@ export function HeroSection() {
             href="https://www.instagram.com/topsharing2027/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="zusammen mehr auf Instagram"
+            aria-label="zusammen mehr auf Instagram (öffnet in neuem Tab)"
           >
             <IconInstagram width="32" height="32" />
           </InstagramLink>
