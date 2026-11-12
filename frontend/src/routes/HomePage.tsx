@@ -11,7 +11,7 @@ import { ArticlesSection } from '../components/ArticlesSection'
 
 export function HomePage() {
   usePageMeta(
-    'zusammen mehr: Melanie Berner & Nicole Wyss, Regierungsrat Zürich 2027',
+    'Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027',
     'zusammen mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur.',
   )
   useScrollToHash()

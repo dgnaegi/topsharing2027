@@ -31,7 +31,7 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 
 | Seite | Title | Description (max. 155 Zeichen) |
 |---|---|---|
-| Startseite | `zusammen mehr: Melanie Berner & Nicole Wyss, Regierungsrat Zürich 2027` | `zusammen mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur.` |
+| Startseite | `Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027` | `zusammen mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur.` |
 | Datenschutz | `Datenschutzerklärung: Berner & Wyss 2027` | `Datenschutzerklärung zur Kandidatur von Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027.` |
 | Impressum | `Impressum: Berner & Wyss 2027` | `Impressum der Kandidatur von Melanie Berner und Nicole Wyss für die Regierungsratswahl Zürich 2027.` |
 
@@ -39,13 +39,13 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 
 ```html
 <html lang="de-CH">
-<title>zusammen mehr: Melanie Berner & Nicole Wyss, Regierungsrat Zürich 2027</title>
+<title>Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027</title>
 <meta name="description" content="zusammen mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur." />
 <meta name="keywords" content="Regierungsratswahl Zürich 2027, Kandidierende Regierungsrat, Melanie Berner, Nicole Wyss, Regierungsrat Kandidatinnen Zürich" />
 <link rel="canonical" href="https://zusammen-mehr.ch/" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="zusammen mehr: Melanie Berner & Nicole Wyss, Regierungsrat Zürich 2027" />
+<meta property="og:title" content="Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027" />
 <meta property="og:description" content="Kandidierende für den Regierungsrat des Kantons Zürich, Wahlen 2027." />
 <meta property="og:image" content="https://zusammen-mehr.ch/og-image.jpg" />
 <meta property="og:locale" content="de_CH" />

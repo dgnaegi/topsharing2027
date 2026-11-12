@@ -34,11 +34,14 @@ Sitemap: ${siteUrl}/sitemap.xml
 writeFileSync(
   path.join(publicDir, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>${siteUrl}/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>${siteUrl}/melanie-berner-nicole-wyss-4x3.jpg</image:loc></image:image>
+    <image:image><image:loc>${siteUrl}/melanie-berner-nicole-wyss-1x1.jpg</image:loc></image:image>
+    <image:image><image:loc>${siteUrl}/melanie-berner-nicole-wyss-16x9.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>${siteUrl}/datenschutz</loc>
