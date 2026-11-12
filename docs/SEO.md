@@ -47,7 +47,7 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027" />
 <meta property="og:description" content="Kandidierende für den Regierungsrat des Kantons Zürich, Wahlen 2027." />
-<meta property="og:image" content="https://zusammen-mehr.ch/og-image.jpg" />
+<meta property="og:image" content="https://zusammen-mehr.ch/og-zusammen-mehr.jpg" />
 <meta property="og:locale" content="de_CH" />
 
 <meta name="twitter:card" content="summary_large_image" />
