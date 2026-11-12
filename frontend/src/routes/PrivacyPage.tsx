@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { Band, BandMeta } from '../components/Band.styled'
-import { PageHeading, BackButton, Section, H2, P, Ul } from './PrivacyPage.styled'
+import { PageHeading, Section, H2, P, Ul } from './PrivacyPage.styled'
 
 export function PrivacyPage() {
   usePageMeta(
@@ -14,9 +13,6 @@ export function PrivacyPage() {
       <BandMeta>
         <span>Rechtliches</span>
       </BandMeta>
-      <BackButton as={Link} to="/" $variant="secondary">
-        Zur Startseite
-      </BackButton>
       <PageHeading as="h1" $size="l">
         datenschutz
       </PageHeading>

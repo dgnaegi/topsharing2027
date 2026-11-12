@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
 import { usePageMeta } from '../hooks/usePageMeta'
 import { Band, BandMeta } from '../components/Band.styled'
-import { PageHeading, BackButton, Section, H2, P } from './PrivacyPage.styled'
+import { PageHeading, Section, H2, P } from './PrivacyPage.styled'
 
 export function ImpressumPage() {
   usePageMeta(
@@ -14,9 +13,6 @@ export function ImpressumPage() {
       <BandMeta>
         <span>Rechtliches</span>
       </BandMeta>
-      <BackButton as={Link} to="/" $variant="secondary">
-        Zur Startseite
-      </BackButton>
       <PageHeading as="h1" $size="l">
         impressum
       </PageHeading>
@@ -37,7 +33,7 @@ export function ImpressumPage() {
       <Section>
         <H2>Bildnachweis</H2>
         <P>
-          Fotos: ©{' '}
+          Bild Plakatkampagne: ©{' '}
           <a href="https://www.goranbasic.ch/" target="_blank" rel="noopener noreferrer">
             Goran Basic
           </a>
