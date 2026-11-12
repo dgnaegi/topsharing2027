@@ -13,7 +13,6 @@ export function PrivacyPage() {
     <Band as="main" id="main-content" tabIndex={-1} $tone="paper">
       <BandMeta>
         <span>Rechtliches</span>
-        <span>Berner &amp; Wyss 2027</span>
       </BandMeta>
       <BackButton as={Link} to="/" $variant="secondary">
         Zur Startseite

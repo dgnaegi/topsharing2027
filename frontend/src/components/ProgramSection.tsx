@@ -15,7 +15,6 @@ export function ProgramSection() {
     <Band $tone="ink" id="programm">
       <BandMeta>
         <span>02 / Programm</span>
-        <span>{GOALS.length} Ziele</span>
       </BandMeta>
       <Grid>
         <Col>

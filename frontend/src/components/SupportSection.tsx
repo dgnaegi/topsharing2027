@@ -6,7 +6,6 @@ export function SupportSection() {
     <Band $tone="paper" id="unterstuetzen">
       <BandMeta>
         <span>03 / Unterstützen</span>
-        <span>Zwei Möglichkeiten</span>
       </BandMeta>
       <Grid>
         <Col>

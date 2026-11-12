@@ -7,7 +7,6 @@ export function TeamSection() {
     <Band $tone="paper" id="kandidatur">
       <BandMeta>
         <span>01 / Kandidatur</span>
-        <span>Alternative Linke</span>
       </BandMeta>
       <Grid>
         <Col $to={6}>

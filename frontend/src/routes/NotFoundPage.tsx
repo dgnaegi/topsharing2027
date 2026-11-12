@@ -10,7 +10,6 @@ export function NotFoundPage() {
     <Band as="main" id="main-content" tabIndex={-1} $tone="paper">
       <BandMeta>
         <span>404</span>
-        <span>Berner &amp; Wyss 2027</span>
       </BandMeta>
       <PageHeading as="h1" $size="l">
         nicht gefunden

@@ -25,7 +25,6 @@ export function AboutSection() {
     <Band $tone="paper" id="ueber-uns">
       <BandMeta>
         <span>05 / Über uns</span>
-        <span>Nicole Wyss, Melanie Berner</span>
       </BandMeta>
       <Grid>
         <Col>

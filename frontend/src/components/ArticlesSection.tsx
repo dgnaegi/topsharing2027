@@ -7,7 +7,6 @@ export function ArticlesSection() {
     <Band $tone="ink" id="pressespiegel">
       <BandMeta>
         <span>06 / Pressespiegel</span>
-        <span>{ARTICLES.length} Beiträge</span>
       </BandMeta>
       <Grid>
         <Col>

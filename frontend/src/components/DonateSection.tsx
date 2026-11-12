@@ -6,7 +6,6 @@ export function DonateSection() {
     <Band $tone="signal" id="spenden">
       <BandMeta>
         <span>04 / Spenden</span>
-        <span>Steuerlich abziehbar</span>
       </BandMeta>
       <Grid>
         <Col>
