@@ -81,7 +81,7 @@ export const Title = styled.h1`
   font-size: inherit;
 `
 
-/** «zusammen» ist rund 3.75em breit: 24cqi lässt mobil Platz für die Balken-Innenabstände. */
+/** «Zusammen» ist rund 3.7em breit: 24cqi lässt mobil Platz für die Balken-Innenabstände. */
 export const Slogan = styled.span`
   display: flex;
   flex-direction: column;
@@ -92,7 +92,6 @@ export const Slogan = styled.span`
   font-size: clamp(2.5rem, min(10svh, 24cqi), 8rem);
   line-height: 1;
   letter-spacing: 0.025em;
-  text-transform: lowercase;
 
   ${media.hero} {
     gap: 0;

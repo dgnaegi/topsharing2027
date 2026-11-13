@@ -45,7 +45,7 @@ export function SiteNav() {
   return (
     <NavBar ref={barRef}>
       <Brand href="/#top" onClick={() => setOpen(false)}>
-        zusammen mehr
+        Zusammen Mehr
       </Brand>
       <MenuToggle
         ref={toggleRef}

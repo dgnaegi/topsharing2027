@@ -19,7 +19,7 @@ export function HeroSection() {
       <Content>
         <Title id="titel">
           <Slogan>
-            <Bar>zusammen</Bar> <Bar>mehr</Bar>
+            <Bar>Zusammen</Bar> <Bar>Mehr</Bar>
           </Slogan>
           <VisuallyHidden>: </VisuallyHidden>
           <Claim>Melanie Berner und Nicole Wyss in den Regierungsrat</Claim>
@@ -30,7 +30,7 @@ export function HeroSection() {
             href="https://www.instagram.com/topsharing2027/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="zusammen mehr auf Instagram (öffnet in neuem Tab)"
+            aria-label="Zusammen Mehr auf Instagram (öffnet in neuem Tab)"
           >
             <IconInstagram width="32" height="32" />
           </InstagramLink>

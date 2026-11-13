@@ -28,7 +28,7 @@ export function TeamSection() {
             </VisuallyHidden>
           </Display>
           <Text>
-            Wir sind überzeugt, dass zusammen mehr und bessere Ergebnisse erzielt werden können.
+            Wir sind überzeugt, dass Zusammen Mehr und bessere Ergebnisse erzielt werden können.
             Darum kandidieren wir bei den Regierungsratswahlen 2027 gemeinsam für den Regierungsrat
             des Kantons Zürich. Keine klassische Zweierkandidatur, eine gegen die andere, sondern
             als Team mit vereinten Kräften.
@@ -44,7 +44,7 @@ export function TeamSection() {
             Regierungsarbeit ein. Das verbessert die Qualität von Entscheidungen und erhöht die
             Kontinuität in der Amtsführung. Studien zeigen, dass Führungs-Tandems oft effizienter
             und fokussierter arbeiten. Das Vier-Augen-Prinzip stärkt Transparenz und Qualität.
-            Zusammen mehr eben.
+            Zusammen Mehr eben.
           </Text>
           <Names>
             Nicole Wyss, Kantonsrätin AL

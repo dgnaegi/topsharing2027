@@ -44,7 +44,7 @@ Zwei Schnitte, klar getrennte Aufgaben. Kein Mischen innerhalb einer Ebene.
 
 | Familie | Rolle | Grössenbereich |
 |---|---|---|
-| **AL Ruder Plakat** | Nur der Hero-Slogan „zusammen mehr" (Display XL) | ab 40px |
+| **AL Ruder Plakat** | Nur der Hero-Slogan „Zusammen Mehr" (Display XL) | ab 40px |
 | **LL Unica77** | Alles andere: Sektionstitel (Display L, Bold), Menü, Fliesstext, Labels, UI | alle Grössen |
 | **LL Unica77 Mono** | Meta, Nummerierung, Code, Tabellenzahlen | optional |
 
@@ -76,11 +76,11 @@ Der Schnitt ist eine sehr schmale, schwere Plakatgrotesk und funktioniert nur gr
 }
 ```
 
-- **Kleinschreibung** bei Claims und Hauptzeilen. Versalanfang nur bei Eigennamen und Organisationsnamen.
+- **Kleinschreibung** bei Claims und Hauptzeilen. Versalanfang nur bei Eigennamen und Organisationsnamen. Der Kampagnenname „Zusammen Mehr" ist ein Eigenname und wird überall mit grossem Z und M geschrieben, auch im Hero-Slogan.
 - Zeilenabstand unter 1, die Zeilen sollen als Block stehen, nicht als Absatz.
 - Buchstabenabstand öffnen (`letter-spacing: 0.025em`), sonst verschmelzen die Buchstaben des schweren Schnitts. Wortabstand ebenfalls leicht öffnen.
 - Nie in Fliesstextlänge. Maximal 4 Wörter pro Zeile.
-- **Ausnahme Zentrierung:** Der Hero-Slogan „zusammen mehr" steht immer exakt mittig (`text-align: center`, `margin-left: 0`, `padding-left` in Höhe des `letter-spacing`, damit der Nachlauf nach dem letzten Buchstaben die Mitte nicht verschiebt). Alle anderen Displayzeilen und aller Fliesstext bleiben linksbündig.
+- **Ausnahme Zentrierung:** Der Hero-Slogan „Zusammen Mehr" steht immer exakt mittig (`text-align: center`, `margin-left: 0`, `padding-left` in Höhe des `letter-spacing`, damit der Nachlauf nach dem letzten Buchstaben die Mitte nicht verschiebt). Alle anderen Displayzeilen und aller Fliesstext bleiben linksbündig.
 - Eine Kontur-Variante (Outline) ist nicht im gelieferten Paket.
 
 ### Unica77: Text und UI

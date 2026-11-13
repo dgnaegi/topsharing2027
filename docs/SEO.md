@@ -8,7 +8,7 @@ Priorität von oben nach unten. Jedes Keyword muss natürlich im Fliesstext vork
 
 | Keyword | Wo verwenden |
 |---|---|
-| zusammen mehr | Kampagnenname und Domain. Title, H1 (Slogan), `og:site_name`, JSON-LD (`WebSite.name`) |
+| Zusammen Mehr | Kampagnenname und Domain. Title, H1 (Slogan), `og:site_name`, JSON-LD (`WebSite.name`) |
 | Regierungsratswahl Zürich 2027 | Titel, Eckenmetadaten (Hero), erster Absatz |
 | Kandidierende Regierungsrat | H1 (Claim „in den Regierungsrat"), Meta-Description |
 | Melanie Berner | Title, H1, JSON-LD `Person`. Überall, wo sie erwähnt wird (voller Name, nicht nur „Melanie") |
@@ -31,7 +31,7 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 
 | Seite | Title | Description (max. 155 Zeichen) |
 |---|---|---|
-| Startseite | `Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027` | `zusammen mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur.` |
+| Startseite | `Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027` | `Zusammen Mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur.` |
 | Datenschutz | `Datenschutzerklärung: Berner & Wyss 2027` | `Datenschutzerklärung zur Kandidatur von Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027.` |
 | Impressum | `Impressum: Berner & Wyss 2027` | `Impressum der Kandidatur von Melanie Berner und Nicole Wyss für die Regierungsratswahl Zürich 2027.` |
 
@@ -40,7 +40,7 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 ```html
 <html lang="de-CH">
 <title>Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027</title>
-<meta name="description" content="zusammen mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur." />
+<meta name="description" content="Zusammen Mehr: Melanie Berner und Nicole Wyss (AL) kandidieren gemeinsam im Top-Sharing für den Regierungsrat Zürich 2027. Unterstütze die Kandidatur." />
 <meta name="keywords" content="Regierungsratswahl Zürich 2027, Kandidierende Regierungsrat, Melanie Berner, Nicole Wyss, Regierungsrat Kandidatinnen Zürich" />
 <link rel="canonical" href="https://zusammen-mehr.ch/" />
 
@@ -64,7 +64,7 @@ Namen und Jahr (2027) immer zusammen mit „Regierungsrat" oder „Regierungsrat
 
 Ein `@graph` in `frontend/index.html`, verknüpft über `@id`:
 
-- `WebSite` mit `name: "zusammen mehr"` und `alternateName`. Damit kann Google den Kampagnennamen
+- `WebSite` mit `name: "Zusammen Mehr"` und `alternateName`. Damit kann Google den Kampagnennamen
   als Site-Namen im Suchergebnis anzeigen.
 - `Organization` (die Kampagne) mit `sameAs` auf Instagram und `member` auf beide Personen.
 - Je ein `Person` für Melanie Berner und Nicole Wyss mit `jobTitle` (Kantonsrätin bzw.
