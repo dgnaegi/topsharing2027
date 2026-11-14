@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-const DEFAULT_TITLE = 'Melanie Berner und Nicole Wyss für den Regierungsrat Zürich 2027'
+const DEFAULT_TITLE = 'Nicole Wyss und Melanie Berner gemeinsam in den Regierungsrat Zürich 2027'
 
 function upsertHead(selector: string, create: () => HTMLElement, attr: string, value: string) {
   let el = document.head.querySelector<HTMLElement>(selector)

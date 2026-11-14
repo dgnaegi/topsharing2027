@@ -32,7 +32,9 @@ export function SupportSection() {
         <Col $to={8}>
           <Display id="unterstuetzen-titel">
             unterstützen
-            <VisuallyHidden>: Nicole Wyss und Melanie Berner in den Regierungsrat</VisuallyHidden>
+            <VisuallyHidden>
+              : Nicole Wyss und Melanie Berner gemeinsam in den Regierungsrat
+            </VisuallyHidden>
           </Display>
         </Col>
         <Col $from={8}>

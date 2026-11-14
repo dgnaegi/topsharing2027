@@ -22,7 +22,7 @@ export function HeroSection() {
             <Bar>Zusammen</Bar> <Bar>Mehr</Bar>
           </Slogan>
           <VisuallyHidden>: </VisuallyHidden>
-          <Claim>Melanie Berner und Nicole Wyss in den Regierungsrat</Claim>
+          <Claim>Nicole Wyss und Melanie Berner gemeinsam in den Regierungsrat</Claim>
           <VisuallyHidden>, Regierungsratswahlen 2027, Kanton Zürich</VisuallyHidden>
         </Title>
         <Actions>
