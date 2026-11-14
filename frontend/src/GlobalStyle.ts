@@ -13,6 +13,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  /* Sonst überschreibt jedes styled display (flex, grid) das hidden-Attribut. */
+  [hidden] {
+    display: none !important;
+  }
+
   html {
     background: ${({ theme }) => theme.colors.paper};
     scroll-padding-top: ${({ theme }) => theme.navHeight};
