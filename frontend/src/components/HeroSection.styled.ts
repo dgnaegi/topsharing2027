@@ -40,8 +40,6 @@ export const Photo = styled.div`
   ${media.hero} {
     inset: clamp(1rem, 7svh, 4rem) var(--hero-x) 0 auto;
     width: var(--photo-w);
-    border: ${({ theme }) => theme.borderStructural};
-    border-bottom: none;
 
     img {
       object-position: 50% 10%;

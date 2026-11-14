@@ -158,7 +158,7 @@ Die Marginalien des Plakats („Liste 6", Datum, Ort) werden zum Navigationsprin
 
 ### Fotos
 
-Ausnahme Hero: das Kandidatinnenfoto (Goran Basic) steht farbig im Hero, auf Desktop mit `4px` Rahmen rechts auf dem Signalband, mobil vollflächig. In „Über uns" liegen Fassungen, in denen jeweils nur eine Person farbig ist. Alle anderen Fotos nur in Schwarzweiss (`grayscale(1)`, leicht erhöhter Kontrast), im Hochformat 7:8 mit `4px` Rahmen in einem eigenen Papierband (`TeamSection`). Kein Foto auf Signalflächen: Versuche mit `multiply` auf dem Hero und als Streifen am Bandrand wirkten unruhig und konkurrierten mit dem Slogan. Originale liegen in `frontend/originals/` (nicht im Repo), ausgeliefert wird nur die verkleinerte WebP-Datei aus `src/assets/`.
+Ausnahme Hero: das Kandidatinnenfoto (Goran Basic) steht farbig im Hero, auf Desktop ohne Rahmen rechts auf dem Signalband, mobil vollflächig. In „Über uns" liegen Fassungen, in denen jeweils nur eine Person farbig ist. Alle anderen Fotos nur in Schwarzweiss (`grayscale(1)`, leicht erhöhter Kontrast), im Hochformat 7:8 mit `4px` Rahmen in einem eigenen Papierband (`TeamSection`). Kein Foto auf Signalflächen: Versuche mit `multiply` auf dem Hero und als Streifen am Bandrand wirkten unruhig und konkurrierten mit dem Slogan. Originale liegen in `frontend/originals/` (nicht im Repo), ausgeliefert wird nur die verkleinerte WebP-Datei aus `src/assets/`.
 
 ## Rahmen & Radius
 
