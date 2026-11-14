@@ -26,7 +26,7 @@ export function PrivacyPage() {
         <H2>Verantwortliche Stelle</H2>
         <P>Verantwortlich für die Datenbearbeitung auf dieser Website:</P>
         <P>
-          Melanie Berner &amp; Nicole Wyss, Kandidatur für den Regierungsrat Zürich 2027
+          Melanie&nbsp;Berner &amp; Nicole&nbsp;Wyss, Kandidatur für den Regierungsrat Zürich 2027
           <br />
           Technischer Kontakt: Daniel Gnägi
           <br />
@@ -83,6 +83,17 @@ export function PrivacyPage() {
       </Section>
 
       <Section>
+        <H2>Server-Logs</H2>
+        <P>
+          Bei jedem Aufruf der Website protokolliert Scalingo technische Angaben: IP-Adresse,
+          Zeitpunkt, aufgerufene Seite, Browser-Kennung und die Seite, von der du kommst. Wir
+          brauchen diese Logs, um Fehler zu finden und Missbrauch abzuwehren. Wir werten sie nicht
+          für Statistiken aus und verknüpfen sie nicht mit anderen Daten. Scalingo löscht die Logs
+          nach einem Jahr automatisch.
+        </P>
+      </Section>
+
+      <Section>
         <H2>Speicherdauer</H2>
         <P>
           Die E-Mail mit deinen Angaben löschen wir aus dem Postfach des Kandidaturteams, sobald wir
@@ -126,7 +137,7 @@ export function PrivacyPage() {
         <H2>Änderungen</H2>
         <P>
           Wir passen diese Datenschutzerklärung an, wenn sich an der Website oder an der Rechtslage
-          etwas ändert. Es gilt jeweils die hier veröffentlichte Fassung. Stand: September 2026.
+          etwas ändert. Es gilt jeweils die hier veröffentlichte Fassung. Stand: November 2026.
         </P>
       </Section>
     </Band>

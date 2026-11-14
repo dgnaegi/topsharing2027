@@ -32,7 +32,7 @@ export function DonateDetails() {
             <br />
             Molkenstrasse 21, 8004 Zürich
             <br />
-            Vermerk: Nicole Wyss &amp; Melanie Berner
+            Vermerk: Nicole&nbsp;Wyss &amp; Melanie&nbsp;Berner
           </dd>
         </Details>
       </Layout>

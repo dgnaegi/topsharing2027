@@ -24,7 +24,7 @@ export function SupportSection() {
   }, [])
 
   return (
-    <Band $tone="paper" id="unterstuetzen" aria-labelledby="unterstuetzen-titel">
+    <Band $tone="signal" id="unterstuetzen" aria-labelledby="unterstuetzen-titel">
       <BandMeta>
         <span>03 / Unterstützen</span>
       </BandMeta>

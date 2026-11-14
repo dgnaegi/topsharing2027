@@ -1,5 +1,5 @@
 import { useFormContext } from 'react-hook-form'
-import { RevealFieldset, Legend, Field, Label, HelpText, ErrorText } from './Form.styled'
+import { RevealFieldset, Field, Label, HelpText, ErrorText } from './Form.styled'
 import { Input, TextArea, FileInput } from './FormControls.styled'
 import { MAX_IMAGE_BYTES, ALLOWED_IMAGE_TYPES } from '../utils/fileToDataUrl'
 import type { SupportFormValues } from './SupportForm'
@@ -11,8 +11,8 @@ export function PublicFields() {
   } = useFormContext<SupportFormValues>()
 
   return (
-    <RevealFieldset>
-      <Legend>Für die Website</Legend>
+    // Ohne Legende ist eine Fieldset-Gruppe für Screenreader wertlos: darum ein div.
+    <RevealFieldset as="div">
       <Field>
         <Label htmlFor="role">Funktion (optional)</Label>
         <Input
@@ -35,7 +35,7 @@ export function PublicFields() {
         <TextArea
           id="quote"
           aria-required="true"
-          placeholder="Warum unterstützt du Melanie Berner und Nicole Wyss?"
+          placeholder="Warum unterstützt du Melanie&nbsp;Berner und Nicole&nbsp;Wyss?"
           aria-invalid={errors.quote ? 'true' : undefined}
           aria-describedby={errors.quote ? 'quote-error' : undefined}
           {...register('quote', { required: true, maxLength: 2000 })}

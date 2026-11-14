@@ -20,7 +20,7 @@ export function ImpressumPage() {
       <Section>
         <H2>Herausgeberin</H2>
         <P>
-          Melanie Berner &amp; Nicole Wyss, Kandidatur für den Regierungsrat Zürich 2027
+          Melanie&nbsp;Berner &amp; Nicole&nbsp;Wyss, Kandidatur für den Regierungsrat Zürich 2027
           <br />
           Sekretariat AL
           <br />

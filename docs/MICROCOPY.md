@@ -45,6 +45,14 @@ Kurze Sätze. Aktiv. Ohne Füllwörter. Kein Fachjargon.
 | „Zitat gesendet. Danke für deine Unterstützung." | „Deine wertvolle Rückmeldung wurde erfolgreich übermittelt." |
 | „Bitte alle Felder ausfüllen." | „Es wird gebeten, sämtliche Felder vollständig auszufüllen." |
 
+## Namen nie umbrechen
+
+Vor- und Nachname der Kandidatinnen stehen immer auf derselben Zeile. Zwischen den beiden steht
+ein geschütztes Leerzeichen: in JSX-Text und JSX-Attributen `Nicole&nbsp;Wyss`, in
+TS-Strings `'Nicole\u00A0Wyss'`, in JSON (z. B. `src/data/events.json`) `"Nicole\u00A0Wyss"`. Das gilt für jeden sichtbaren Text, auch für Platzhalter und
+Daten in `src/data/`. Nicht nötig in Meta-Tags, `alt`, `aria-label`, `VisuallyHidden` und im
+Teilen-Text, weil dort nichts umbricht.
+
 ## Buttons & CTAs
 
 Verb zuerst, max. 3 Wörter, konkrete Aktion.

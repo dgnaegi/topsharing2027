@@ -47,9 +47,9 @@ export function TeamSection() {
             Zusammen Mehr eben.
           </Text>
           <Names>
-            Nicole Wyss, Kantonsrätin AL
+            Nicole&nbsp;Wyss, Kantonsrätin AL
             <br />
-            Melanie Berner, Alt-Kantonsrätin AL
+            Melanie&nbsp;Berner, Alt-Kantonsrätin AL
           </Names>
         </Col>
       </Grid>

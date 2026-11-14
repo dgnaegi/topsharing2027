@@ -6,6 +6,7 @@ import { TeamSection } from '../components/TeamSection'
 import { ProgramSection } from '../components/ProgramSection'
 import { SupportSection } from '../components/SupportSection'
 import { AboutSection } from '../components/AboutSection'
+import { EventsSection } from '../components/EventsSection'
 import { ArticlesSection } from '../components/ArticlesSection'
 
 export function HomePage() {
@@ -23,6 +24,7 @@ export function HomePage() {
       <ProgramSection />
       <SupportSection />
       <AboutSection />
+      <EventsSection />
       <ArticlesSection />
     </main>
   )

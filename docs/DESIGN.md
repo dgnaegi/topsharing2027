@@ -142,7 +142,19 @@ Jede Sektion ist ein vollbreites Band. Farbe wechselt hart, ohne Übergangszone.
 .band--ink    { background: #000;    color: #FFF; }
 ```
 
-Rhythmus: Signal → Papier → Ink. Zwei Signalbänder nie direkt hintereinander.
+Rhythmus: Signal → Papier → Ink. Zwei Signalbänder nie direkt hintereinander, auch nie zwei
+gleichfarbige Bänder. Startseite heute:
+
+| Band | Farbe |
+|---|---|
+| Hero | Signal |
+| 01 Kandidatur | Papier |
+| 02 Programm | Ink |
+| 03 Unterstützen | Signal (Formular und Spendenangaben auf getönter Fläche) |
+| 04 Über uns | Papier |
+| 05 Veranstaltungen | Signal (Details klappen auf Papierfläche auf) |
+| 06 Pressespiegel | Ink |
+| Footer | Papier |
 
 ### Eckenmetadaten
 

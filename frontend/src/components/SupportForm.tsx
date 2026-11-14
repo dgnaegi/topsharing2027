@@ -112,16 +112,22 @@ export function SupportForm({ mode }: Props) {
             type="email"
             autoComplete="email"
             aria-invalid={errors.email ? 'true' : undefined}
-            aria-describedby={errors.email ? 'email-help email-error' : 'email-help'}
+            aria-describedby={
+              [isPublic && 'email-help', errors.email && 'email-error'].filter(Boolean).join(' ') ||
+              undefined
+            }
             {...register('email', {
               required: true,
               maxLength: 200,
               pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
             })}
           />
-          <HelpText id="email-help">
-            Nur für Rückfragen. Sie erscheint nicht auf der Seite.
-          </HelpText>
+          {/* Nur beim Zitat nötig: dort erscheinen Name und Zitat öffentlich, die E-Mail nicht. */}
+          {isPublic && (
+            <HelpText id="email-help">
+              Nur für Rückfragen. Sie erscheint nicht auf der Seite.
+            </HelpText>
+          )}
           {errors.email && (
             <ErrorText id="email-error">Bitte gib eine gültige E-Mail an.</ErrorText>
           )}
