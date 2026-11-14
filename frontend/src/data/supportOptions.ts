@@ -14,7 +14,7 @@ export const SUPPORT_OPTIONS: SupportOption[] = [
     mode: 'help',
     title: 'Mithelfen',
     short: 'Mithelfen',
-    help: 'Bei der Kampagne anpacken, Standaktionen unterstützen, Flyer stecken',
+    help: 'An Ständen stehen, Flyer stecken, mit anpacken',
   },
   {
     mode: 'quote',

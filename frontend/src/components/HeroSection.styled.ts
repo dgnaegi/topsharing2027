@@ -8,7 +8,8 @@ import { enter, settle } from '../motion'
  */
 export const HeroBand = styled.section`
   --hero-gap: clamp(1.25rem, 5.5vw, 5rem);
-  --hero-x: max(var(--hero-gap), calc((100% - 1600px) / 2));
+  /* Gleicher Seitenrand wie Navigation und Bänder, damit das Foto rechts auf der Kante steht. */
+  --hero-x: max(clamp(1rem, 4vw, 4rem), calc((100% - 1600px) / 2));
   /* Foto nah an 2:3 halten: Breite folgt der Hero-Höhe, gedeckelt durch Seitenbreite. */
   --photo-w: min(640px, 40vw, calc((100svh - ${({ theme }) => theme.navHeight}) * 0.62));
   position: relative;

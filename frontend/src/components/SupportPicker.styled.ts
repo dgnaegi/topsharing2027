@@ -67,6 +67,7 @@ export const Tab = styled.button`
 
   ${media.md} {
     flex-direction: row;
+    align-items: flex-start;
     justify-content: flex-start;
     gap: ${({ theme }) => theme.spacing.lg};
     padding: ${({ theme }) => `${theme.spacing.lg} ${theme.spacing.xl}`};
@@ -110,5 +111,6 @@ export const Help = styled.span`
     display: block;
     font-size: 0.9375rem;
     line-height: 1.35;
+    text-wrap: balance;
   }
 `

@@ -3,7 +3,7 @@ import { PHOTO_HIGHLIGHT } from '../data/photos'
 import type { Candidate } from '../data/candidates'
 import { Frame, Layer, HitFront, HitBack } from './AboutPhoto.styled'
 
-const SIZES = '(min-width: 900px) 480px, 100vw'
+const SIZES = '(min-width: 900px) 40vw, 480px'
 
 interface Props {
   active: Candidate['slug']

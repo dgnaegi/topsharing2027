@@ -27,7 +27,7 @@ export function ProgramSection() {
         <Col $to={6}>
           <Lead>
             Als Regierungsrätinnen werden wir für einen solidarischen Kanton Zürich kämpfen. Einen
-            Kanton, den wir uns alle leisten können und der endlich vorwärts macht, damit:
+            Kanton, den wir uns alle leisten können und der endlich vorwärtsmacht, damit:
           </Lead>
         </Col>
         <Col $from={6}>

@@ -25,8 +25,9 @@ export function SupportSuccess({ isPublic }: Props) {
     <Form as="div" role="status" tabIndex={-1} ref={ref}>
       <SuccessTitle>danke.</SuccessTitle>
       <StatusText>
-        Du bist dabei. Wir melden uns bei dir.
-        {isPublic && ' Bevor dein Name erscheint, schauen wir kurz drüber.'}
+        {isPublic
+          ? 'Zitat gesendet. Bevor es mit deinem Namen erscheint, schauen wir kurz drüber.'
+          : 'Du bist dabei. Wir melden uns bei dir.'}
       </StatusText>
     </Form>
   )

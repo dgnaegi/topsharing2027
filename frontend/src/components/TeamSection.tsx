@@ -20,7 +20,7 @@ export function TeamSection() {
             decoding="async"
           />
         </Col>
-        <Col $from={7}>
+        <Col $from={6}>
           <Display id="kandidatur-titel">
             top-sharing
             <VisuallyHidden>
@@ -28,23 +28,20 @@ export function TeamSection() {
             </VisuallyHidden>
           </Display>
           <Text>
-            Wir sind überzeugt, dass Zusammen Mehr und bessere Ergebnisse erzielt werden können.
-            Darum kandidieren wir bei den Regierungsratswahlen 2027 gemeinsam für den Regierungsrat
-            des Kantons Zürich. Keine klassische Zweierkandidatur, eine gegen die andere, sondern
-            als Team mit vereinten Kräften.
+            Wir sind überzeugt, dass wir zusammen mehr und Besseres erreichen. Darum kandidieren wir
+            2027 gemeinsam für den Regierungsrat des Kantons Zürich. Nicht als Zweierkandidatur, bei
+            der eine gegen die andere antritt, sondern als Team.
           </Text>
           <Text>
-            Ein Regierungsamt übersteigt ein 100%-Pensum bei weitem. Das schliesst Menschen aus,
-            häufig Frauen, die regelmässig unbezahlte Care-Arbeit leisten. Das muss sich ändern.
-            Wird eine von uns gewählt, teilen wir uns Arbeit und Lohn.
+            Ein Regierungsamt geht weit über ein 100-Prozent-Pensum hinaus. Das schliesst Menschen
+            aus, häufig Frauen, die unbezahlte Care-Arbeit leisten. Das muss sich ändern. Wird eine
+            von uns gewählt, teilen wir uns Arbeit und Lohn.
           </Text>
           <Text>
-            Top-Sharing heisst Jobsharing in einer Führungsposition. Das bringt viele Vorteile: Zwei
-            unterschiedliche Perspektiven, Erfahrungen und Kompetenzen fliessen in die
-            Regierungsarbeit ein. Das verbessert die Qualität von Entscheidungen und erhöht die
-            Kontinuität in der Amtsführung. Studien zeigen, dass Führungs-Tandems oft effizienter
-            und fokussierter arbeiten. Das Vier-Augen-Prinzip stärkt Transparenz und Qualität.
-            Zusammen Mehr eben.
+            Top-Sharing heisst Jobsharing in einer Führungsposition. So bringen zwei Personen ihre
+            Perspektiven, Erfahrungen und Kompetenzen in die Regierungsarbeit ein. Das macht
+            Entscheide besser und sorgt für Kontinuität im Amt. Dazu kommt das Vier-Augen-Prinzip:
+            Es schafft Transparenz. Zusammen Mehr eben.
           </Text>
           <Names>
             Nicole&nbsp;Wyss, Kantonsrätin AL

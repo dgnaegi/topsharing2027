@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { media } from '../theme'
 
 export const Frame = styled.div`
   position: relative;
@@ -8,6 +9,11 @@ export const Frame = styled.div`
   overflow: hidden;
   border: ${({ theme }) => theme.borderStructural};
   background: ${({ theme }) => theme.colors.muted};
+
+  /* Ab md füllt das Foto die Spalten 1 bis 5 wie das Foto in der Kandidatur. */
+  ${media.md} {
+    max-width: none;
+  }
 `
 
 export const Layer = styled.div<{ $visible: boolean }>`

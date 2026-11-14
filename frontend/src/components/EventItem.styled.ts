@@ -28,7 +28,8 @@ export const Title = styled.span`
 export const Trigger = styled.button`
   display: grid;
   grid-template-columns: 4rem 1fr 2rem;
-  align-items: center;
+  /* Mobil bricht der Titel mehrzeilig: Datum und Plus stehen dann oben bündig. */
+  align-items: start;
   gap: ${({ theme }) => theme.spacing.md};
   width: 100%;
   min-height: 44px;
@@ -44,6 +45,7 @@ export const Trigger = styled.button`
 
   ${media.md} {
     grid-template-columns: 7rem 1fr 3rem;
+    align-items: center;
     gap: ${({ theme }) => theme.spacing.xl};
   }
 `

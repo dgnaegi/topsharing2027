@@ -14,6 +14,7 @@ export const FooterBar = styled.footer`
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-wrap: balance;
 
   ${media.maxSm} {
     flex-direction: column;

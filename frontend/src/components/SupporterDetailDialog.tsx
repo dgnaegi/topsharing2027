@@ -42,7 +42,7 @@ export function SupporterDetailDialog({ supporter, onClose }: Props) {
         <DetailName id="supporter-dialog-name">
           {supporter.firstName} {supporter.lastName}
         </DetailName>
-        <DetailQuote>„{supporter.quote}"</DetailQuote>
+        <DetailQuote>„{supporter.quote}“</DetailQuote>
       </DialogBox>
     </Overlay>
   )

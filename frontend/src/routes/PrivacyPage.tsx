@@ -38,7 +38,7 @@ export function PrivacyPage() {
         <H2>Welche Daten wir bearbeiten</H2>
         <P>
           Die Website hat weder Benutzerkonten noch eine Datenbank. Daten erhalten wir nur, wenn du
-          das Formular „Unterstützen" ausfüllst und absendest:
+          das Formular „Unterstützen“ ausfüllst und absendest:
         </P>
         <Ul>
           <li>
