@@ -2,29 +2,26 @@ import styled from 'styled-components'
 import { media } from '../theme'
 import { enter, nudgeIn } from '../motion'
 
+/** Panel unter den Unterstützen-Kacheln: schliesst ohne Oberkante an deren Rahmen an. */
 export const Form = styled.form`
   position: relative;
   background: ${({ theme }) => theme.colors.tint};
-  border: ${({ theme }) => theme.border};
-  padding: calc(${({ theme }) => theme.spacing.xl} + 8px) ${({ theme }) => theme.spacing.xl}
-    ${({ theme }) => theme.spacing.xl};
+  border: ${({ theme }) => theme.borderStructural};
+  border-top: none;
+  padding: ${({ theme }) => theme.spacing.xl};
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.md};
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8px;
-    background: ${({ theme }) => theme.colors.signal};
-  }
-
   ${media.maxSm} {
     padding-inline: ${({ theme }) => theme.spacing.md};
   }
+`
+
+/** Ein Satz über dem Formular: was mit den Angaben passiert. */
+export const Intro = styled.p`
+  font-weight: 500;
+  max-width: 60ch;
 `
 
 export const Row = styled.div`

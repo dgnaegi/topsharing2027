@@ -12,7 +12,7 @@ export function AboutSection() {
   return (
     <Band $tone="paper" id="ueber-uns" aria-labelledby="ueber-uns-titel">
       <BandMeta>
-        <span>05 / Über uns</span>
+        <span>04 / Über uns</span>
       </BandMeta>
       <Grid>
         <Col>

@@ -9,7 +9,7 @@ export function ArticlesSection() {
   return (
     <Band $tone="ink" id="pressespiegel" aria-labelledby="pressespiegel-titel">
       <BandMeta>
-        <span>06 / Pressespiegel</span>
+        <span>05 / Pressespiegel</span>
       </BandMeta>
       <Grid>
         <Col>

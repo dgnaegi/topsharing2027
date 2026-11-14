@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { Form, Row, Field, Label, ErrorText, HelpText, StatusText } from './Form.styled'
+import { Form, Row, Field, Label, ErrorText, HelpText, StatusText, Intro } from './Form.styled'
 import { Input } from './FormControls.styled'
 import { Button } from './Button.styled'
-import { SupportChoice } from './SupportChoice'
 import { SupportSuccess } from './SupportSuccess'
 import { PublicFields } from './PublicFields'
 import { submitSupport } from '../api/endpoints'
@@ -14,8 +13,6 @@ export interface SupportFormValues {
   firstName: string
   lastName: string
   email: string
-  campaign: boolean
-  publicSupport: boolean
   role: string
   quote: string
   image: FileList
@@ -24,32 +21,44 @@ export interface SupportFormValues {
 type Status =
   { type: 'idle' } | { type: 'success'; public: boolean } | { type: 'error'; message: string }
 
-export function SupportForm() {
+interface Props {
+  /** Kommt vom gewählten Tab: mithelfen oder öffentlich unterstützen. */
+  mode: 'help' | 'quote'
+}
+
+const INTRO = {
+  help: 'Wir melden uns bei dir, sobald es etwas zu tun gibt.',
+  quote:
+    'Dein Name und dein Zitat erscheinen auf dieser Website. Funktion und Foto sind freiwillig.',
+}
+
+const SUBMIT = { help: 'Ich bin dabei', quote: 'Zitat senden' }
+
+export function SupportForm({ mode }: Props) {
   const methods = useForm<SupportFormValues>()
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors, isSubmitting },
   } = methods
   const [status, setStatus] = useState<Status>({ type: 'idle' })
-  const isPublic = watch('publicSupport')
+  const isPublic = mode === 'quote'
 
   async function onSubmit(v: SupportFormValues) {
     setStatus({ type: 'idle' })
     try {
-      const file = v.publicSupport ? v.image?.[0] : undefined
+      const file = isPublic ? v.image?.[0] : undefined
       await submitSupport({
         firstName: v.firstName.trim(),
         lastName: v.lastName.trim(),
         email: v.email.trim(),
-        campaign: v.campaign,
-        publicSupport: v.publicSupport,
-        role: v.publicSupport ? v.role.trim() || undefined : undefined,
-        quote: v.publicSupport ? v.quote.trim() || undefined : undefined,
+        campaign: !isPublic,
+        publicSupport: isPublic,
+        role: isPublic ? v.role.trim() || undefined : undefined,
+        quote: isPublic ? v.quote.trim() || undefined : undefined,
         image: file ? await fileToDataUrl(file) : undefined,
       })
-      setStatus({ type: 'success', public: v.publicSupport })
+      setStatus({ type: 'success', public: isPublic })
     } catch (err) {
       const message =
         err instanceof ApiError
@@ -64,6 +73,7 @@ export function SupportForm() {
   return (
     <FormProvider {...methods}>
       <Form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <Intro>{INTRO[mode]}</Intro>
         <Row>
           <Field>
             <Label htmlFor="firstName">Vorname</Label>
@@ -117,11 +127,10 @@ export function SupportForm() {
           )}
         </Field>
 
-        <SupportChoice />
         {isPublic && <PublicFields />}
 
         <Button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
-          {isSubmitting ? 'Wird gesendet…' : 'Unterstützung senden'}
+          {isSubmitting ? 'Wird gesendet…' : SUBMIT[mode]}
         </Button>
         {status.type === 'error' && <StatusText role="alert">{status.message}</StatusText>}
       </Form>

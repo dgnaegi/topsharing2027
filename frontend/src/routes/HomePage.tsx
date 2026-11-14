@@ -5,7 +5,6 @@ import { HeroSection } from '../components/HeroSection'
 import { TeamSection } from '../components/TeamSection'
 import { ProgramSection } from '../components/ProgramSection'
 import { SupportSection } from '../components/SupportSection'
-import { DonateSection } from '../components/DonateSection'
 import { AboutSection } from '../components/AboutSection'
 import { ArticlesSection } from '../components/ArticlesSection'
 
@@ -23,7 +22,6 @@ export function HomePage() {
       <TeamSection />
       <ProgramSection />
       <SupportSection />
-      <DonateSection />
       <AboutSection />
       <ArticlesSection />
     </main>
