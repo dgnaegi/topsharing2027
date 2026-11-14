@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../theme'
+import { selectable } from '../selectable'
 
 /** Liegt auf dem Signalband: Text und Linien schwarz, Details auf Papierfläche. */
 export const Item = styled.li`
@@ -32,22 +33,18 @@ export const Trigger = styled.button`
   width: 100%;
   min-height: 44px;
   padding-block: ${({ theme }) => theme.spacing.lg};
+  padding-inline: ${({ theme }) => theme.spacing.md};
   border: none;
-  background: none;
-  color: inherit;
   font: inherit;
   text-align: left;
   cursor: pointer;
+  ${selectable("[aria-expanded='true']")}
+  /* Liegt auf dem Signalband: ohne Hover durchsichtig. */
+  background: transparent;
 
   ${media.md} {
     grid-template-columns: 7rem 1fr 3rem;
     gap: ${({ theme }) => theme.spacing.xl};
-  }
-
-  &:hover ${Title} {
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 4px;
   }
 `
 
@@ -82,39 +79,13 @@ export const Meta = styled.span`
   font-weight: 500;
 `
 
-/** Plus wird beim Öffnen zum Minus: Zustand nicht nur über Farbe. */
-export const Toggle = styled.span<{ $open: boolean }>`
-  position: relative;
-  justify-self: end;
-  width: 24px;
-  height: 24px;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 10px 0;
-    background: currentColor;
-    transition: transform ${({ theme }) => theme.motion.fast} ease-out;
-  }
-
-  &::after {
-    transform: rotate(${({ $open }) => ($open ? '0deg' : '90deg')});
-  }
-`
-
 export const Details = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  /* Gleich breit wie der schwarze Balken darüber, ohne eigenen Rahmen. */
   padding: ${({ theme }) => theme.spacing.xl};
   background: ${({ theme }) => theme.colors.paper};
-  border: ${({ theme }) => theme.borderStructural};
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing.md};
-
-  ${media.md} {
-    margin-left: calc(7rem + ${({ theme }) => theme.spacing.xl});
-  }
 
   ${media.maxSm} {
     padding: ${({ theme }) => theme.spacing.md};

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Band, BandMeta, Grid, Col, Display, Lead } from './Band.styled'
+import { Band, BandMeta, Grid, Col, Display } from './Band.styled'
 import { VisuallyHidden } from './VisuallyHidden.styled'
 import { SupportPicker } from './SupportPicker'
 import { SupportForm } from './SupportForm'
@@ -36,9 +36,6 @@ export function SupportSection() {
               : Nicole Wyss und Melanie Berner gemeinsam in den Regierungsrat
             </VisuallyHidden>
           </Display>
-        </Col>
-        <Col $from={8}>
-          <Lead>Drei Wege, wie du dabei bist. Wähl einen aus, oder mehrere nacheinander.</Lead>
         </Col>
         <Col>
           <DonateAnchor id={DONATE_HASH.slice(1)} />

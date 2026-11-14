@@ -13,10 +13,10 @@ import {
   Head,
   Title,
   Meta,
-  Toggle,
   Details,
   When,
 } from './EventItem.styled'
+import { Toggle } from './EventToggle.styled'
 
 interface Props {
   event: CampaignEvent

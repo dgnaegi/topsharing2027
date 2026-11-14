@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { selectable } from '../selectable'
 import { media } from '../theme'
 
 /** Drei Kacheln, auch mobil nebeneinander: so steht der Inhalt immer direkt darunter. */
@@ -45,26 +46,13 @@ export const Tab = styled.button`
   padding: ${({ theme }) => `${theme.spacing.md} ${theme.spacing.xs}`};
   border: none;
   border-right: ${({ theme }) => theme.borderStructural};
-  background: ${({ theme }) => theme.colors.paper};
-  color: ${({ theme }) => theme.colors.ink};
   font: inherit;
   text-align: center;
   cursor: pointer;
-  transition:
-    background ${({ theme }) => theme.motion.fast} ease-out,
-    color ${({ theme }) => theme.motion.fast} ease-out;
+  ${selectable("[aria-selected='true']")}
 
   &:last-child {
     border-right: none;
-  }
-
-  &:hover:not([aria-selected='true']) {
-    background: ${({ theme }) => theme.colors.tint};
-  }
-
-  &[aria-selected='true'] {
-    background: ${({ theme }) => theme.colors.ink};
-    color: ${({ theme }) => theme.colors.paper};
   }
 
   &[aria-selected='true'] ${IconBox} {

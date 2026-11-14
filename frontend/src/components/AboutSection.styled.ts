@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { media } from '../theme'
 import { enter, fadeIn } from '../motion'
+import { selectable } from '../selectable'
 
 export const NameList = styled.div`
   display: grid;
@@ -21,8 +22,6 @@ export const NameButton = styled.button`
   padding: ${({ theme }) => theme.spacing.md};
   border: ${({ theme }) => theme.borderStructural};
   border-radius: ${({ theme }) => theme.radius};
-  background: ${({ theme }) => theme.colors.tint};
-  color: ${({ theme }) => theme.colors.ink};
   font-weight: 700;
   font-size: clamp(1.25rem, 2.5vw, 2.25rem);
   line-height: 1;
@@ -30,21 +29,7 @@ export const NameButton = styled.button`
   text-align: center;
   text-wrap: balance;
   cursor: pointer;
-  transition:
-    background ${({ theme }) => theme.motion.fast} ease-out,
-    transform 0.1s ease-out;
-
-  &:hover {
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    transform: none;
-  }
-
-  &[aria-pressed='true'] {
-    background: ${({ theme }) => theme.colors.signal};
-  }
+  ${selectable("[aria-pressed='true']")}
 
   ${media.md} {
     padding: ${({ theme }) => theme.spacing.lg};
