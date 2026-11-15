@@ -5,13 +5,19 @@ import { SupportPicker } from './SupportPicker'
 import { SupportForm } from './SupportForm'
 import { DonateDetails } from './DonateDetails'
 import { DonateAnchor } from './SupportSection.styled'
-import { DONATE_HASH, PANEL_ID, tabId, type SupportMode } from '../data/supportOptions'
+import {
+  DONATE_HASH,
+  PANEL_ID,
+  SUPPORT_OPTIONS,
+  tabId,
+  type SupportMode,
+} from '../data/supportOptions'
 
 const modeFromHash = (): SupportMode | null =>
   window.location.hash === DONATE_HASH ? 'give' : null
 
 export function SupportSection() {
-  const [mode, setMode] = useState<SupportMode>(() => modeFromHash() ?? 'help')
+  const [mode, setMode] = useState<SupportMode>(() => modeFromHash() ?? SUPPORT_OPTIONS[0].mode)
 
   // Links auf /#spenden (alter Menüpunkt, geteilte Links) öffnen direkt den Spenden-Tab.
   useEffect(() => {

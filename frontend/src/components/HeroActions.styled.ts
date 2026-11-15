@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { media } from '../theme'
 import { enter } from '../motion'
 
-/** Nur ab 1024px sichtbar: Instagram unter der Unterzeile. Mobil steht der Slogan allein. */
+/** Nur im Querformat sichtbar: Instagram unter der Unterzeile. Mobil steht der Slogan allein. */
 export const Actions = styled.div`
   display: none;
 
@@ -18,13 +18,13 @@ export const InstagramLink = styled.a`
   align-items: center;
   min-width: 44px;
   min-height: 44px;
-  color: ${({ theme }) => theme.colors.ink};
+  color: ${({ theme }) => theme.colors.paper};
   transition:
     color 0.15s ease-out,
     transform 0.1s ease-out;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.paper};
+    color: ${({ theme }) => theme.colors.signal};
     transform: translateY(-1px);
   }
 `

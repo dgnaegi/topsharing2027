@@ -4,14 +4,16 @@ import { enter, settle } from '../motion'
 
 /**
  * Hero füllt zusammen mit der Navigationsleiste genau den Bildschirm.
- * Mobil: Foto vollflächig, Schrift auf Balken. Daneben-Layout (media.hero): Pink, Foto rechts.
+ * Mobil: Hochformat-Foto vollflächig, Schrift auf Balken unten.
+ * Querformat (media.hero): Breitbild vollflächig, die beiden rechts, Slogan links daneben.
  */
 export const HeroBand = styled.section`
-  --hero-gap: clamp(1.25rem, 5.5vw, 5rem);
-  /* Gleicher Seitenrand wie Navigation und Bänder, damit das Foto rechts auf der Kante steht. */
+  --hero-gap: clamp(1.25rem, 4vw, 4rem);
+  /* Gleicher Seitenrand wie Navigation und Bänder. */
   --hero-x: max(clamp(1rem, 4vw, 4rem), calc((100% - 1600px) / 2));
-  /* Foto nah an 2:3 halten: Breite folgt der Hero-Höhe, gedeckelt durch Seitenbreite. */
-  --photo-w: min(640px, 40vw, calc((100svh - ${({ theme }) => theme.navHeight}) * 0.62));
+  --hero-h: calc(100svh - ${({ theme }) => theme.navHeight});
+  /* Gerenderte Bildbreite bei object-fit: cover (Breitbild 1.871:1). */
+  --img-w: max(100%, calc(var(--hero-h) * 1.871));
   position: relative;
   overflow: hidden;
   height: calc(100vh - ${({ theme }) => theme.navHeight});
@@ -20,7 +22,7 @@ export const HeroBand = styled.section`
   background: ${({ theme }) => theme.colors.paper};
 
   ${media.hero} {
-    background: ${({ theme }) => theme.colors.signal};
+    background: ${({ theme }) => theme.colors.studio};
   }
 `
 
@@ -38,18 +40,16 @@ export const Photo = styled.div`
     animation-duration: 1.4s;
   }
 
-  ${media.hero} {
-    inset: clamp(1rem, 7svh, 4rem) var(--hero-x) 0 auto;
-    width: var(--photo-w);
-
-    img {
-      object-position: 50% 10%;
-    }
+  /* Rechtsbündig: die beiden bleiben bei jedem Format ganz im Bild. Bei Ultrawide wird
+     unten beschnitten, die Köpfe (ab 12 % Höhe) bleiben drin. */
+  ${media.hero} img {
+    object-position: 100% 15%;
   }
 `
 
 /**
- * Textblock. Mobil unten, exakt mittig. Daneben-Layout: mittig in der Fläche links vom Foto.
+ * Textblock. Mobil unten, exakt mittig. Querformat: mittig in der freien Wand links.
+ * Die Personen beginnen bei 61.5 % der Bildbreite, rechtsbündig gemessen also 38.5 %.
  * Container, damit die Schriftgrösse sich nach der verfügbaren Breite richtet.
  */
 export const Content = styled.div`
@@ -64,7 +64,7 @@ export const Content = styled.div`
   ${media.hero} {
     top: 0;
     bottom: 0;
-    right: calc(var(--photo-w) + var(--hero-x) + var(--hero-gap));
+    right: calc(var(--img-w) * 0.385 + var(--hero-gap));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,9 +93,8 @@ export const Slogan = styled.span`
   letter-spacing: 0.025em;
 
   ${media.hero} {
-    gap: 0;
-    font-size: clamp(2.5rem, min(25cqi, 22svh), 14rem);
-    line-height: 0.92;
+    gap: 0.06em;
+    font-size: clamp(2rem, min(21cqi, 13svh), 9rem);
   }
 `
 
@@ -110,9 +109,9 @@ export const Bar = styled.span`
     animation-delay: 200ms;
   }
 
+  /* Gleiche Balken wie mobil, Innenabstände wachsen mit der Schrift. */
   ${media.hero} {
-    padding: 0 0 0 0.025em;
-    background: none;
+    padding: 0.05em 0.16em 0.07em calc(0.16em + 0.025em);
   }
 `
 
@@ -130,11 +129,9 @@ export const Claim = styled.span`
   ${enter(320)}
 
   ${media.hero} {
-    max-width: 520px;
-    margin-top: clamp(1rem, 4svh, 2rem);
-    padding: 0;
-    background: none;
-    color: ${({ theme }) => theme.colors.ink};
-    font-size: clamp(1rem, min(1.8vw, 3.2svh), 1.625rem);
+    max-width: min(18.5em, 100%);
+    margin-top: clamp(0.5rem, 2svh, 1.25rem);
+    padding: 0.45em 0.75em;
+    font-size: clamp(0.9375rem, min(1.5vw, 2.6svh), 1.375rem);
   }
 `

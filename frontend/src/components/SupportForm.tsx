@@ -27,7 +27,7 @@ interface Props {
 }
 
 const INTRO = {
-  help: 'Wir melden uns bei dir, sobald es etwas zu tun gibt.',
+  help: 'Wir melden uns bei dir, sobald es etwas zu tun gibt, zum Beispiel Flyer verteilen oder bei einer Standaktion mithelfen.',
   quote:
     'Dein Name und dein Zitat erscheinen auf dieser Website. Funktion und Foto sind freiwillig.',
 }

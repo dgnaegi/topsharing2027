@@ -11,12 +11,6 @@ export interface SupportOption {
 
 export const SUPPORT_OPTIONS: SupportOption[] = [
   {
-    mode: 'help',
-    title: 'Mithelfen',
-    short: 'Mithelfen',
-    help: 'An Ständen stehen, Flyer stecken, mit anpacken',
-  },
-  {
     mode: 'quote',
     title: 'Öffentlich unterstützen',
     short: 'Zitat',
@@ -27,6 +21,12 @@ export const SUPPORT_OPTIONS: SupportOption[] = [
     title: 'Spenden',
     short: 'Spenden',
     help: 'Per Twint oder Überweisung',
+  },
+  {
+    mode: 'help',
+    title: 'Mithelfen',
+    short: 'Mithelfen',
+    help: 'An Ständen stehen, Flyer stecken, mit anpacken',
   },
 ]
 

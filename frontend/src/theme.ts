@@ -9,6 +9,8 @@ export const theme = {
     signalDark: '#C10F5D',
     tint: '#FFE9F2',
     muted: '#F2F2F2',
+    /** Dunkelgrau der Studiowand links im Breitbild, steht bis das Foto geladen ist. */
+    studio: '#4A4A48',
   },
   fonts: {
     display: "'AL Ruder Plakat', 'Helvetica Neue', Arial, sans-serif",
@@ -52,15 +54,18 @@ export type Theme = typeof theme
 
 export const bp = theme.breakpoints
 
+/** Querformat ab Handybreite: Breitbild im Hero. Auch für <source media> im Markup. */
+export const heroQuery = '(orientation: landscape) and (min-width: 560px)'
+
 export const media = {
   sm: `@media (min-width: ${bp.sm})`,
   md: `@media (min-width: ${bp.md})`,
   lg: `@media (min-width: ${bp.lg})`,
   /**
-   * Hero nebeneinander (Pink, Foto rechts): jeder Querformat-Screen ab Handybreite.
-   * Hochformat, auch grosse Tablets, bekommt das Vollbild-Foto.
+   * Hero im Breitbild, Slogan links neben den beiden: jeder Querformat-Screen ab Handybreite.
+   * Hochformat, auch grosse Tablets, bekommt das Hochformat-Foto.
    */
-  hero: '@media (orientation: landscape) and (min-width: 560px)',
+  hero: `@media ${heroQuery}`,
   maxSm: `@media (max-width: ${bp.sm})`,
   maxMd: `@media (max-width: ${bp.md})`,
 } as const
