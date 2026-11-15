@@ -22,6 +22,7 @@ export function HeroPicture() {
         width={PHOTO_WIDTH}
         height={PHOTO_HEIGHT}
         decoding="async"
+        {...{ fetchpriority: 'high' }}
       />
     </picture>
   )

@@ -12,10 +12,13 @@ export const HeroBand = styled.section`
   /* Gleicher Seitenrand wie Navigation und Bänder. */
   --hero-x: max(clamp(1rem, 4vw, 4rem), calc((100% - 1600px) / 2));
   --hero-h: calc(100svh - ${({ theme }) => theme.navHeight});
-  /* Gerenderte Bildbreite bei object-fit: cover (Breitbild 1.871:1). */
-  --img-w: max(100%, calc(var(--hero-h) * 1.871));
+  /* Breitbild 1.871:1, um 1.2 vergrössert und rechts um 6 % der Bildbreite beschnitten. */
+  --img-w: max(calc(100cqw / 0.94), calc(var(--hero-h) * 1.871 * 1.2));
+  --img-h: calc(var(--img-w) / 1.871);
   position: relative;
   overflow: hidden;
+  /* cqw im Bild bezieht sich so auf die Bandbreite, auch in top und height. */
+  container-type: inline-size;
   height: calc(100vh - ${({ theme }) => theme.navHeight});
   height: calc(100svh - ${({ theme }) => theme.navHeight});
   border-bottom: ${({ theme }) => theme.borderStructural};
@@ -41,18 +44,22 @@ export const Photo = styled.div`
     object-position: 50% 0%;
     ${enter(0, settle)}
     animation-duration: 1.4s;
-  }
 
-  /* Rechtsbündig: die beiden bleiben bei jedem Format ganz im Bild. Bei Ultrawide wird
-     unten beschnitten, die Köpfe (ab 12 % Höhe) bleiben drin. */
-  ${media.hero} img {
-    object-position: 100% 15%;
+    /* Hereingezoomt: Köpfe (ab 11.7 % Bildhöhe) sitzen bei 5 % der Hero-Höhe, unten werden
+       Füsse und Sockel beschnitten. Rechts fällt nur leere Wand weg. */
+    ${media.hero} {
+      position: absolute;
+      top: calc(var(--hero-h) * 0.05 - var(--img-h) * 0.117);
+      right: calc(var(--img-w) * -0.06);
+      width: var(--img-w);
+      height: var(--img-h);
+    }
   }
 `
 
 /**
  * Textblock. Mobil unten, exakt mittig. Querformat: mittig in der freien Wand links.
- * Die Personen beginnen bei 61.5 % der Bildbreite, rechtsbündig gemessen also 38.5 %.
+ * Die Personen beginnen bei 61.5 % der Bildbreite, abzüglich 6 % Beschnitt rechts 32.5 %.
  * Container, damit die Schriftgrösse sich nach der verfügbaren Breite richtet.
  */
 export const Content = styled.div`
@@ -67,7 +74,7 @@ export const Content = styled.div`
   ${media.hero} {
     top: 0;
     bottom: 0;
-    right: calc(var(--img-w) * 0.385 + var(--hero-gap));
+    right: calc(var(--img-w) * 0.325 + var(--hero-gap));
     display: flex;
     flex-direction: column;
     align-items: center;

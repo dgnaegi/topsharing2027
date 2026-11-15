@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Band, BandMeta, Grid, Col, Display } from './Band.styled'
 import { VisuallyHidden } from './VisuallyHidden.styled'
 import { SupportPicker } from './SupportPicker'
@@ -12,12 +12,15 @@ import {
   tabId,
   type SupportMode,
 } from '../data/supportOptions'
+import { EMPTY_DRAFT, type SupportDraft } from '../data/supportForm'
 
 const modeFromHash = (): SupportMode | null =>
   window.location.hash === DONATE_HASH ? 'give' : null
 
 export function SupportSection() {
   const [mode, setMode] = useState<SupportMode>(() => modeFromHash() ?? SUPPORT_OPTIONS[0].mode)
+
+  const draft = useRef<SupportDraft>({ ...EMPTY_DRAFT })
 
   // Links auf /#spenden (alter Menüpunkt, geteilte Links) öffnen direkt den Spenden-Tab.
   useEffect(() => {
@@ -46,8 +49,17 @@ export function SupportSection() {
         <Col>
           <DonateAnchor id={DONATE_HASH.slice(1)} />
           <SupportPicker active={mode} onSelect={setMode} />
-          <div role="tabpanel" id={PANEL_ID} aria-labelledby={tabId(mode)}>
-            {mode === 'give' ? <DonateDetails /> : <SupportForm key={mode} mode={mode} />}
+          <div
+            role="tabpanel"
+            id={PANEL_ID}
+            aria-labelledby={tabId(mode)}
+            tabIndex={mode === 'give' ? 0 : undefined}
+          >
+            {mode === 'give' ? (
+              <DonateDetails />
+            ) : (
+              <SupportForm key={mode} mode={mode} draft={draft} />
+            )}
           </div>
         </Col>
       </Grid>

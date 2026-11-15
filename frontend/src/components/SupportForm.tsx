@@ -1,48 +1,52 @@
-import { useState } from 'react'
+import { useEffect, useState, type MutableRefObject } from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
-import { Form, Row, Field, Label, ErrorText, HelpText, StatusText, Intro } from './Form.styled'
-import { Input } from './FormControls.styled'
+import { Form, StatusText, Intro } from './Form.styled'
 import { Button } from './Button.styled'
 import { SupportSuccess } from './SupportSuccess'
+import { ContactFields } from './ContactFields'
 import { PublicFields } from './PublicFields'
 import { submitSupport } from '../api/endpoints'
 import { ApiError } from '../api/client'
 import { fileToDataUrl } from '../utils/fileToDataUrl'
-
-export interface SupportFormValues {
-  firstName: string
-  lastName: string
-  email: string
-  role: string
-  quote: string
-  image: FileList
-}
+import {
+  FORM_INTRO,
+  FORM_SUBMIT,
+  type FormMode,
+  type SupportDraft,
+  type SupportFormValues,
+} from '../data/supportForm'
 
 type Status =
   { type: 'idle' } | { type: 'success'; public: boolean } | { type: 'error'; message: string }
 
 interface Props {
   /** Kommt vom gewählten Tab: mithelfen oder öffentlich unterstützen. */
-  mode: 'help' | 'quote'
+  mode: FormMode
+  draft: MutableRefObject<SupportDraft>
 }
 
-const INTRO = {
-  help: 'Wir melden uns bei dir, sobald es etwas zu tun gibt, zum Beispiel Flyer verteilen oder bei einer Standaktion mithelfen.',
-  quote:
-    'Dein Name und dein Zitat erscheinen auf dieser Website. Funktion und Foto sind freiwillig.',
-}
-
-const SUBMIT = { help: 'Ich bin dabei', quote: 'Zitat senden' }
-
-export function SupportForm({ mode }: Props) {
-  const methods = useForm<SupportFormValues>()
+export function SupportForm({ mode, draft }: Props) {
+  const methods = useForm<SupportFormValues>({ defaultValues: draft.current })
   const {
-    register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    watch,
+    formState: { isSubmitting },
   } = methods
   const [status, setStatus] = useState<Status>({ type: 'idle' })
   const isPublic = mode === 'quote'
+
+  useEffect(() => {
+    const subscription = watch((v) => {
+      draft.current = {
+        firstName: v.firstName ?? '',
+        lastName: v.lastName ?? '',
+        email: v.email ?? '',
+        role: v.role ?? '',
+        quote: v.quote ?? '',
+      }
+    })
+    return () => subscription.unsubscribe()
+  }, [watch, draft])
 
   async function onSubmit(v: SupportFormValues) {
     setStatus({ type: 'idle' })
@@ -58,6 +62,7 @@ export function SupportForm({ mode }: Props) {
         quote: isPublic ? v.quote.trim() || undefined : undefined,
         image: file ? await fileToDataUrl(file) : undefined,
       })
+      if (isPublic) draft.current = { ...draft.current, role: '', quote: '' }
       setStatus({ type: 'success', public: isPublic })
     } catch (err) {
       const message =
@@ -73,70 +78,11 @@ export function SupportForm({ mode }: Props) {
   return (
     <FormProvider {...methods}>
       <Form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Intro>{INTRO[mode]}</Intro>
-        <Row>
-          <Field>
-            <Label htmlFor="firstName">Vorname</Label>
-            <Input
-              id="firstName"
-              aria-required="true"
-              autoComplete="given-name"
-              aria-invalid={errors.firstName ? 'true' : undefined}
-              aria-describedby={errors.firstName ? 'firstName-error' : undefined}
-              {...register('firstName', { required: true, maxLength: 100 })}
-            />
-            {errors.firstName && (
-              <ErrorText id="firstName-error">Bitte gib deinen Vornamen an.</ErrorText>
-            )}
-          </Field>
-          <Field>
-            <Label htmlFor="lastName">Nachname</Label>
-            <Input
-              id="lastName"
-              aria-required="true"
-              autoComplete="family-name"
-              aria-invalid={errors.lastName ? 'true' : undefined}
-              aria-describedby={errors.lastName ? 'lastName-error' : undefined}
-              {...register('lastName', { required: true, maxLength: 100 })}
-            />
-            {errors.lastName && (
-              <ErrorText id="lastName-error">Bitte gib deinen Nachnamen an.</ErrorText>
-            )}
-          </Field>
-        </Row>
-        <Field>
-          <Label htmlFor="email">E-Mail</Label>
-          <Input
-            id="email"
-            aria-required="true"
-            type="email"
-            autoComplete="email"
-            aria-invalid={errors.email ? 'true' : undefined}
-            aria-describedby={
-              [isPublic && 'email-help', errors.email && 'email-error'].filter(Boolean).join(' ') ||
-              undefined
-            }
-            {...register('email', {
-              required: true,
-              maxLength: 200,
-              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            })}
-          />
-          {/* Nur beim Zitat nötig: dort erscheinen Name und Zitat öffentlich, die E-Mail nicht. */}
-          {isPublic && (
-            <HelpText id="email-help">
-              Nur für Rückfragen. Sie erscheint nicht auf der Seite.
-            </HelpText>
-          )}
-          {errors.email && (
-            <ErrorText id="email-error">Bitte gib eine gültige E-Mail an.</ErrorText>
-          )}
-        </Field>
-
+        <Intro>{FORM_INTRO[mode]}</Intro>
+        <ContactFields isPublic={isPublic} />
         {isPublic && <PublicFields />}
-
         <Button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
-          {isSubmitting ? 'Wird gesendet…' : SUBMIT[mode]}
+          {isSubmitting ? 'Wird gesendet…' : FORM_SUBMIT[mode]}
         </Button>
         {status.type === 'error' && <StatusText role="alert">{status.message}</StatusText>}
       </Form>

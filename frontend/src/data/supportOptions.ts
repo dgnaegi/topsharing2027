@@ -11,16 +11,16 @@ export interface SupportOption {
 
 export const SUPPORT_OPTIONS: SupportOption[] = [
   {
-    mode: 'quote',
-    title: 'Öffentlich unterstützen',
-    short: 'Zitat',
-    help: 'Mit Name und Zitat auf der Website',
-  },
-  {
     mode: 'give',
     title: 'Spenden',
     short: 'Spenden',
     help: 'Per Twint oder Überweisung',
+  },
+  {
+    mode: 'quote',
+    title: 'Öffentlich unterstützen',
+    short: 'Zitat',
+    help: 'Mit Name und Zitat auf der Website',
   },
   {
     mode: 'help',

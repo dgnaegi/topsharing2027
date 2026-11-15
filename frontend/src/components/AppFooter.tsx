@@ -1,48 +1,9 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import {
-  FooterBar,
-  FooterLinks,
-  FooterShare,
-  FooterIconButton,
-  FooterStatus,
-} from './AppFooter.styled'
+import { FooterBar, FooterLinks, FooterShare, FooterIconButton } from './AppFooter.styled'
 import { NewTabHint } from './NewTabHint'
-import { IconShare } from './icons/IconShare'
-import { IconWhatsApp } from './icons/IconWhatsApp'
-
-const SHARE_TEXT =
-  'Melanie Berner und Nicole Wyss kandidieren 2027 für den Regierungsrat des Kantons Zürich.'
+import { IconInstagram } from './icons/IconInstagram'
 
 export function AppFooter() {
-  const [status, setStatus] = useState('')
-
-  useEffect(() => {
-    if (!status) return
-    const t = window.setTimeout(() => setStatus(''), 3000)
-    return () => clearTimeout(t)
-  }, [status])
-
-  async function handleShare() {
-    const url = window.location.href
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: document.title, text: SHARE_TEXT, url })
-      } catch {
-        // Nutzer hat den Teilen-Dialog abgebrochen.
-      }
-      return
-    }
-    try {
-      await navigator.clipboard.writeText(url)
-      setStatus('Link kopiert.')
-    } catch {
-      setStatus('Der Link konnte nicht kopiert werden.')
-    }
-  }
-
-  const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${SHARE_TEXT} ${window.location.href}`)}`
-
   return (
     <FooterBar>
       <span>Berner &amp; Wyss 2027. Regierungsratswahl Zürich.</span>
@@ -54,21 +15,15 @@ export function AppFooter() {
           <NewTabHint />
         </a>
         <FooterShare>
-          <FooterIconButton type="button" onClick={handleShare} aria-label="Seite teilen">
-            <IconShare width="20" height="20" />
-          </FooterIconButton>
           <FooterIconButton
             as="a"
-            href={whatsappHref}
+            href="https://www.instagram.com/topsharing2027/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Auf WhatsApp teilen (öffnet in neuem Tab)"
+            aria-label="Zusammen Mehr auf Instagram (öffnet in neuem Tab)"
           >
-            <IconWhatsApp width="20" height="20" />
+            <IconInstagram width="20" height="20" />
           </FooterIconButton>
-          <FooterStatus role="status" aria-live="polite">
-            {status}
-          </FooterStatus>
         </FooterShare>
       </FooterLinks>
     </FooterBar>

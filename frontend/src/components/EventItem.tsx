@@ -44,8 +44,8 @@ export function EventItem({ event }: Props) {
           <Head>
             <Title>{event.title}</Title>
             <Meta>
-              <VisuallyHidden>{date.long}, </VisuallyHidden>
-              {event.venue}, {event.address}
+              <VisuallyHidden>{date.date}, </VisuallyHidden>
+              {date.time}, {event.venue}, {event.address}
             </Meta>
           </Head>
           <Toggle $open={open} aria-hidden="true" />
@@ -63,7 +63,7 @@ export function EventItem({ event }: Props) {
         {event.url && (
           <p>
             <a href={event.url} target="_blank" rel="noopener noreferrer">
-              Link
+              Mehr erfahren
               <VisuallyHidden> zum Termin {event.title}</VisuallyHidden>
               <NewTabHint />
             </a>

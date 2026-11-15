@@ -11,11 +11,15 @@ const time = new Intl.DateTimeFormat('de-CH', { hour: '2-digit', minute: '2-digi
 
 export function eventDateParts(start: string) {
   const d = new Date(start)
+  const date = full.format(d)
+  const clock = `${time.format(d)} Uhr`
   return {
     day: day.format(d),
     month: month.format(d).replace('.', ''),
-    /** z. B. „Mittwoch, 2. Dezember 2026, 19:30“ */
-    long: `${full.format(d)}, ${time.format(d)}`,
+    date,
+    time: clock,
+    /** z. B. „Mittwoch, 2. Dezember 2026, 19:30 Uhr“ */
+    long: `${date}, ${clock}`,
   }
 }
 

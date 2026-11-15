@@ -2,7 +2,7 @@ import { useFormContext } from 'react-hook-form'
 import { RevealFieldset, Field, Label, HelpText, ErrorText } from './Form.styled'
 import { Input, TextArea, FileInput } from './FormControls.styled'
 import { MAX_IMAGE_BYTES, ALLOWED_IMAGE_TYPES } from '../utils/fileToDataUrl'
-import type { SupportFormValues } from './SupportForm'
+import type { SupportFormValues } from '../data/supportForm'
 
 export function PublicFields() {
   const {

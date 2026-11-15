@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { media } from '../theme'
-import { enter, nudgeIn } from '../motion'
 
 export const FooterBar = styled.footer`
   padding-block: ${({ theme }) => theme.spacing.xl};
@@ -60,18 +59,4 @@ export const FooterIconButton = styled.button`
   &:active {
     transform: none;
   }
-`
-
-export const FooterStatus = styled.p`
-  margin-left: ${({ theme }) => theme.spacing.sm};
-
-  &:not(:empty) {
-    ${enter(0, nudgeIn)}
-    animation-duration: 0.25s;
-  }
-
-  font-weight: 700;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 `
