@@ -30,10 +30,13 @@ export const Photo = styled.div`
   position: absolute;
   inset: 0;
 
+  /* color: transparent versteckt den Alt-Text, den Safari und Firefox während des Ladens
+     ungestylt anzeigen. Screenreader lesen ihn weiterhin vor. */
   img {
     display: block;
     width: 100%;
     height: 100%;
+    color: transparent;
     object-fit: cover;
     object-position: 50% 0%;
     ${enter(0, settle)}
