@@ -66,6 +66,7 @@ export const media = {
    * Hochformat, auch grosse Tablets, bekommt das Hochformat-Foto.
    */
   hero: `@media ${heroQuery}`,
+  touch: '@media (pointer: coarse)',
   maxSm: `@media (max-width: ${bp.sm})`,
   maxMd: `@media (max-width: ${bp.md})`,
 } as const

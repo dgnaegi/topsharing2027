@@ -1,5 +1,9 @@
 import { Form, Intro } from './Form.styled'
-import { Layout, QrBox, Details } from './DonateDetails.styled'
+import { Layout, QrBox, Details, TwintLink } from './DonateDetails.styled'
+import { NewTabHint } from './NewTabHint'
+
+const TWINT_URL =
+  'https://go.twint.ch/1/e/tw?tw=acq.iOu0kG-LSiaskrzHHyqJ_TUGbUfEhPFGrDjl0B27gyXiCwphIjV6W_CBRbpALmSL'
 
 /** Inhalt des Spenden-Tabs. Gleiche Fläche wie das Formular, damit das Panel nicht springt. */
 export function DonateDetails() {
@@ -21,7 +25,13 @@ export function DonateDetails() {
         </QrBox>
         <Details>
           <dt>Twint</dt>
-          <dd>QR-Code mit der Twint-App scannen</dd>
+          <dd>
+            QR-Code mit der Twint-App scannen
+            <TwintLink as="a" href={TWINT_URL} target="_blank" rel="noopener noreferrer">
+              Mit Twint spenden
+              <NewTabHint />
+            </TwintLink>
+          </dd>
           <dt>Banküberweisung</dt>
           <dd>
             Alternative Linke

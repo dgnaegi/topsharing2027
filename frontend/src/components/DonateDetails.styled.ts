@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { media } from '../theme'
+import { Button } from './Button.styled'
 
 /** Mobil QR-Code über den Angaben, ab Tablet daneben. */
 export const Layout = styled.div`
@@ -52,5 +53,19 @@ export const Details = styled.dl`
     font-weight: 500;
     font-size: clamp(1rem, 1.6vw, 1.25rem);
     overflow-wrap: anywhere;
+  }
+`
+
+export const TwintLink = styled(Button)`
+  display: none;
+
+  ${media.touch} {
+    display: block;
+    width: fit-content;
+    margin-top: ${({ theme }) => theme.spacing.md};
+  }
+
+  ${media.maxSm} {
+    width: 100%;
   }
 `
