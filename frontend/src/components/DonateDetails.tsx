@@ -1,9 +1,11 @@
 import { Form, Intro } from './Form.styled'
 import { Layout, QrBox, Details, TwintLink } from './DonateDetails.styled'
 import { NewTabHint } from './NewTabHint'
+import { IbanCopyButton } from './IbanCopyButton'
 
 const TWINT_URL =
   'https://go.twint.ch/1/e/tw?tw=acq.iOu0kG-LSiaskrzHHyqJ_TUGbUfEhPFGrDjl0B27gyXiCwphIjV6W_CBRbpALmSL'
+const IBAN = 'CH07 0900 0000 1668 6688 9'
 
 /** Inhalt des Spenden-Tabs. Gleiche Fläche wie das Formular, damit das Panel nicht springt. */
 export function DonateDetails() {
@@ -36,7 +38,8 @@ export function DonateDetails() {
           <dd>
             Alternative Linke
             <br />
-            IBAN: CH07 0900 0000 1668 6688 9
+            IBAN: {IBAN}
+            <IbanCopyButton iban={IBAN} />
             <br />
             Kontonummer: 16-686688-9
             <br />
