@@ -26,7 +26,6 @@ export const Photo = styled.img`
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border: ${({ theme }) => theme.borderStructural};
   background: ${({ theme }) => theme.colors.muted};
 `
 
