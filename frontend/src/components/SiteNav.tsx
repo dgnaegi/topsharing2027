@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { NAV_ITEMS } from '../data/navigation'
 import { bp } from '../theme'
 import { NavBar, Brand, MenuToggle, Nav } from './SiteNav.styled'
@@ -6,11 +7,13 @@ import { NavList, ItemNumber } from './SiteNavList.styled'
 import { IconMenu } from './icons/IconMenu'
 import { useActiveSection } from '../hooks/useActiveSection'
 
-const SECTION_IDS = NAV_ITEMS.map((item) => item.id)
-
 export function SiteNav() {
   const [open, setOpen] = useState(false)
-  const active = useActiveSection(SECTION_IDS)
+  const [params] = useSearchParams()
+  const preview = params.has('preview')
+  const items = NAV_ITEMS.filter((item) => preview || !item.previewOnly)
+  const base = preview ? '/?preview' : '/'
+  const active = useActiveSection(items.map((item) => item.id))
   const barRef = useRef<HTMLElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
 
@@ -44,7 +47,7 @@ export function SiteNav() {
 
   return (
     <NavBar ref={barRef}>
-      <Brand href="/#top" onClick={() => setOpen(false)}>
+      <Brand href={`${base}#top`} onClick={() => setOpen(false)}>
         Zusammen Mehr
       </Brand>
       <MenuToggle
@@ -59,10 +62,10 @@ export function SiteNav() {
       </MenuToggle>
       <Nav aria-label="Hauptnavigation">
         <NavList id="site-menu" role="list" $open={open}>
-          {NAV_ITEMS.map((item, i) => (
+          {items.map((item, i) => (
             <li key={item.id}>
               <a
-                href={`/#${item.id}`}
+                href={`${base}#${item.id}`}
                 aria-current={item.id === active ? 'true' : undefined}
                 onClick={() => setOpen(false)}
               >

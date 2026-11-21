@@ -36,7 +36,7 @@ berner-wyss2027/
 │   │   ├── main.tsx, App.tsx, theme.ts, GlobalStyle.ts, styled.d.ts
 │   │   ├── components/           # Foo.tsx + Foo.styled.ts (Bänder: Hero, Team, Support, Donate)
 │   │   ├── fonts.css             # @font-face + Lineto-Disclaimer (nicht entfernen)
-│   │   ├── data/supporters.ts    # Platzhalter-Unterstützende (manuell gepflegt)
+│   │   ├── data/supporters.json  # Unterstützer:innen mit Zitat (Fotos in public/unterstuetzende/)
 │   │   ├── routes/               # HomePage, PrivacyPage, ImpressumPage
 │   │   ├── api/{client,endpoints}.ts
 │   │   └── hooks/usePageMeta.ts
@@ -104,7 +104,11 @@ ersetzt via Vite-Plugin in `vite.config.ts`) sowie `robots.txt`/`sitemap.xml` (g
 ohne Code-Änderung: Env-Var `VITE_SITE_URL`. Mail-Absenderadresse separat via `MAIL_FROM` in
 `backend/.env`.
 
-## Unterstützende pflegen
+## Stimmen (Unterstützer:innen) pflegen
 
-Die Liste (`SupportersSection`) ist vorerst nicht auf der Startseite eingebunden. Es gibt keine Datenbank. Neue Unterstützungs-Zitate kommen als E-Mail an `daniel@gnaegi.me`.
-Nach Prüfung werden sie manuell in `frontend/src/data/supporters.ts` ergänzt.
+Die Sektion „Stimmen“ (`SupportersSection`, Anker `#stimmen`) erscheint vorerst nur mit `?preview` in der URL (`HomePage.tsx`).
+Es gibt keine Datenbank. Neue Zitate kommen als E-Mail an `daniel@gnaegi.me`. Die Mail enthält
+einen fertigen Text für Claude Code (Skill `/unterstuetzer-hinzufuegen`) und eine
+Antwort-Vorlage an die Person. Der Skill schneidet das Foto mit
+`frontend/scripts/supporter-photo.py` auf 800 × 1000 px (WebP) zu und ergänzt
+`frontend/src/data/supporters.json`.

@@ -1,41 +1,34 @@
 import styled from 'styled-components'
-import { media } from '../theme'
 
 export const SupportersList = styled.ul`
   list-style: none;
-  columns: 2;
-  column-gap: ${({ theme }) => theme.spacing.xl};
-
-  ${media.maxSm} {
-    columns: 1;
-  }
+  border-top: ${({ theme }) => theme.border};
 `
 
-export const SupporterItem = styled.li`
-  padding: ${({ theme }) => theme.spacing.sm} 0;
-  border-bottom: ${({ theme }) => theme.border};
-  break-inside: avoid;
-`
-
-export const SupporterName = styled.span`
-  font-weight: 700;
-`
-
-export const QuoteTrigger = styled.button`
+export const NameButton = styled.button`
+  display: block;
+  width: 100%;
+  padding: ${({ theme }) => theme.spacing.md} 0;
   background: none;
   border: none;
-  padding: 0;
+  border-bottom: ${({ theme }) => theme.border};
   font: inherit;
-  font-weight: 700;
+  font-weight: 500;
   color: ${({ theme }) => theme.colors.ink};
+  text-align: left;
   text-decoration: underline;
-  text-decoration-color: ${({ theme }) => theme.colors.signal};
+  text-decoration-color: transparent;
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
   cursor: pointer;
-  text-align: left;
+  transition: text-decoration-color ${({ theme }) => theme.motion.fast};
 
   &:hover {
-    text-decoration-color: ${({ theme }) => theme.colors.signalDark};
+    text-decoration-color: ${({ theme }) => theme.colors.ink};
+  }
+
+  &[aria-pressed='true'] {
+    font-weight: 700;
+    text-decoration-color: ${({ theme }) => theme.colors.signal};
   }
 `

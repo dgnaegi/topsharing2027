@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { z } from 'zod'
 import { validate } from '../middleware/validate'
 import { sendMail } from '../services/mail'
+import { buildSupportMailHtml, slugify } from '../services/supportMail'
 import { AppError, ErrorCode } from '../errors'
 
 const router = Router()
@@ -36,14 +37,6 @@ const supportSchema = z
   .refine((d) => d.campaign || d.publicSupport)
   .refine((d) => !d.publicSupport || Boolean(d.quote))
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-}
-
 function parseImage(dataUrl: string): { buffer: Buffer; contentType: string; ext: string } {
   const match = dataUrl.match(/^data:([^;]+);base64,(.+)$/)
   if (!match) throw new AppError(ErrorCode.VALIDATION_ERROR, 400, 'Bitte wähl ein gültiges Bild.')
@@ -76,30 +69,30 @@ router.post('/support', validate(supportSchema), async (req, res, next) => {
       req.body as z.infer<typeof supportSchema>
 
     const attachments = []
+    let photoFilename: string | undefined
     if (publicSupport && image) {
       const { buffer, contentType, ext } = parseImage(image)
-      attachments.push({ filename: `foto.${ext}`, content: buffer, contentType })
+      photoFilename = `${slugify(firstName, lastName) || 'foto'}.${ext}`
+      attachments.push({ filename: photoFilename, content: buffer, contentType })
     }
 
     const kinds = [campaign && 'Kampagne mitmachen', publicSupport && 'Öffentlich unterstützen']
       .filter(Boolean)
       .join(' und ')
 
-    const publicPart = publicSupport
-      ? `
-        <p><strong>Funktion:</strong> ${role ? escapeHtml(role) : 'keine'}</p>
-        <p><strong>Zitat:</strong> ${escapeHtml(quote ?? '').replace(/\n/g, '<br>')}</p>
-        <p>${image ? 'Foto im Anhang.' : 'Kein Foto eingereicht.'}</p>`
-      : ''
-
     await sendMail({
       to: 'daniel@gnaegi.me',
       subject: `Neue Unterstützung: ${firstName} ${lastName}`,
-      html: `
-        <p><strong>Name:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
-        <p><strong>E-Mail:</strong> ${escapeHtml(email)}</p>
-        <p><strong>Art:</strong> ${kinds}</p>${publicPart}
-      `,
+      html: buildSupportMailHtml({
+        firstName,
+        lastName,
+        email,
+        kinds,
+        publicSupport,
+        role,
+        quote,
+        photoFilename,
+      }),
       replyTo: email,
       attachments,
     })

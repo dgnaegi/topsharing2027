@@ -5,3 +5,6 @@ dist/
 
 # Originalfotos (gross), nicht ausliefern
 frontend/originals/
+
+# Lokaler Claude-Skill, nicht einchecken
+.claude/skills/unterstuetzer-hinzufuegen/SKILL.md
