@@ -12,5 +12,19 @@
     "lastName": "Koller",
     "role": "Musiker / Autor",
     "quote": "Zwei kompetente Frauen aus der Stadt, die im Regierungsrat mitreden, das passt perfekt."
+  },
+  {
+    "slug": "gigi-moto",
+    "firstName": "Gigi",
+    "lastName": "Moto",
+    "role": "Sängerin und Schauspielerin",
+    "quote": "Es braucht mutige Frauen im Regierungsrat, die auch in urbanen Gebieten für Gerechtigkeit sorgen. Zürich soll eine farbige und lebendige Stadt sein, wo Menschen in bezahlbaren Wohnungen leben, Raum für allerlei Kunst geschaffen wird, und die kultigen Plätze und Kleinbetriebe bestehen bleiben. Es wäre schade, wenn diese Stadt zu Tode gentrifiziert würde."
+  },
+  {
+    "slug": "roman-riklin",
+    "firstName": "Roman",
+    "lastName": "Riklin",
+    "role": "Storyteller & Songwriter",
+    "quote": "Ich fühle nicht nur inhaltlich durch Wyss und Berner vertreten, sondern stehe auch voll und ganz hinter der tollen Idee dieser gemeinsamen Kandidatur."
   }
 ]
