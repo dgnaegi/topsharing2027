@@ -106,7 +106,7 @@ ohne Code-Änderung: Env-Var `VITE_SITE_URL`. Mail-Absenderadresse separat via `
 
 ## Stimmen (Unterstützer:innen) pflegen
 
-Die Sektion „Stimmen“ (`SupportersSection`, Anker `#stimmen`) erscheint vorerst nur mit `?preview` in der URL (`HomePage.tsx`).
+Die Sektion „Stimmen“ (`SupportersSection`, Anker `#stimmen`) ist öffentlich.
 Es gibt keine Datenbank. Neue Zitate kommen als E-Mail an `daniel@gnaegi.me`. Die Mail enthält
 einen fertigen Text für Claude Code (Skill `/unterstuetzer-hinzufuegen`) und eine
 Antwort-Vorlage an die Person. Der Skill schneidet das Foto mit

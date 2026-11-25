@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
 import { NAV_ITEMS } from '../data/navigation'
 import { bp } from '../theme'
 import { NavBar, Brand, MenuToggle, Nav } from './SiteNav.styled'
@@ -9,10 +8,8 @@ import { useActiveSection } from '../hooks/useActiveSection'
 
 export function SiteNav() {
   const [open, setOpen] = useState(false)
-  const [params] = useSearchParams()
-  const preview = params.has('preview')
-  const items = NAV_ITEMS.filter((item) => preview || !item.previewOnly)
-  const base = preview ? '/?preview' : '/'
+  const items = NAV_ITEMS
+  const base = '/'
   const active = useActiveSection(items.map((item) => item.id))
   const barRef = useRef<HTMLElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
